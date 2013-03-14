@@ -19,7 +19,7 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     // localization support
     QTranslator translator;
     QString locale_string = QLocale().name();
-    QString filename = QString( "GOTransitSchedule_%1" ).arg( locale_string );
+    QString filename = QString( "Game_5_%1" ).arg( locale_string );
     if (translator.load(filename, "app/native/qm")) {
         app.installTranslator( &translator );
     }

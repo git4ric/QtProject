@@ -18,6 +18,7 @@ class Data: public QObject
 public:
 	Data(QObject* parent);
 	~Data();
+	QString processFile(QString input);
 	void fetchData();
 private:
 	QNetworkAccessManager* _manager;
