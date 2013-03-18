@@ -19,6 +19,9 @@ public:
 	Data(QObject* parent);
 	~Data();
 	QString processFile(QString input);
+	QString processStationName(QString input);
+	void processTime(QString input, QString *hour, QString *minute);
+
 	void fetchData();
 private:
 	QNetworkAccessManager* _manager;
