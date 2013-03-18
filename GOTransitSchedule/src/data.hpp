@@ -11,6 +11,7 @@
 #include <qt4/QtNetwork/QNetworkAccessManager>
 #include <qt4/QtNetwork/QNetworkRequest>
 #include <qt4/QtNetwork/QNetworkReply>
+#include <qt4/QtCore/QPair>
 
 class Data: public QObject
 {
@@ -18,9 +19,9 @@ class Data: public QObject
 public:
 	Data(QObject* parent);
 	~Data();
-	QString processFile(QString input);
+	void processFile();
 	QString processStationName(QString input);
-	void processTime(QString input, QString *hour, QString *minute);
+	QPair<QString,QString> processTime(QString input);
 
 	void fetchData();
 private:
