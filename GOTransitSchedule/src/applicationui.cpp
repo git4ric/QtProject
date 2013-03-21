@@ -1,3 +1,7 @@
+//TODO: Custom icons for tabbed pane icons (GO and Presto)
+//TODO: Add coming soon screen for PRESTO tab
+
+
 // Default empty project template
 #include "applicationui.hpp"
 
@@ -28,20 +32,22 @@
 #include <qt4/QtCore/QFile>
 #include <bb/cascades/Dialog>
 #include <QTextStream>
+#include <bb/cascades/TextField>
 #include <bb/cascades/TextArea>
-#include <QLocale>
-#include <QTranslator>
+#include <bb/cascades/KeyListener>
+#include <bb/cascades/TabbedPane>
 #include <bb/cascades/ScrollView>
 #include <bb/cascades/ScrollMode>
-
+#include <bps/virtualkeyboard.h>
+#include <bb/cascades/Tab>
 #include "data.hpp"
-#define QT_DECLARATIVE_DEBUG
-
-#include <Qt/qdeclarativedebug.h>
 
 using namespace bb::cascades;
 
 
+QStringList stationName;
+TextField *suggestion1, *suggestion2, *suggestion3, *suggestion4, *textInput;
+ImageView *logo;
 
 ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 : QObject(app)
@@ -51,82 +57,207 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 		navigationPane = NavigationPane::create();
 		// Create the root container
 		Container* contentContainer = Container::create()
-	                         .top(300);
-		contentContainer->setBackground(Color::fromARGB(0xff7A7A7A));
+	                         .top(100);
+		contentContainer->setBackground(Color::fromARGB(0x005A5A5A));
+
 
 		StackLayout *pStackLayout = new StackLayout();
 		pStackLayout->setOrientation( LayoutOrientation::TopToBottom );
 		contentContainer->setLayout(pStackLayout);
 
-		ImageView* logo = ImageView::create("asset:///images/go-transit.png");
+		logo = ImageView::create("asset:///images/go-transit.png");
 		logo->setHorizontalAlignment(HorizontalAlignment::Center);
 
 
-		dropDownFrom = DropDown::create().title("Starting from...");
-		McMaster = Option::create().text("McMaster");
-		Oakville = Option::create().text("Oakville Carpool");
-		dropDownFrom->add(McMaster);
-		dropDownFrom->add(Oakville);
-		dropDownFrom->setHorizontalAlignment(HorizontalAlignment::Center);
+		//dropDownFrom = DropDown::create().title("Starting from...");
+		textInput = new TextField();
+		textInput->setHintText("Starting from...");
 
-		dropDownTo = DropDown::create().title("Going to...");
-		dropDownTo->add(McMaster);
-		dropDownTo->add(Oakville);
-		dropDownTo->setHorizontalAlignment(HorizontalAlignment::Center);
+		suggestion1 = new TextField();
+		suggestion1->setVisible(false);
+		suggestion1->setHintText("");
+		suggestion2 = new TextField();
+		suggestion2->setVisible(false);
+		suggestion2->setHintText("");
+		suggestion3 = new TextField();
+		suggestion3->setVisible(false);
+		suggestion3->setHintText("");
+		suggestion4 = new TextField();
+		suggestion4->setVisible(false);
+		suggestion4->setHintText("");
+		QString appFolder(QDir::currentPath());
+		QString fileName = appFolder + "/app/native/assets/schedule/stations.txt";
+		QFile file(fileName);
+
+			if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+				qDebug() << "Could not open file for parsing";
+				return;
+			}
+
+	 	 while (!file.atEnd()) {
+			QByteArray line = file.readLine();
+			stationName.append(line);
+			//option = Option::create().text(line);
+			//dropDownFrom->add(option);
+
+		}
+		//dropDownFrom->setHorizontalAlignment(HorizontalAlignment::Center);
 
 		Button* findSchedule = Button::create()
 		.text("Find Schedule")
 		.image(Image("asset:///myImage.png"));
 		findSchedule->setHorizontalAlignment(HorizontalAlignment::Center);
 
-		Button* button = Button::create()
-		.text("From McMaster")
-		.image(Image("asset:///myImage.png"));
-		button->setHorizontalAlignment(HorizontalAlignment::Center);
-
-		Button* button2 = Button::create()
-		.text("From Oakville")
-		.image(Image("asset:///myImage.png"));
-		button2->setHorizontalAlignment(HorizontalAlignment::Center);
-
-		Button* button3 = Button::create().text("Fetch Data");
-		QObject::connect(button3,SIGNAL(clicked()),this,SLOT(onClicked()));
-
 		contentContainer->add(logo);
-		contentContainer->add(dropDownTo);
-		contentContainer->add(dropDownFrom);
+		//contentContainer->add(dropDownFrom);
+		contentContainer->add(textInput);
+		contentContainer->add(suggestion1);
+		contentContainer->add(suggestion2);
+		contentContainer->add(suggestion3);
+		contentContainer->add(suggestion4);
 		contentContainer->add(findSchedule);
-		contentContainer->add(button3);
 
 		bool res = QObject::connect(findSchedule, SIGNAL(clicked()), this,
 		                            SLOT(handleOakvilleClick()));
 		Q_ASSERT(res);
 
+		res = QObject::connect(textInput, SIGNAL(textChanging(QString)), this,
+				                            SLOT(showSuggestions(QString)));
+
+		res = QObject::connect(textInput, SIGNAL(focusedChanged(bool)), this,
+						                            SLOT(removeUI(bool)));
+
+		res = QObject::connect(suggestion1, SIGNAL(focusedChanged(bool)), this,
+						                            SLOT(suggestionOneHighlight()));
+
+		res = QObject::connect(suggestion2, SIGNAL(focusedChanged(bool)), this,
+						                            SLOT(suggestionTwoHighlight()));
+
+		res = QObject::connect(suggestion3, SIGNAL(focusedChanged(bool)), this,
+						                            SLOT(suggestionThreeHighlight()));
+
+		res = QObject::connect(suggestion4, SIGNAL(focusedChanged(bool)), this,
+						                            SLOT(suggestionFourHighlight()));
 		// Indicate that the variable res isn't used in the rest of the app, to prevent
 		// a compiler warning
 		Q_UNUSED(res);
 
-		res = QObject::connect(button2, SIGNAL(clicked()), this,
-				                            SLOT(handleOakvilleClick()));
-		Q_ASSERT(res);
-		// Indicate that the variable res isn't used in the rest of the app, to prevent
-		// a compiler warning
-		Q_UNUSED(res);
+		TabbedPane* tabbedPane = TabbedPane::create() .showTabsOnActionBar(true);
+			Tab* tab = new Tab();
+			tab->setTitle("GO Transit");
+			tab->setDescription("Get Bus route timings from any station for GO Transit!");
 
+			Tab* tab2 = new Tab();
+			tab2->setTitle("PRESTO Card");
+			tab2->setDescription("Get balance and other info about your PRESTO Card!");
 
+			Tab* tab3 = new Tab();
+			tab3->setTitle("Settings");
+			tab3->setDescription("App settings and specifications");
 
 		page = new Page();
 		page->setContent(contentContainer);
 		navigationPane->push(page);
-		app->setScene(navigationPane);
+		tab->setContent(navigationPane);
+		tabbedPane->add(tab);
+		tabbedPane->add(tab2);
+		tabbedPane->add(tab3);
+
+		app->setScene(tabbedPane);
+
+	     //   virtualkeyboard_change_options(VIRTUALKEYBOARD_LAYOUT_NUM_PUNC, VIRTUALKEYBOARD_ENTER_DEFAULT);
+}
+
+void ApplicationUI::removeUI(bool focused){
+	if (focused)
+		logo->setVisible(false);
+	else
+		logo->setVisible(true);
 
 }
-void ApplicationUI::onClicked(){
-	Data* data = new Data(this);
-	data->fetchData();
+void ApplicationUI::suggestionOneHighlight(){
+	textInput->setText(suggestion1->text());
+	suggestion1->setVisible(false);
+	suggestion2->setVisible(false);
+	suggestion3->setVisible(false);
+	suggestion4->setVisible(false);
 }
+
+void ApplicationUI::suggestionTwoHighlight(){
+	textInput->setText(suggestion2->text());
+		suggestion1->setVisible(false);
+		suggestion2->setVisible(false);
+		suggestion3->setVisible(false);
+		suggestion4->setVisible(false);
+
+
+}
+
+void ApplicationUI::suggestionThreeHighlight(){
+	textInput->setText(suggestion3->text());
+		suggestion1->setVisible(false);
+		suggestion2->setVisible(false);
+		suggestion3->setVisible(false);
+		suggestion4->setVisible(false);
+
+
+}
+
+void ApplicationUI::suggestionFourHighlight(){
+	textInput->setText(suggestion4->text());
+		suggestion1->setVisible(false);
+		suggestion2->setVisible(false);
+		suggestion3->setVisible(false);
+		suggestion4->setVisible(false);
+
+
+}
+void ApplicationUI::showSuggestions(QString text){//Called whenever a new character is put into textfield
+	QString s1 = "",s2 = "",s3 = "",s4 = "";
+	for (int i = 0; i < stationName.length(); i++){
+		QString r = stationName[i].left(text.length());
+		 int x = QString::compare(r, text, Qt::CaseInsensitive);  // x == 0, if two strings are same
+		if (x == 0){
+			if (s1 == "")
+				s1 = stationName[i];
+			else if (s2 == "")
+				s2 = stationName[i];
+			else if (s3 == "")
+				s3 = stationName[i];
+			else if (s4 == "")
+				s4 = stationName[i];
+			else
+				break;
+		}
+
+	}
+	if (s1 != ""){
+	suggestion1->setText(s1);
+	suggestion1->setVisible(true);}
+	else
+		suggestion1->setVisible(false);
+	if (s2 != ""){
+	suggestion2->setText(s2);
+	suggestion2->setVisible(true);}
+	else
+		suggestion2->setVisible(false);
+	if (s3 != ""){
+	suggestion3->setText(s3);
+	suggestion3->setVisible(true);}
+	else
+		suggestion3->setVisible(false);
+	if (s4 != ""){
+	suggestion4->setText(s4);
+	suggestion4->setVisible(true);}
+	else
+		suggestion4->setVisible(false);
+}
+
 void ApplicationUI::handleOakvilleClick()
 {
+	Data* data = new Data(this);
+	data->fetchData();
+
 	    Page* root = new Page();
 	    QString labelText = "Label";
 	    Label *label = new Label();

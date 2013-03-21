@@ -10,13 +10,11 @@
 #include <qt4/QtCore/QStringList>
 #include <qt4/QtCore/QDebug>
 #include <qt4/QtCore/QFile>
-#include <qt4/QtCore/QTimer>
+
 
 Data::Data(QObject* parent){
 	_manager = new QNetworkAccessManager(this);
-	_stopFetchFlag = false;
 	QObject::connect(_manager, SIGNAL(finished(QNetworkReply*)),this, SLOT(replyFinished(QNetworkReply*)));
-	_baseUrl = "http://www.gotransit.com/publicroot/en/schedules/pubsched.aspx?table=20&direction=0&day=1&page=1&new=";
 }
 
 Data::~Data(){
@@ -24,17 +22,8 @@ Data::~Data(){
 }
 
 void Data::fetchData(){
-	int temp = _baseUrl.indexOf("page=1",0);
-	qDebug() << temp;
-	while(!_stopFetchFlag){
-		QTimer::singleShot(4000,this,SLOT(sendRequest(_baseUrl)));
-	}
+	_manager->get(QNetworkRequest(QUrl("http://www.gotransit.com/publicroot/en/schedules/pubsched.aspx?table=20&direction=0&day=1&page=1&new=")));
 }
-
-void Data::sendRequest(QString str){
-	_manager->get(QNetworkRequest(QUrl(str)));
-}
-
 void Data::replyFinished(QNetworkReply* reply){
 	const QByteArray arr = reply->readAll();
 	QFile file(QString("data/settings.txt"));
@@ -44,14 +33,7 @@ void Data::replyFinished(QNetworkReply* reply){
 	}
 	file.write(arr);
 	file.close();
-
-	if(arr.contains("Trip Departure Time or Transfer required") and !_stopFetchFlag){
-		processFile();
-	}
-	else{
-		_stopFetchFlag = true;
-	}
-
+	processFile();
 }
 QString Data::processStationName(QString input){
 	int indexBegin = input.indexOf(">");
@@ -96,6 +78,7 @@ void Data::processFile(){
 		 QByteArray line = file.readLine();
 		 if (line.contains("/publicroot/en/travelling/stations.aspx?station=")){
 			 stationName.append(processStationName(line));
+			 //filter = true;
 			 qDebug() << stationName[i];
 			 i++;
 		 }
@@ -110,3 +93,30 @@ void Data::processFile(){
 	file.close();
 	qDebug() << "End of Parsing!";
 }
+
+/*QString Data::processFile(QString input){
+	//Store station list (with time) into an array
+	QString hour;
+	QString minute;
+	QStringList stationList = input.split("Takes you to the next time period.");
+	for (int i = 1; i < stationList.length(); i++){
+		//TimeList[1] will store name of this station followed by times listed out
+		QStringList timeList = stationList[i].split("station=");
+		//Gets name of this station
+		int indexEnd = timeList[1].indexOf("</a"); //Indicates where end of station name is
+		int indexBegin = 15;
+		QString nameOfStation = timeList[1].mid(indexBegin, indexEnd);//Gets everything left of indexEnd (name of station)
+														//for (int j = 0; j < timeList.length(); j++){
+		int j = 0;
+			while (j < 500){ //Fix this condition
+				//Get each hour
+				int lineStart = nameOfStation.indexOf("&nbsp;", j);
+				hour = nameOfStation.mid(lineStart - 2, lineStart); //Hour of this bus
+				minute = nameOfStation.mid(lineStart+ 6, lineStart + 8); //Minute of this bus
+				j = lineStart;
+
+			}
+		}
+	}*/
+
+

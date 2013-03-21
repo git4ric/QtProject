@@ -24,7 +24,12 @@ public:
     virtual ~ApplicationUI() {}
 public slots:
 	void handleOakvilleClick();
-	void onClicked();
+	void removeUI(bool focused);
+	void suggestionOneHighlight();
+	void suggestionTwoHighlight();
+	void suggestionThreeHighlight();
+	void suggestionFourHighlight();
+	void showSuggestions(QString text);
 
 private:
 	bb::cascades::Label *label;
@@ -33,6 +38,7 @@ private:
 	bb::cascades::DropDown *dropDownFrom;
 	bb::cascades::Option *Oakville;
 	bb::cascades::Option *McMaster;
+	bb::cascades::Option *option;
 	bb::cascades::NavigationPane* navigationPane;
 
 };

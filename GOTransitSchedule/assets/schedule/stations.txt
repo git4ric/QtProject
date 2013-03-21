@@ -1,0 +1,197 @@
+Aberfoyle Carpool Lot
+Acton (Main St. N.)
+Acton GO Station
+Agincourt GO Station
+Ajax (Hwy. 2 @ Church St.)
+Ajax (Hwy. 2 @ Harwood Ave.)
+Ajax (Hwy. 2 @ Westney Rd.)
+Ajax Bus Terminal
+Ajax GO Station
+Aldershot GO Station
+Allandale Waterfront GO Station
+Appleby GO Station
+Aurora Carpool Lot (Aurora Rd. & Hwy 404)
+Aurora GO Station
+Barrie Bus Terminal
+Barrie South GO Station
+Beaverton (Simcoe St. @ Mara Rd.)
+Bloor GO Station
+Bolton (Albion-Vaughan Rd. @ Industrial Rd.)
+Bolton (Hwy 50 @ Allan Dr)
+Bolton (Hwy 50 @ Wilton Dr.)
+Bolton (Hwy 50 @ Columbia Way)
+Bolton (King St. @ Humber Lea Blvd.)
+Bolton South (Hwy 50 & Mayfrield)
+Bowmanville (King St. @ Liberty St.)
+Bowmanville (Waverly Rd. @ Baseline Rd.)
+Bowmanville Carpool Lot
+Bradford (Barrie St. @ John St.)
+Bradford GO Station
+Bramalea GO Station
+Bramalea Transit Terminal
+Brampton (Hurontario St. & Bovaird Dr.)
+Brampton (Steeles Ave. @ Rutherford Rd.)
+Brampton - Shopper's World Mall (Hurontario @ Bartley Bull)
+Brampton Bus Terminal
+Brampton GO Station
+Bronte Carpool Lot (Bronte Rd. & Hwy. 407)
+Bronte GO Station
+Brooklin - Winchester @ Anderson Bus Stop
+Brougham (Hwy. 407 @ Brock Rd.)
+Burlington Carpool Lot (Dundas St. & Hwy 407)
+Burlington GO Station
+Caledon (Hwy. 10 @ Charleston Sideroad)
+Cambridge SmartCentre
+Cannington (Cameron St. & Ann St.)
+Cavan Carpool Lot
+Centennial College - Progress Campus
+Centennial GO Station
+Churchill (Hwy. 11 @ Killarney Beach Rd.)
+Clarington North Carpool Lot
+Clarkson GO Station
+Cooksville GO Station
+Courtice (Hwy. 2 @ Courtice Rd.)
+Danforth GO Station
+Dixie GO Station
+Durham College/UOIT
+East Gwillimbury GO Station
+Eglinton GO Station
+Erindale GO Station
+Etobicoke (Dixon Rd. @ Martin Grove Rd.)
+Etobicoke (Hwy. 27 @ Rexdale Blvd)
+Etobicoke North GO Station
+Exhibition GO Station
+Finch GO Bus Terminal
+Georgetown (Main @ Wesleyan)
+Georgetown GO Station
+Georgetown Market
+Glenwoods Park and Ride
+Goodwood (Hwy. 47 @ Front St.)
+Greenbank (Hwy. 12 @ Cragg Rd.)
+Greenwood (Hwy. 7 @ Westney Rd.)
+Grimsby Carpool Lot
+Guelph Central GO Station
+Guildwood GO Station
+Hamilton (King St. W. & Dundurn St.)
+Hamilton (Main St. W. & Longwood Rd.)
+Hamilton GO Centre
+Holland Landing (Yonge St. & Mt Albert Rd.)
+Humber College
+Hurontario & 407
+Keele St. & Hwy. 401
+Kennedy GO Station
+King City GO Station
+Kipling GO Station
+Kitchener Bus Terminal
+Kleinburg (Islington & Nashville)
+Langstaff GO Station
+Lincolnville GO station
+Lisgar GO Station
+Long Branch GO Station
+Malton (Airport & Derry)
+Malton (Finch & Darcel)
+Malton GO Station
+Maple (Major Mackenzie & Hwy. 400)
+Maple GO Station
+Markham GO Station
+McMaster University GO Bus Terminal
+Meadowvale (Derry & Winston Churchill)
+Meadowvale (Erin Mills & Mississauga Rd.)
+Meadowvale Business Park (Syntex & Financial)
+Meadowvale GO Station
+Meadowvale Town Centre (Aquitaine Ave.)
+Milliken GO Station
+Milton (Main & Martin)
+Milton (Thompson & Derry)
+Milton Carpool Lot
+Milton GO Station
+Mimico GO Station
+Mississauga (Erin Mills & Eglinton)
+Mount Joy GO Station
+Myrtle (Hwy 12 @ Myrtle Rd.)
+Newcastle Bus Stop
+Newcastle Carpool Lot
+Newmarket Carpool Lot (Hwy. 9 & Hwy. 400)
+Newmarket GO Bus Terminal
+Newmarket GO Station
+Niagara Falls (Hwy 420 & Stanley)
+Niagara Falls VIA Rail Station
+Nobleton (King Rd @ Hwy. 27)
+North Rouge (Kingston Rd. @ Port Union)
+North York (Yonge St. @ Sheppard Ave.)
+Norval (Hwy 7 & King)
+Oakville (Sheridan College)
+Oakville Carpool Lot (Trafalgar Rd. & Hwy 407)
+Oakville GO Station
+Old Cummer GO Station
+Orangeville (Broadway & Blind Line)
+Orangeville (Broadway & Hwy. 10)
+Orangeville Carpool Lot
+Orangeville Mall
+Oriole GO Station
+Oshawa (Bond St. & Centre St.)
+Oshawa (Hwy. 2 @ Stevenson Rd.)
+Oshawa (King St. & Centre St.)
+Oshawa (Simcoe St. & Bloor St.)
+Oshawa Bus Terminal (Bond St. & Centre St.)
+Oshawa Centre Mall (Stevenson Rd.)
+Oshawa GO Station
+Pearson Airport (Terminal 1)
+Pefferlaw/Virginia (Pefferlaw Rd. & Station Rd.)
+Peterborough Bus Terminal
+Peterborough South Carpool Lot
+Pickering (Hwy. 2 @ Brock Rd.)
+Pickering (Hwy. 2 @ Fairport Rd.)
+Pickering (Hwy. 2 @ Glenanna Rd.)
+Pickering (Hwy. 2 @ Liverpool Rd.)
+Pickering GO Station
+Port Bolster (Lake Ridge Rd. @ Hwy. 48)
+Port Credit GO Station
+Port Perry (Curts Rd. @ Water St.)
+Port Perry (Reach St. @ Old Simcoe St.)
+Richmond Hill Centre
+Richmond Hill GO Station
+Rockwood (Alma St. & Main St.)
+Rouge Hill GO Station
+Rutherford GO Station
+Scarborough Centre Bus Terminal
+Scarborough GO Station
+Snelgrove (Hurontario St. @ Mayfield Rd.)
+Sportsworld
+Square One GO Bus Terminal (Station Gate Rd. & Rathburn Rd.)
+St. Catharines (Fairview Mall)
+Stoney Creek (Nash Rd & Barton St.)
+Stouffville GO Station
+Streetsville GO Station
+Stroud (Hwy. 11 @ Victoria Rd.)
+Sunderland (Albert St. & River St.)
+Thornhill (Yonge St. @ Langstaff Rd.)
+Toronto (Hwy. 27 @ Humber College Blvd.)
+Trent University
+Trinity Common (Hwy. 410 & Bovaird Dr.)
+Union Station
+Union Station GO Bus Terminal
+Unionville GO Station
+University Of Guelph (South Ring Rd. & Gordon St.)
+University Of Toronto @ Scarborough
+University Of Waterloo
+Uxbridge (Railway St. & Spruce St.)
+Vaughan (Keele @ Snidercroft)
+Victoria (Hwy. 10 @ King St.)
+Weston GO Station
+Whitby GO Station
+Whitby (Brock St. @ Dundas St.)
+Whitby (Dundas St @ Anderson St.)
+Whitby (Dundas St @ Brock St.)
+Whitby (Dundas St @ Garden St.)
+Whitby (Dundas St @ McQuay Blvd.)
+Whitby (Dundas St @ Thickson Rd.)
+Whitby (Dundas St @ White Oaks Ct.)
+Wilfrid Laurier University
+Williams Parkway Carpool Lot
+Woodbridge (Hwy. 50 & Hwy. 7)
+Woodbrige (Rutherford Rd. & Vaughan Mills Rd.)
+York Mills Bus Terminal
+York University Bus Loop
+York University GO Station
+Yorkdale Bus Terminal

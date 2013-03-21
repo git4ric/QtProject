@@ -26,11 +26,8 @@ public:
 	void fetchData();
 private:
 	QNetworkAccessManager* _manager;
-	bool _stopFetchFlag;
-	QString _baseUrl;
 public slots:
 	void replyFinished(QNetworkReply*);
-	void sendRequest(QString);
 
 };
 
