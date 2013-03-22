@@ -48,12 +48,11 @@ using namespace bb::cascades;
 QStringList stationName;
 TextField *suggestion1, *suggestion2, *suggestion3, *suggestion4, *textInput;
 ImageView *logo;
+DropDown *routeDropDown, *directionDropDown;
 
 ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 : QObject(app)
 {
-
-
 		navigationPane = NavigationPane::create();
 		// Create the root container
 		Container* contentContainer = Container::create()
@@ -69,7 +68,6 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 		logo->setHorizontalAlignment(HorizontalAlignment::Center);
 
 
-		//dropDownFrom = DropDown::create().title("Starting from...");
 		textInput = new TextField();
 		textInput->setHintText("Starting from...");
 
@@ -85,6 +83,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 		suggestion4 = new TextField();
 		suggestion4->setVisible(false);
 		suggestion4->setHintText("");
+
 		QString appFolder(QDir::currentPath());
 		QString fileName = appFolder + "/app/native/assets/schedule/stations.txt";
 		QFile file(fileName);
@@ -95,13 +94,21 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 			}
 
 	 	 while (!file.atEnd()) {
-			QByteArray line = file.readLine();
-			stationName.append(line);
-			//option = Option::create().text(line);
-			//dropDownFrom->add(option);
+			QString line = file.readLine();
+			QStringList firstElement = line.split(",");
+			stationName.append(firstElement[0]);
+
 
 		}
-		//dropDownFrom->setHorizontalAlignment(HorizontalAlignment::Center);
+		file.close();
+
+		routeDropDown = DropDown::create().title("Select a Route (Choose a station first)");
+		routeDropDown->setHorizontalAlignment(HorizontalAlignment::Center);
+		routeDropDown->setEnabled(false);
+
+		directionDropDown = DropDown::create().title("Select direction of travel");
+		directionDropDown->setHorizontalAlignment(HorizontalAlignment::Center);
+		directionDropDown->setEnabled(false);
 
 		Button* findSchedule = Button::create()
 		.text("Find Schedule")
@@ -109,12 +116,13 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 		findSchedule->setHorizontalAlignment(HorizontalAlignment::Center);
 
 		contentContainer->add(logo);
-		//contentContainer->add(dropDownFrom);
 		contentContainer->add(textInput);
 		contentContainer->add(suggestion1);
 		contentContainer->add(suggestion2);
 		contentContainer->add(suggestion3);
 		contentContainer->add(suggestion4);
+		contentContainer->add(routeDropDown);
+		contentContainer->add(directionDropDown);
 		contentContainer->add(findSchedule);
 
 		bool res = QObject::connect(findSchedule, SIGNAL(clicked()), this,
@@ -165,7 +173,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 
 		app->setScene(tabbedPane);
 
-	     //   virtualkeyboard_change_options(VIRTUALKEYBOARD_LAYOUT_NUM_PUNC, VIRTUALKEYBOARD_ENTER_DEFAULT);
+
 }
 
 void ApplicationUI::removeUI(bool focused){
@@ -181,6 +189,11 @@ void ApplicationUI::suggestionOneHighlight(){
 	suggestion2->setVisible(false);
 	suggestion3->setVisible(false);
 	suggestion4->setVisible(false);
+	BPS_API void virtualkeyboard_hide();
+	virtualkeyboard_hide();
+	QStringList elements = checkRoutes();
+	enableDropDown(elements);
+
 }
 
 void ApplicationUI::suggestionTwoHighlight(){
@@ -189,7 +202,10 @@ void ApplicationUI::suggestionTwoHighlight(){
 		suggestion2->setVisible(false);
 		suggestion3->setVisible(false);
 		suggestion4->setVisible(false);
-
+		BPS_API void virtualkeyboard_hide();
+			virtualkeyboard_hide();
+			QStringList elements = checkRoutes();
+			enableDropDown(elements);
 
 }
 
@@ -199,7 +215,10 @@ void ApplicationUI::suggestionThreeHighlight(){
 		suggestion2->setVisible(false);
 		suggestion3->setVisible(false);
 		suggestion4->setVisible(false);
-
+		BPS_API void virtualkeyboard_hide();
+			virtualkeyboard_hide();
+			QStringList elements = checkRoutes();
+			enableDropDown(elements);
 
 }
 
@@ -209,10 +228,57 @@ void ApplicationUI::suggestionFourHighlight(){
 		suggestion2->setVisible(false);
 		suggestion3->setVisible(false);
 		suggestion4->setVisible(false);
+		BPS_API void virtualkeyboard_hide();
+			virtualkeyboard_hide();
+		QStringList elements = checkRoutes();
+		enableDropDown(elements);
+}
 
+void ApplicationUI::enableDropDown(QStringList elements){
+	routeDropDown->removeAll();
+	for (int i = 0; i < elements.length(); i++){
+		Option *opt = new Option();
+		opt->setText(elements[i]);
+		routeDropDown->add(opt);
+	}
+	routeDropDown->setTitle("Route");
+	routeDropDown->setEnabled(true);
+}
+QStringList ApplicationUI::checkRoutes(){
+	QStringList routes;
+	QString selectedStation = textInput->text();
+	int x;
+	for (x = 0; x < stationName.length(); x++){
+		if (QString::compare(selectedStation, stationName[x], Qt::CaseInsensitive) == 0)  // x == 0, if two strings are same
+			break;
+	}
 
+	QFile file(QDir::currentPath() + "/app/native/assets/schedule/stations.txt");
+
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+		qDebug() << "Could not open file for parsing";
+	}
+	int index = 0;
+	while (!file.atEnd()) {
+		QString line = file.readLine();
+		if (index == x){
+			QStringList elements = line.split(",");
+			int a = 1;
+			while (a < elements.length()){
+				routes.append(elements[a]);
+				a++;
+			}
+			break;
+		}
+		else
+		index++;
+	}
+	return routes;
 }
 void ApplicationUI::showSuggestions(QString text){//Called whenever a new character is put into textfield
+	routeDropDown->setTitle("Select a Route (Choose a station first");
+	routeDropDown->setEnabled(false);
+	routeDropDown->removeAll();
 	QString s1 = "",s2 = "",s3 = "",s4 = "";
 	for (int i = 0; i < stationName.length(); i++){
 		QString r = stationName[i].left(text.length());
@@ -255,8 +321,10 @@ void ApplicationUI::showSuggestions(QString text){//Called whenever a new charac
 
 void ApplicationUI::handleOakvilleClick()
 {
-	Data* data = new Data(this);
-	data->fetchData();
+
+
+		Data* data = new Data(this);
+		data->fetchData();
 
 	    Page* root = new Page();
 	    QString labelText = "Label";

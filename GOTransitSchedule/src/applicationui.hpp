@@ -24,6 +24,8 @@ public:
     virtual ~ApplicationUI() {}
 public slots:
 	void handleOakvilleClick();
+	QStringList checkRoutes();
+	void enableDropDown(QStringList elements);
 	void removeUI(bool focused);
 	void suggestionOneHighlight();
 	void suggestionTwoHighlight();
