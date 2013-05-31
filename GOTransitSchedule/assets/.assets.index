@@ -1,6 +1,14 @@
 1
-4
-images/go-transit.png
+12
+images/ld.png
+images/logo-landscape.png
+images/logo-landscape.psd
+images/logo-portrait.png
+images/logo-portrait.psd
 main.qml
-schedule/fromMcMaster.txt
-schedule/fromOakville.txt
+schedule/routes.txt
+schedule/rwzr.py
+schedule/special cases.txt
+schedule/stations - backup - backup.txt
+schedule/stations - backup.txt
+schedule/stations.txt

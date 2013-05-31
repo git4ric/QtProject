@@ -8,8 +8,15 @@
 #include <bb/cascades/Option>
 #include <bb/cascades/Label>
 #include <bb/cascades/DropDown>
-
+#include <bb/cascades/TextField>
+#include <bb/cascades/ImageView>
+#include <bb/system/InvokeRequest>
+#include <bb/system/InvokeTargetReply>
+#include <bb/system/InvokeManager>
+#include "data.hpp"
+#include "LoadData.hpp"
 namespace bb { namespace cascades { class Application; }}
+namespace bb { namespace cascades { class Container; }}
 
 /*!
  * @brief Application pane object
@@ -22,27 +29,46 @@ class ApplicationUI : public QObject
 public:
     ApplicationUI(bb::cascades::Application *app);
     virtual ~ApplicationUI() {}
+
 public slots:
-	void handleOakvilleClick();
-	QStringList checkRoutes();
-	void enableDropDown(QStringList elements);
+	void update();
+	void onOpenWebsiteClicked();
+	void scheduleUIDirectionChanging();
+	void onReplyFinished();
+	void getDeviceInformation();
+	void loadMoreTimes(bb::cascades::TouchEvent* event);
+	void loadMoreStations(bb::cascades::TouchEvent* event);
 	void removeUI(bool focused);
 	void suggestionOneHighlight();
 	void suggestionTwoHighlight();
 	void suggestionThreeHighlight();
 	void suggestionFourHighlight();
+	void onDisplayDirectionAboutToChange();
 	void showSuggestions(QString text);
-
+	void onClicked();
+	void createSettingsTab();
+	void enableDropDown(QStringList elements);
+	QStringList checkRoutes();
+	QList <QStringList> specialCases(QList <QStringList> buses);
+	void setUpScheduleUI();
+	void addDirection(int index);
+	void enableButton();
+	void setRouteNumber(QString r);
 private:
+
 	bb::cascades::Label *label;
-	bb::cascades::Page *page;
+	bb::cascades::Page *page, *page2;
 	bb::cascades::DropDown *dropDownTo;
 	bb::cascades::DropDown *dropDownFrom;
 	bb::cascades::Option *Oakville;
 	bb::cascades::Option *McMaster;
 	bb::cascades::Option *option;
-	bb::cascades::NavigationPane* navigationPane;
-
+	QStringList stationName;
+	bb::system::InvokeManager* _manager;
+	bb::system::InvokeTargetReply* _reply;
+	QTimer *timer;
+	Data* data;
+	bool _saveData;
 };
 
 
