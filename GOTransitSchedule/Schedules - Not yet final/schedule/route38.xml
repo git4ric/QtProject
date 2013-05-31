@@ -1,0 +1,214 @@
+<route number="38">
+    <direction number="0">
+        <day number="1">
+            <station name="Bolton Hwy 50 &amp; Columbia">
+                <time>05.58.38</time>
+                <time>07.11.38</time>
+                <time>08.50.38</time>
+                <time>09.50.38</time>
+                <time>11.20.38</time>
+                <time>13.20.38</time>
+            </station>
+            <station name="Bolton Albion V.&amp; Indust.">
+                <time>05.48.38A</time>
+                <time>06.33.38A</time>
+            </station>
+            <station name="Bolton Hwy 50&amp; Allan Dr">
+                <time>05.54.38A</time>
+                <time>06.39.38A</time>
+            </station>
+            <station name="Bolton  King &amp; Humber Lea">
+                <time>05.58.38A</time>
+                <time>06.43.38A</time>
+            </station>
+            <station name="Nobleton at Hwy 27">
+                <time>06.04.38A</time>
+                <time>06.49.38A</time>
+            </station>
+            <station name="Bolton Hwy50&amp;Wilton Dr">
+                <time>06.03.38</time>
+                <time>07.16.38</time>
+                <time>08.55.38</time>
+                <time>09.55.38</time>
+                <time>11.25.38</time>
+                <time>13.25.38</time>
+            </station>
+            <station name="Bolton Hwy 50 &amp; Mayfield">
+                <time>06.10.38</time>
+                <time>07.23.38</time>
+                <time>09.02.38</time>
+                <time>10.02.38</time>
+                <time>11.32.38</time>
+                <time>13.32.38</time>
+            </station>
+            <station name="Kleinburg at Nashville">
+                <time>06.11.38A</time>
+                <time>06.56.38A</time>
+            </station>
+            <station name="Woodbridge Rutherford">
+                <time>06.18.38A</time>
+                <time>07.05.38A</time>
+            </station>
+            <station name="Woodbridge (Hwy 50 &amp; 7)">
+                <time>06.21.38</time>
+                <time>07.36.38</time>
+                <time>09.13.38</time>
+                <time>10.11.38</time>
+                <time>11.41.38</time>
+                <time>13.41.38</time>
+            </station>
+            <station name="Malton GO Station">
+                <time>06.38.38</time>
+                <time>06.53.Train</time>
+                <time>07.42.Train</time>
+                <time>07.56.38</time>
+                <time>08.11.Train</time>
+                <time>09.30.38</time>
+                <time>09.45.Train</time>
+                <time>10.25.38</time>
+                <time>10.30.Train</time>
+                <time>11.55.38</time>
+                <time>12.00.Train</time>
+                <time>13.55.38</time>
+                <time>14.00.Train</time>
+            </station>
+            <station name="Humber College Blvd&amp;Hwy27">
+                <time>06.33.38A</time>
+                <time>07.23.Train</time>
+            </station>
+            <station name="Etobicoke North GO stn">
+                <time>06.43.38A</time>
+                <time>06.59.Train</time>
+                <time>07.33.38A</time>
+                <time>07.49.Train</time>
+                <time>08.17.Train</time>
+                <time>09.52.Train</time>
+            </station>
+            <station name="Yorkdale Bus Terminal">
+                <time>06.58.38A</time>
+                <time>07.53.Train</time>
+            </station>
+            <station name="York Mills Bus Terminal">
+                <time>07.08.38A</time>
+                <time>08.03.Train</time>
+            </station>
+            <station name="Union Station">
+                <time>07.28.Train</time>
+                <time>08.17.Train</time>
+                <time>08.48.Train</time>
+                <time>10.20.Train</time>
+                <time>11.00.Train</time>
+                <time>12.30.Train</time>
+                <time>14.30.Train</time>
+            </station>
+        </day>
+    </direction>
+    <direction number="1">
+        <day number="1">
+            <station name="Union Station">
+                <time>09.30.Train</time>
+                <time>11.30.Train</time>
+                <time>13.30.Train</time>
+                <time>15.30.Train</time>
+                <time>16.15.Train</time>
+                <time>17.15.Train</time>
+                <time>19.20.Train</time>
+            </station>
+            <station name="York Mills Bus Terminal">
+                <time>16.13.Train</time>
+                <time>17.13.38A</time>
+            </station>
+            <station name="Yorkdale Bus Terminal">
+                <time>16.25.Train</time>
+                <time>17.25.38A</time>
+            </station>
+            <station name="Etobicoke North GO stn">
+                <time>15.55.Train</time>
+                <time>16.40.Train</time>
+                <time>.ti.38A</time>
+                <time>17.40.Train</time>
+                <time>.ti.38A</time>
+            </station>
+            <station name="Humber College Blvd&amp;Hwy27">
+                <time>17.01.Train</time>
+                <time>18.01.38A</time>
+            </station>
+            <station name="Malton GO Station">
+                <time>09.55.Train</time>
+                <time>.ti.38</time>
+                <time>11.55.Train</time>
+                <time>.ti.38</time>
+                <time>13.55.Train</time>
+                <time>.ti.38</time>
+                <time>16.02.Train</time>
+                <time>.ti.38</time>
+                <time>16.47.Train</time>
+                <time>.ti.38</time>
+                <time>17.47.Train</time>
+                <time>.it.38</time>
+                <time>19.45.Train</time>
+                <time>20.03.38</time>
+            </station>
+            <station name="Woodbridge (Hwy 50 &amp; 7)">
+                <time>10.12.38</time>
+                <time>12.12.38</time>
+                <time>14.12.38</time>
+                <time>16.24.38</time>
+                <time>17.11.38</time>
+                <time>18.09.38</time>
+                <time>20.15.38</time>
+            </station>
+            <station name="Woodbridge Rutherford">
+                <time>17.21.38A</time>
+                <time>18.21.38A</time>
+            </station>
+            <station name="Kleinburg at Nashville">
+                <time>17.31.38A</time>
+                <time>18.31.38A</time>
+            </station>
+            <station name="Bolton Hwy 50 &amp; Mayfield">
+                <time>10.22.38</time>
+                <time>12.22.38</time>
+                <time>14.22.38</time>
+                <time>16.36.38</time>
+                <time>17.26.38</time>
+                <time>18.21.38</time>
+                <time>20.25.38</time>
+            </station>
+            <station name="Nobleton at Hwy 27">
+                <time>17.37.38A</time>
+                <time>18.37.38A</time>
+            </station>
+            <station name="Bolton  King &amp; Humber Lea">
+                <time>17.45.38A</time>
+                <time>18.45.38A</time>
+            </station>
+            <station name="Bolton Hwy 50&amp; Allan Dr">
+                <time>10.26.38</time>
+                <time>12.26.38</time>
+                <time>14.26.38</time>
+                <time>16.42.38</time>
+                <time>17.32.38</time>
+                <time>18.27.38</time>
+                <time>20.29.38</time>
+            </station>
+            <station name="Bolton Hwy50&amp;Wilton Dr">
+                <time>17.50.38A</time>
+                <time>18.50.38A</time>
+            </station>
+            <station name="Bolton Albion V.&amp; Indust.">
+                <time>18.00.38A</time>
+                <time>19.00.38A</time>
+            </station>
+            <station name="Bolton Hwy 50 &amp; Columbia">
+                <time>10.35.38</time>
+                <time>12.35.38</time>
+                <time>14.35.38</time>
+                <time>16.52.38</time>
+                <time>17.42.38</time>
+                <time>18.37.38</time>
+                <time>20.38.38</time>
+            </station>
+        </day>
+    </direction>
+</route>
