@@ -442,8 +442,10 @@ void ApplicationUI::onClicked(){
             localFile->setDirection("1");
 
         localFile->setStation(textInput->text());
-        localFile->setHour(7);
-        localFile->setMinute((40));
+        localFile->setHour(05);
+        localFile->setMinute(00);
+//        localFile->setHour(QTime::currentTime().hour());
+//        localFile->setMinute(QTime::currentTime().minute());
         localFile->parseXML();
         setUpScheduleUI();
 
@@ -496,13 +498,13 @@ void ApplicationUI::setUpScheduleUI(){
 
             QList <QStringList> buses = localFile->getBuses();
             buses = specialCases(buses);
-            for (int ii = 0; ii < 3; ii++) {
-            		qDebug() << "BUS " + QString::number(ii + 1);
-            		QStringList temporary = buses.at(ii);
-            		for (int j = 0; j < buses.at(ii).length(); j++)
-            			qDebug() << "Time: " + temporary[j];
-            	}
-            	qDebug() << "Finished displaying...";
+//            for (int ii = 0; ii < 3; ii++) {
+//            		qDebug() << "BUS " + QString::number(ii + 1);
+//            		QStringList temporary = buses.at(ii);
+//            		for (int j = 0; j < buses.at(ii).length(); j++)
+//            			qDebug() << "Time: " + temporary[j];
+//            	}
+//            	qDebug() << "Finished displaying...";
             QStringList y;
             for (indexOfCurrentStationShowing = 0; indexOfCurrentStationShowing < stationsToShow+1 && indexOfCurrentStationShowing < buses.at(0).length()+1; indexOfCurrentStationShowing++) {//b = the container with the row of station
                 pContainer2 = new Container();
@@ -570,7 +572,7 @@ void ApplicationUI::setUpScheduleUI(){
              redDisplay = new Label();
              redDisplay->textStyle()->setBase(*redStyle);
              redDisplay->setMultiline(true);
-             redDisplay->setText("This is a time when the bus/train arrives at the station. It is not a departure time");
+             redDisplay->setText("This station is the last stop for this Bus/Train");
              redDisplay->setHorizontalAlignment(HorizontalAlignment::Center);
              if (!showRedDisplay)
              redDisplay->setVisible(false);
@@ -722,6 +724,25 @@ void ApplicationUI::loadMoreTimes(bb::cascades::TouchEvent* event){
 
 		qDebug() << "Size of buses: " << QString::number(buses.size());
 		int array[5] = {5,9,13,17,21};
+
+		int terminate=0;
+		for(int k=0;k<buses.size();k++){
+			for(int l=0;l<stationsSize;l++){
+				if(buses.at(k).at(l).compare("N.A_") == 0){
+					terminate++;
+					//qDebug() << "Terminate: " + QString::number(terminate);
+				}
+			}
+		}
+
+		// Do not update the times if ALL 15 times are returned as N.A_ which means there were no more buses on that route.
+		if(terminate == 15){
+			redDisplay->setText("These are the last Bus/Train on this route.");
+			redDisplay->setVisible(true);
+			return;
+		}
+
+
 		for(int i=0;i<buses.size();i++){
 			for(int j=0;j < stationsSize;j++){
 				qDebug() << "Bus: " + buses.at(i).at(j);
@@ -743,10 +764,12 @@ void ApplicationUI::loadMoreTimes(bb::cascades::TouchEvent* event){
 				}
 				else{
 					//Set to either an arrow, red text, or blank text
-					if(buses.at(i).at(j).contains("_"))
+					if(buses.at(i).at(j).contains("_")){
 						listOfTextAreas.at(array[j] + i)->setText(" ");
-					else
+					}
+					else{
 						listOfTextAreas.at(array[j] + i)->setText("<html>&#8595;</html>");
+					}
 				}
 			}
 		}

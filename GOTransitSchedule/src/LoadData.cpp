@@ -209,6 +209,8 @@ void LoadData::addBusTimes(QDomNode n) {
 		q = k[1].toInt(&ok, 10); //Minute
 		if (r <= 3) //Special case when time is 00, 01, 02 or 03
 			r = r + 24;
+		if (timeHour <=3)
+			timeHour += 24;
 		//Add into array if its time is later than the current time
 		if (r > timeHour || (r == timeHour && q >= timeMinute)) {
 			//buses.at(j)[0] = e.text();
@@ -255,7 +257,6 @@ void LoadData::addSubsequentBusTimes(QDomNode n, int whichStationToAdd) {
 			index++;
 			QDomNode bb = n.parentNode();
 			n = bb.firstChild();
-			qDebug() << "Reset N";
 			continue;
 		}
 
@@ -273,6 +274,8 @@ void LoadData::addSubsequentBusTimes(QDomNode n, int whichStationToAdd) {
 		q = values[1].toInt(&ok, 10);
 		if (r <= 3)
 			r = r + 24;
+		if (oldHour <= 3)
+			oldHour  = oldHour + 24;
 		//If the value for current time is more than last time...
 		if (r > oldHour || (r == oldHour && q > oldMinute)) {
 			//qDebug() << " r " + values[0] + " q " + values[1] + " num " + values[2] + " index = " + QString::number(index);
@@ -300,7 +303,6 @@ void LoadData::addSubsequentBusTimes(QDomNode n, int whichStationToAdd) {
 			index++;
 			QDomNode bb = n.parentNode();
 			n = bb.firstChild();
-			//qDebug() << "Reset n";
 		} else
 			n = n.nextSibling();
 	}
@@ -369,6 +371,12 @@ QString LoadData::checkSpecialCases(QString name) {
 		return "Whitby Dundas @ Brock";
 	else if (name.compare("Port Union & Kingston") == 0)
 		return "North Rouge Kingston Rd. & Port Union";
+	else if (name.compare("Clarington N. P&R/Carpool") == 0)
+		return "Clarington North Carpool Lot";
+	else if (name.compare("Peterborough South P&amp;R/Ca") == 0)
+		return "Peterborough South Carpool Lot";
+	else if (name.compare("Cavan P&amp;R/Carpool") == 0)
+		return "Cavan Carpool Lot";
 	else
 		return name;
 }
