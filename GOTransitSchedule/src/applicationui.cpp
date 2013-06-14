@@ -249,7 +249,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
         //tab2->setDescription("Get balance and other info about your PRESTO Card!");
 
         Tab* tab3 = new Tab();
-        tab3->setTitle("Settings");
+        tab3->setTitle("Disclaimer");
         tab3->setDescription("App settings and specifications");
 
         page = new Page();
