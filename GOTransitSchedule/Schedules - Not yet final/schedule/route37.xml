@@ -1,0 +1,191 @@
+<route number="37">
+    <direction number="0">
+        <day number="1">
+            <station name="Orangeville Mall">
+                <time>05.33.37</time>
+                <time>06.12.37</time>
+                <time>06.47.37</time>
+                <time>07.55.37</time>
+                <time>12.30.37</time>
+                <time>19.35.37</time>
+            </station>
+            <station name="Broadway &amp; Blind Line">
+                <time>05.37.37</time>
+                <time>06.16.37</time>
+                <time>06.51.37</time>
+                <time>07.59.37</time>
+                <time>12.34.37</time>
+                <time>19.39.37</time>
+            </station>
+            <station name="Orangeville GO Park&amp;Ride">
+                <time>05.44.37</time>
+                <time>06.23.37</time>
+                <time>06.58.37</time>
+                <time>08.06.37</time>
+                <time>12.41.37</time>
+                <time>19.46.37</time>
+            </station>
+            <station name="Broadway &amp; Hwy 10">
+                <time>05.47.37</time>
+                <time>06.26.37</time>
+                <time>07.01.37</time>
+                <time>08.09.37</time>
+                <time>12.44.37</time>
+                <time>19.49.37</time>
+            </station>
+            <station name="Caledon  Hwy10/Charleston">
+                <time>05.56.37</time>
+                <time>06.35.37</time>
+                <time>07.10.37</time>
+                <time>08.18.37</time>
+                <time>12.53.37</time>
+                <time>19.58.37</time>
+            </station>
+            <station name="Victoria Hwy10 at King">
+                <time>06.05.37</time>
+                <time>06.45.37</time>
+                <time>07.20.37</time>
+                <time>08.28.37</time>
+                <time>13.03.37</time>
+                <time>20.07.37</time>
+            </station>
+            <station name="Snelgrove at Mayfield">
+                <time>06.10.37</time>
+                <time>06.50.37</time>
+                <time>07.25.37</time>
+                <time>08.33.37</time>
+                <time>13.08.37</time>
+                <time>20.12.37</time>
+            </station>
+            <station name="Brampton Bus Terminal">
+                <time>06.23.37</time>
+                <time>07.07.37</time>
+                <time>07.42.37</time>
+                <time>08.50.37</time>
+                <time>08.55.&amp;nbsp;</time>
+                <time>13.25.37</time>
+                <time>13.35.Train</time>
+                <time>20.25.37</time>
+                <time>20.35.31</time>
+            </station>
+            <station name="Brampton GO Station">
+                <time>06.38.Train</time>
+                <time>07.22.Train</time>
+                <time>07.57.Train</time>
+            </station>
+            <station name="TrinityCommon Hwy410&amp;Bova"/>
+            <station name="Bramalea Transit Terminal"/>
+            <station name="Bramalea GO Station">
+                <time>06.47.Train</time>
+                <time>07.30.Train</time>
+                <time>08.05.Train</time>
+                <time>09.16.&amp;nbsp;</time>
+                <time>09.40.Train</time>
+            </station>
+            <station name="Union Station">
+                <time>07.28.Train</time>
+                <time>08.01.Train</time>
+                <time>08.48.Train</time>
+                <time>10.18.Train</time>
+            </station>
+            <station name="Toronto Union Bus Term">
+                <time>14.20.Train</time>
+                <time>21.20.31</time>
+            </station>
+        </day>
+    </direction>
+    <direction number="1">
+        <day number="1">
+            <station name="Toronto Union Bus Term">
+                <time>09.30.Train</time>
+                <time>19.15.&amp;nbsp;</time>
+            </station>
+            <station name="Union Station">
+                <time>15.30.Train</time>
+                <time>16.15.Train</time>
+                <time>16.45.Train</time>
+                <time>17.45.Train</time>
+            </station>
+            <station name="Bramalea GO Station">
+                <time>16.09.Train</time>
+                <time>16.54.Train</time>
+                <time>17.24.Train</time>
+                <time>18.24.Train</time>
+            </station>
+            <station name="Bramalea Transit Terminal"/>
+            <station name="TrinityCommon Hwy410&amp;Bova"/>
+            <station name="Brampton GO Station">
+                <time>16.17.Train</time>
+                <time>17.03.Train</time>
+                <time>17.33.Train</time>
+                <time>18.33.Train</time>
+            </station>
+            <station name="Brampton Bus Terminal">
+                <time>10.25.Train</time>
+                <time>10.35.37</time>
+                <time>16.25.37</time>
+                <time>17.13.37</time>
+                <time>17.43.37</time>
+                <time>18.43.37</time>
+                <time>19.55.&amp;nbsp;</time>
+                <time>20.15.37</time>
+            </station>
+            <station name="Snelgrove at Mayfield">
+                <time>10.44.37</time>
+                <time>16.37.37</time>
+                <time>17.28.37</time>
+                <time>17.57.37</time>
+                <time>18.55.37</time>
+                <time>20.27.37</time>
+            </station>
+            <station name="Victoria Hwy10 at King">
+                <time>10.49.37</time>
+                <time>16.42.37</time>
+                <time>17.34.37</time>
+                <time>18.03.37</time>
+                <time>19.00.37</time>
+                <time>20.32.37</time>
+            </station>
+            <station name="Caledon  Hwy10/Charleston">
+                <time>10.59.37</time>
+                <time>16.52.37</time>
+                <time>17.44.37</time>
+                <time>18.13.37</time>
+                <time>19.10.37</time>
+                <time>20.42.37</time>
+            </station>
+            <station name="Broadway &amp; Hwy 10">
+                <time>11.07.37</time>
+                <time>17.00.37</time>
+                <time>17.53.37</time>
+                <time>18.22.37</time>
+                <time>19.18.37</time>
+                <time>20.50.37</time>
+            </station>
+            <station name="Orangeville Mall">
+                <time>11.10.37</time>
+                <time>17.04.37</time>
+                <time>17.58.37</time>
+                <time>18.26.37</time>
+                <time>19.22.37</time>
+                <time>20.54.37</time>
+            </station>
+            <station name="Broadway &amp; Blind Line">
+                <time>11.14.37</time>
+                <time>17.09.37</time>
+                <time>18.03.37</time>
+                <time>18.31.37</time>
+                <time>19.27.37</time>
+                <time>20.59.37</time>
+            </station>
+            <station name="Orangeville GO Park&amp;Ride">
+                <time>11.25.37</time>
+                <time>17.20.37</time>
+                <time>18.14.37</time>
+                <time>18.42.37</time>
+                <time>19.38.37</time>
+                <time>21.10.37</time>
+            </station>
+        </day>
+    </direction>
+</route>
