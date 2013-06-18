@@ -1,0 +1,78 @@
+<route number="67">
+    <direction number="0">
+        <day number="1">
+            <station name="Glenwoods">
+                <time>05.40.67</time>
+                <time>06.05.67</time>
+                <time>06.30.67</time>
+                <time>06.50.67</time>
+                <time>07.20.67</time>
+            </station>
+            <station name="Aurora Rd. &amp; Hwy. 404">
+                <time>06.05.67</time>
+                <time>06.30.67</time>
+                <time>06.55.67</time>
+                <time>07.15.67</time>
+                <time>07.45.67</time>
+            </station>
+            <station name="Yonge St. @ Sheppard Ave.">
+                <time>06.30.67</time>
+                <time>07.00.67</time>
+                <time>07.30.67</time>
+                <time>08.00.67</time>
+                <time>08.30.67</time>
+            </station>
+            <station name="Finch GO Bus Terminal">
+                <time>06.40.67</time>
+                <time>07.10.67</time>
+                <time>07.40.67</time>
+                <time>08.10.67</time>
+                <time>08.40.67</time>
+            </station>
+        </day>
+    </direction>
+    <direction number="1">
+        <day number="1">
+            <station name="Finch GO Bus Terminal">
+                <time>12.08.67</time>
+                <time>15.08.67</time>
+                <time>16.08.67</time>
+                <time>16.38.67</time>
+                <time>17.08.67</time>
+                <time>17.38.67</time>
+                <time>18.08.67</time>
+                <time>19.08.67</time>
+            </station>
+            <station name="Yonge St. @ Sheppard Ave.">
+                <time>12.13.67</time>
+                <time>15.15.67</time>
+                <time>16.15.67</time>
+                <time>16.45.67</time>
+                <time>17.15.67</time>
+                <time>17.45.67</time>
+                <time>18.15.67</time>
+                <time>19.13.67</time>
+            </station>
+            <station name="Aurora Rd. &amp; Hwy. 404">
+                <time>12.43.67</time>
+                <time>15.48.67</time>
+                <time>16.58.67</time>
+                <time>17.28.67</time>
+                <time>17.58.67</time>
+                <time>18.23.67</time>
+                <time>18.48.67</time>
+                <time>19.43.67</time>
+            </station>
+            <station name="Glenwoods">
+                <time>13.13.67</time>
+                <time>16.18.67</time>
+                <time>17.28.67</time>
+                <time>18.03.67</time>
+                <time>18.33.67</time>
+                <time>18.58.67</time>
+                <time>19.23.67</time>
+                <time>20.13.67</time>
+            </station>
+        </day>
+    </direction>
+</route>

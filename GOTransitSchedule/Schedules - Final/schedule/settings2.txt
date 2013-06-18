@@ -1,0 +1,1035 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head id="ctl00_Head1"><title>
+	GOTransit.com - Timetable Details
+</title><meta http-equiv="content-type" content="text/html;charset=utf-8" /><meta http-equiv="Content-Style-Type" content="text/css" />
+<style type='text/css' media='screen,projection'> 
+	@import 'http://www.gotransit.com/publicroot/css/base.css';
+	@import 'http://www.gotransit.com/publicroot/css/main.css';
+	@import 'http://www.gotransit.com/publicroot/css/mxdropdown.css';
+</style>
+<style type="text/css">
+@page rotated {size: landscape}
+.ttable { clear: both; }
+TABLE#ttable  { table-layout: fixed;  	empty-cells: show;	border-collapse: collapse; 	border: .5pt solid white;font-size: 11px;  }
+TD#zone { background: #FFFFFF; text-align: left; vertical alignment: top; width: 20px;}
+TD#sname { background: #FFFFFF; text-align: left; vertical alignment: top; width: 180px;}
+TD#wchair { background: #FFFFFF; text-align: center; vertical alignment: top; width: 16px;}
+TD#remark { background: #FFFFFF; text-align: center; vertical alignment: top; width: 8px;}
+TD#arrowkey { background: #FFFFFF; text-align: center; vertical alignment: top; width: 16px;}
+TD#arrdepart { background: #FFFFFF; text-align: center; vertical alignment: top; width: 20px;}
+TD#YYYY { background: #FFFFFF; text-align: center; vertical alignment: middle; border-left: 2px solid white; border-right: 2px solid white; border-bottom: 1px solid #808080; }
+TD#Y { background: #FFFF66; text-align: center; vertical alignment: top; border-bottom: 1px solid #808080;  border-left: 2px solid white; border-right: 2px solid white; }
+TD#B { background: #66CCFF; text-align: center; vertical alignment: top; border-bottom: 1px solid #808080;  border-left: 2px solid white; border-right: 2px solid white; }
+TD#BB { background: #66CCFF; text-align: center; vertical alignment: top; border-bottom: 1px solid #808080;  border-left: 2px solid white; border-right: 2px solid white; }
+TD#E { background: #E0E0E0; text-align: center; vertical alignment: top; border-bottom: 1px solid #808080;  border-left: 2px solid white; border-right: 2px solid white; }
+TD#YY { background: #FFFF66; text-align: center; vertical alignment: top; border-bottom: 1px solid #808080;  border-left: 2px solid white; border-right: 2px solid white; }
+TD#G { background: #66CC99; text-align: center; vertical alignment: top; font-style: italic; border-left: 2px solid white; border-right: 2px solid white; border-bottom: 1px solid #808080; }
+TD#GG { background: #66CC99; text-align: center; vertical alignment: top; font-style: normal; border-left: 2px solid white; border-right: 2px solid white; border-bottom: 1px solid #808080; }
+TD#P { background: #FF99CC; text-align: center; vertical alignment: top;  border-left: 2px solid white; border-right: 2px solid white; border-bottom: 1px solid #808080; }
+TD#C { background: #FF9933; text-align: center; vertical alignment: top; border-left: 2px solid white; border-right: 2px solid white; border-bottom: 1px solid #808080; }
+TD#bbb { background: #FFFFFF; text-align: center; vertical alignment: top; border-left: 2px solid white; border-right: 2px solid white; border-bottom: 1px solid #808080; }
+.schednote	{margin-left: 4px;margin-bottom: 4px; float: left;}
+#schednote-#FFFF66	{ background-color: #FFFF66;}
+#schednote-#66CC99	{ background-color: #66CC99;}
+</style>
+<script type="text/javascript" src='http://www.gotransit.com/publicroot/js/jquery.tools.min.js'></script>
+</head>
+<body>
+<a href="#content"><img style="border-width:0px; float:left" src='http://www.gotransit.com/publicroot/en/images/skipnav.gif' alt="Bypass navigation and go to content" width="1" height="1" /></a>
+<form name="aspnetForm" method="post" action="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=1&amp;city=*&amp;station=ABPR&amp;new=" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="u+Iz4689780rpSv+Acx9xOK1VcKQ3AKwdjIgFnGLScVKDoSmZaxPLsfPjTQ7Y56Lq8WGNIZnWOv/7apdVgwdmXY/R+NF46a8IOtYF8a5MakGLS9be7lT49KjUsPxJApg2AYapg==" />
+</div>
+
+<div id="container">
+<div class="innertube">
+ 
+
+<HEAD>
+<TITLE>GOTransit.com - Timetable Details</TITLE>
+</HEAD>
+<a name="content"></a> 
+<!===================== Instructions & Links ================================><table width="100%" bgcolor="#e0e0e0" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0" >
+  <tr>
+    <td width="40%" align=left >[<a href="HowToRead.aspx?new=">How 
+	to read this schedule</a>]<br/>
+	    [<a href="howtoprint.aspx">How to print or save this page</a>]</td>
+    <td width="20%" align="left">[<a href="/publicroot/en/fares/farecalculator.aspx?frStation=ABPR">Fare 
+	Calculator</a>]<br/>
+    [<a href="findsch.aspx?station=&amp;frMap=Y&amp;new=">Schedule 
+	Finder</a>]</td>
+      <td width="20%" align="left">
+[<a href="/publicroot/en/PDF/Timetables/CurrentBoard/Table09.pdf"><img border="0" src="/publicroot/en/PDF/adobe.gif" width="16" height="16"/> 
+PDF Regular schedule</a>]
+</td>
+   <td width="20%" align="left">[<a href="pubsched.aspx?table=09&amp;direction=0&amp;day=1&amp;New=&amp;station=ABPR">Return 
+	Trip</a>]<br/>
+    <a href="pubsched.aspx?table=&amp;direction=0&amp;day=1&amp;page=1&amp;New=&amp;station=ABPR">[Connecting 
+	Trip]</a></td>
+  </tr>
+    </table>
+
+<!===================== Schedule Description ================================>
+<div style='background-color: white; float: left;  color: white; font-family:Arial; font-size:x-small; font-weight: bold;  color: #CC3300;'>
+&nbsp;Table&nbsp;</div>
+<div style='background-color: #CC3300; float: left;  color: white; font-weight: bold; font-size: 15px;'>
+&nbsp;09&nbsp;</div>
+<div style='background-color: white; float: left; margin-left: 4px; padding-left: 8px;  color: #CC3300; font-family:Arial; font-size:x-small; font-weight: bold;'>
+Lakeshore East<font color=black>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Eastbound) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Effective 06-Apr-13&nbsp;&nbsp;
+<br/>
+<strong>Toronto -> Scarborough ->Pickering-> Ajax-> Whitby->Oshawa-> Courtice->Bowmanville-> Newcastle</strong></font></div>
+<hr color=#ffffff>
+
+<!===================== Schedule times ====================================>
+ <div class="ttable">
+  <table id="ttable">
+   <tr>
+    <td title="Fare zone number" id="zone"><strong><acronym title="Zone"><font color=#008000>
+	Zn</font></acronym></strong></td>
+    <td title="Stop Name" id="sname"></td>
+    <td title="Wheelchair" id="wchair"></td>
+    <td title="Ticket Agency" id="remark"></td>
+    <td title="Arrive or Depart sign" id="arrdepart"></td>
+    <td title="Takes you to the previous time period. " id="arrowkey"></td>
+    <td title="Trip Departure Time" colspan="12" % nowrap><strong><font color=#008000>Monday to Friday (excluding Holidays)</font></strong></td>
+  </tr>
+<tr>
+
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="E">90</td>
+	<td title="Trip Departure Time or Transfer required" id="E">90</td>
+	<td title="Trip Departure Time or Transfer required" id="E">90</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="E">90</td>
+	<td title="Trip Departure Time or Transfer required" id="E">90</td>
+	<td title="Trip Departure Time or Transfer required" id="E">90</td>
+	<td title="Trip Departure Time or Transfer required" id="E">90</td>
+	<td title="Trip Departure Time or Transfer required" id="E">90</td>
+	<td title="Trip Departure Time or Transfer required" id="E">90</td>
+	<td title="Trip Departure Time or Transfer required" id="E">90</td>
+	<td title="Trip Departure Time or Transfer required" id="E">90</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">02&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=EXGO&amp;new=">Exhibition GO Station</a><td title="wheelchair" id=wchair>
+       	<img src="handicapT.jpg" alt="wheelchair" width="16" />
+    	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id=""></td>
+	<td title="Trip Departure Time or Transfer required" id=""></td>
+	<td title="Trip Departure Time or Transfer required" id=""></td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id=""></td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;58</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;04</td>
+	<td title="Trip Departure Time or Transfer required" id="G">10&nbsp;00</td>
+	<td title="Trip Departure Time or Transfer required" id="G">11&nbsp;00</td>
+	<td title="Trip Departure Time or Transfer required" id="G">12&nbsp;00</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">02&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=USTN&amp;new=">Union Station</a><td title="wheelchair" id=wchair>
+       	<img src="handicapT.jpg" alt="wheelchair" width="16" />
+    	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    <acronym title="Depart or Arrive">Ar</acronym></td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id=""></td>
+	<td title="Trip Departure Time or Transfer required" id=""></td>
+	<td title="Trip Departure Time or Transfer required" id=""></td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id=""></td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;11</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;15</td>
+	<td title="Trip Departure Time or Transfer required" id="G">10&nbsp;11</td>
+	<td title="Trip Departure Time or Transfer required" id="G">11&nbsp;11</td>
+	<td title="Trip Departure Time or Transfer required" id="G">12&nbsp;11</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">  &nbsp;</td>
+    <td title="Stop Name" id="sname">Transfer Node<td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="">Trans</td>
+	<td title="Trip Departure Time or Transfer required" id="">Trans</td>
+	<td title="Trip Departure Time or Transfer required" id="">Trans</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="P">Trans</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">02&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=USTN&amp;new=">Union Station</a><td title="wheelchair" id=wchair>
+       	<img src="handicapT.jpg" alt="wheelchair" width="16" />
+    	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    <acronym title="Depart or Arrive">Dp</acronym></td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="G">06&nbsp;13</td>
+	<td title="Trip Departure Time or Transfer required" id="G">06&nbsp;41</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;28</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;40</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;50</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;13</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;43</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;17</td>
+	<td title="Trip Departure Time or Transfer required" id="G">10&nbsp;13</td>
+	<td title="Trip Departure Time or Transfer required" id="G">11&nbsp;13</td>
+	<td title="Trip Departure Time or Transfer required" id="G">12&nbsp;13</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">02&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=USBT&amp;new=">Toronto-Union Bus Term</a><td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    <acronym title="Depart or Arrive">Dp</acronym></td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">06&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=DAGO&amp;new=">Danforth GO Station</a><td title="wheelchair" id=wchair>
+       	<img src="handicapT.jpg" alt="wheelchair" width="16" />
+    	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="G">06&nbsp;23</td>
+	<td title="Trip Departure Time or Transfer required" id="G">06&nbsp;51</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;38</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;00</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;23</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;53</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;27</td>
+	<td title="Trip Departure Time or Transfer required" id="G">10&nbsp;23</td>
+	<td title="Trip Departure Time or Transfer required" id="G">11&nbsp;23</td>
+	<td title="Trip Departure Time or Transfer required" id="G">12&nbsp;23</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">06&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=SCGO&amp;new=">Scarborough GO Station</a><td title="wheelchair" id=wchair>
+       	<img src="handicapT.jpg" alt="wheelchair" width="16" />
+    	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="G">06&nbsp;29</td>
+	<td title="Trip Departure Time or Transfer required" id="G">06&nbsp;57</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;44</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;06</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;29</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;59</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;33</td>
+	<td title="Trip Departure Time or Transfer required" id="G">10&nbsp;29</td>
+	<td title="Trip Departure Time or Transfer required" id="G">11&nbsp;29</td>
+	<td title="Trip Departure Time or Transfer required" id="G">12&nbsp;29</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">06&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=EGGO&amp;new=">Eglinton GO Station</a><td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="G">06&nbsp;33</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;01</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;48</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;10</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;33</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;03</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;37</td>
+	<td title="Trip Departure Time or Transfer required" id="G">10&nbsp;33</td>
+	<td title="Trip Departure Time or Transfer required" id="G">11&nbsp;33</td>
+	<td title="Trip Departure Time or Transfer required" id="G">12&nbsp;33</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">08&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=GUGO&amp;new=">Guildwood GO Station</a><td title="wheelchair" id=wchair>
+       	<img src="handicapT.jpg" alt="wheelchair" width="16" />
+    	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="G">06&nbsp;38</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;06</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;53</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;15</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;38</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;08</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;42</td>
+	<td title="Trip Departure Time or Transfer required" id="G">10&nbsp;38</td>
+	<td title="Trip Departure Time or Transfer required" id="G">11&nbsp;38</td>
+	<td title="Trip Departure Time or Transfer required" id="G">12&nbsp;38</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">09&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=ROGO&amp;new=">Rouge Hill GO Station</a><td title="wheelchair" id=wchair>
+       	<img src="handicapT.jpg" alt="wheelchair" width="16" />
+    	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="G">06&nbsp;43</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;11</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;58</td>
+	<td title="No stop here: express bus or not a station." id="GG">
+	&darr;
+</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;20</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;43</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;13</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;47</td>
+	<td title="Trip Departure Time or Transfer required" id="G">10&nbsp;43</td>
+	<td title="Trip Departure Time or Transfer required" id="G">11&nbsp;43</td>
+	<td title="Trip Departure Time or Transfer required" id="G">12&nbsp;43</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">91&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=PKGO&amp;new=">Pickering GO Station</a><td title="wheelchair" id=wchair>
+       	<img src="handicapT.jpg" alt="wheelchair" width="16" />
+    	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="G">06&nbsp;51</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;19</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;06</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;15</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;28</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;51</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;21</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;55</td>
+	<td title="Trip Departure Time or Transfer required" id="G">10&nbsp;51</td>
+	<td title="Trip Departure Time or Transfer required" id="G">11&nbsp;51</td>
+	<td title="Trip Departure Time or Transfer required" id="G">12&nbsp;51</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">92&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=AJGO&amp;new=">Ajax GO Station</a><td title="wheelchair" id=wchair>
+       	<img src="handicapT.jpg" alt="wheelchair" width="16" />
+    	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="G">06&nbsp;56</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;24</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;11</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;33</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;56</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;26</td>
+	<td title="Trip Departure Time or Transfer required" id="G">10&nbsp;00</td>
+	<td title="Trip Departure Time or Transfer required" id="G">10&nbsp;56</td>
+	<td title="Trip Departure Time or Transfer required" id="G">11&nbsp;56</td>
+	<td title="Trip Departure Time or Transfer required" id="G">12&nbsp;56</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">93&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=WHGO&amp;new=">Whitby GO Station</a><td title="wheelchair" id=wchair>
+       	<img src="handicapT.jpg" alt="wheelchair" width="16" />
+    	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;04</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;32</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;19</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;41</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;04</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;34</td>
+	<td title="Trip Departure Time or Transfer required" id="G">10&nbsp;08</td>
+	<td title="Trip Departure Time or Transfer required" id="G">11&nbsp;04</td>
+	<td title="Trip Departure Time or Transfer required" id="G">12&nbsp;04</td>
+	<td title="Trip Departure Time or Transfer required" id="G">13&nbsp;04</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">94&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=OSGO&amp;new=">Oshawa GO Station</a><td title="wheelchair" id=wchair>
+       	<img src="handicapT.jpg" alt="wheelchair" width="16" />
+    	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    <acronym title="Depart or Arrive">Ar</acronym></td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;11</td>
+	<td title="Trip Departure Time or Transfer required" id="G">07&nbsp;39</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;26</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="G">08&nbsp;48</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;11</td>
+	<td title="Trip Departure Time or Transfer required" id="G">09&nbsp;41</td>
+	<td title="Trip Departure Time or Transfer required" id="G">10&nbsp;15</td>
+	<td title="Trip Departure Time or Transfer required" id="G">11&nbsp;11</td>
+	<td title="Trip Departure Time or Transfer required" id="G">12&nbsp;11</td>
+	<td title="Trip Departure Time or Transfer required" id="G">13&nbsp;11</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">  &nbsp;</td>
+    <td title="Stop Name" id="sname">Transfer Node<td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="P">Trans</td>
+	<td title="Trip Departure Time or Transfer required" id="P">Trans</td>
+	<td title="Trip Departure Time or Transfer required" id="P">Trans</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="P">Trans</td>
+	<td title="Trip Departure Time or Transfer required" id="P">Trans</td>
+	<td title="Trip Departure Time or Transfer required" id="P">Trans</td>
+	<td title="Trip Departure Time or Transfer required" id="P">Trans</td>
+	<td title="Trip Departure Time or Transfer required" id="P">Trans</td>
+	<td title="Trip Departure Time or Transfer required" id="P">Trans</td>
+	<td title="Trip Departure Time or Transfer required" id="P">Trans</td>
+	<td title="Trip Departure Time or Transfer required" id="P">Trans</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">  &nbsp;</td>
+    <td title="Stop Name" id="sname">*Route Number<td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Fare zone number" id="zone">94&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=OSGO&amp;new=">Oshawa GO Station</a><td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    <acronym title="Depart or Arrive">Dp</acronym></td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="Y">07&nbsp;16</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">07&nbsp;45</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">08&nbsp;31</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">08&nbsp;53</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;16</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;46</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">10&nbsp;20</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">11&nbsp;16</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">12&nbsp;16</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">13&nbsp;16</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">13&nbsp;46</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">94&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=OSCM&amp;new=">Oshawa Centre Mall</a><td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="Y">07&nbsp;20</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">07&nbsp;49</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">08&nbsp;35</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">08&nbsp;57</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;20</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;50</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">10&nbsp;24</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">11&nbsp;20</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">12&nbsp;20</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">13&nbsp;20</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">13&nbsp;50</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">94&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=KICT&amp;new=">Oshawa-King&Centre</a><td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    <acronym title="Ticket Agency">t</acronym></td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="Y">07&nbsp;26</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">07&nbsp;55</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">08&nbsp;41</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;03</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;26</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;56</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">10&nbsp;30</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">11&nbsp;26</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">12&nbsp;26</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">13&nbsp;26</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">13&nbsp;56</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">95&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=CRTC&amp;new=">Courtice-King/Courtice</a><td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="Y">07&nbsp;38</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">08&nbsp;07</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">08&nbsp;53</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;15</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;38</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">10&nbsp;08</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">10&nbsp;42</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">11&nbsp;38</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">12&nbsp;38</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">13&nbsp;38</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">14&nbsp;08</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">96&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=WVBL&amp;new=">Bowmanville-Waverly&Base</a><td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">96&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=BOPR&amp;new=">Bowmanville</a><td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="Y">07&nbsp;47</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">08&nbsp;16</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;02</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;24</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;47</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">10&nbsp;17</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">10&nbsp;51</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">11&nbsp;47</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">12&nbsp;47</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">13&nbsp;47</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">14&nbsp;17</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">96&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=KILB&amp;new=">Bowmanville-King&Liberty</a><td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="Y">07&nbsp;52</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">08&nbsp;21</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;07</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;29</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;52</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">10&nbsp;22</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">10&nbsp;56</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">11&nbsp;52</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">12&nbsp;52</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">13&nbsp;52</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">14&nbsp;22</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">96&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=WVBL&amp;new=">Bowmanville-Waverly&Base</a><td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="No stop here: express bus or not a station." id="YY">
+	&darr;
+</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">97&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=NCPR&amp;new=">Newcastle Carpool Lot</a><td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    </td>
+    <td title="Depart or Arrive" id="arrdepart">
+    </td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="Y">07&nbsp;57</td>
+	<td title="Trip Departure Time or Transfer required" id="y">08&nbsp;26</td>
+	<td title="Trip Departure Time or Transfer required" id="y">09&nbsp;12</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;34</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;57</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">10&nbsp;27</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">11&nbsp;01</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">11&nbsp;57</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">12&nbsp;57</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">13&nbsp;57</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">14&nbsp;27</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+<tr>
+    <td title="Fare zone number" id="zone">97&nbsp;</td>
+    <td title="Stop Name" id="sname"><a
+    href="/publicroot/en/travelling/stations.aspx?station=NCSL&amp;new=">Newcastle-Bus Loop</a><td title="wheelchair" id=wchair>
+       	</td>
+    	
+    <td title="Ticket Agency" id="remark">
+    <acronym title="Ticket Agency">t</acronym></td>
+    <td title="Depart or Arrive" id="arrdepart">
+    <acronym title="Depart or Arrive">Ar</acronym></td>
+    <td title="Takes you to the previous time period. " id=arrowkey>
+    	</td>
+<td title="Trip Departure Time or Transfer required" id="Y">08&nbsp;06</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">08&nbsp;35</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;21</td>
+	<td title="No trip service here" id="bbb">&nbsp;</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">09&nbsp;43</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">10&nbsp;06</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">10&nbsp;36</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">11&nbsp;10</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">12&nbsp;06</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">13&nbsp;06</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">14&nbsp;06</td>
+	<td title="Trip Departure Time or Transfer required" id="Y">14&nbsp;36</td>
+	<td title="Takes you to the next time period." id="arrowkey">
+    	<a href="pubsched.aspx?table=09&amp;direction=1&amp;day=1&amp;page=2&amp;New=&amp;station=&amp;zone="><strong><img
+    		src="tri_r.jpg" alt="Next Page" border="0" width="20" height="20"/></strong></a>
+	</td>
+  </tr>
+</table>
+<!======================= Schedule notes =======================!><p align=center><font color=#008000><strong>
+	Notes special to this table</strong></font>
+<table >
+<tr>
+<td title="Note Keyword" width="10%" align=center >
+<div style='background-color: #FFFF66; margin-left: 4px; padding-left: 4px; '>
+<b>12 00</b></div><td>
+<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
+    <div class="schednote">GO Bus times are in regular type with a yellow background on screen.&nbsp;</div>
+  </td>
+  </tr>
+<tr>
+<td title="Note Keyword" width="10%" align=center >
+<div style='background-color: #66CC99; margin-left: 4px; padding-left: 4px; '>
+<b><I>12 00</I></b></div><td>
+<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
+    <div class="schednote">GO Train times are in italics with a green background on screen.&nbsp;</div>
+  </td>
+  </tr>
+<tr>
+<td title="Note Keyword" width="10%" align=center >
+<div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
+<img src="../images/handicapT.jpg" alt="Keyword Image"/>
+</div><td>
+<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
+    <div class="schednote">GO Train service  is accessible to passengers using mobility devices ONLY at locations shown with this accessible symbol. Bus trips shown on this schedule are NOT accessible.&nbsp;</div>
+  </td>
+  </tr>
+<tr>
+<td title="Note Keyword" width="10%" align=center >
+<div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
+<b>t</b></div><td>
+<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
+    <div class="schednote">GO Transit ticket agency available.&nbsp;</div>
+  </td>
+  </tr>
+<tr>
+<td title="Note Keyword" width="10%" align=center >
+<div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
+<b>D</b></div><td>
+<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
+    <div class="schednote">Stops  to discharge on passenger request ONLY.&nbsp;</div>
+  </td>
+  </tr>
+<tr>
+<td title="Note Keyword" width="10%" align=center >
+<div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
+<b>Hwy #407 East Bus Service</b></div><td>
+<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
+    <div class="schednote">For weekday service on the Hwy #407 East bus service, see <a href="../schedule/pubsched.aspx?table=52&direction=0&day=1&page=1&New=&station=">Table 52</a>.&nbsp;</div>
+  </td>
+  </tr>
+<tr>
+<td title="Note Keyword" width="10%" align=center >
+<div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
+<b>Oshawa Hwy #2</b></div><td>
+<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
+    <div class="schednote">For weekday service on the Oshawa Hwy #2 bus service, please see <a href="../schedule/pubsched.aspx?table=94&direction=0&day=1&page=1&New=&station=">Table 94</a>.&nbsp;</div>
+  </td>
+  </tr>
+<tr>
+<td title="Note Keyword" width="10%" align=center >
+<div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
+<b>Port Perry Bus</b></div><td>
+<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
+    <div class="schednote">For Port Perry service, please see <a href="../schedule/pubsched.aspx?table=81&direction=0&day=1&page=1&New=&station=">Table 81</a>.&nbsp;</div>
+  </td>
+  </tr>
+<tr>
+<td title="Note Keyword" width="10%" align=center >
+<div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
+<b>Schedule times</b></div><td>
+<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
+    <div class="schednote">Schedules are subject to change. Please allow extra time for your trip as most GO Trains operate on shared tracks and trips may be affected by other train traffic. GO Buses may be delayed by road congestion. While we make every effort to notify customers, we cannot be responsible for delays, missed connections, or resulting inconvenience&nbsp;</div>
+  </td>
+  </tr>
+</table>
+</div>
+
+</div>
+<div id="footer">
+  <p>Revised: <span id="ctl00_Label1"></span>&nbsp;|&nbsp;Copyright &#169; GO Transit&nbsp;<span id="ctl00_Label2"></span>&nbsp;|&nbsp;<a href='http://www.gotransit.com/hr_public/en/careers.aspx'>Careers</a>&nbsp;|&nbsp;<a href='http://www.gotransit.com/publicroot/en/sitemap.aspx'>Site Map</a>&nbsp;|&nbsp;<a href='http://www.gotransit.com/public/en/aboutus/terms.aspx'>Privacy & Website Terms</a>&nbsp;|&nbsp;<a href='http://www.gotransit.com/public/en/aboutus/contactus.aspx'>Contact Us</a></p>
+</div>
+
+</div>
+</form>
+</body>
+</html>
