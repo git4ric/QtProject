@@ -1,0 +1,76 @@
+<route number="80">
+    <direction number="0">
+        <day number="1">
+            <station name="Beaverton Simcoe &amp; Mara">
+                <time>05.23.80</time>
+                <time>06.51.80</time>
+                <time>09.37.80</time>
+                <time>12.30.80</time>
+                <time>14.27.80</time>
+                <time>17.48.80</time>
+                <time>19.47.80</time>
+                <time>20.41.80</time>
+                <time>23.12.80</time>
+            </station>
+            <station name="Port Bolster Lake R./Hw48">
+                <time>05.33.80</time>
+                <time>07.01.80</time>
+                <time>09.47.80</time>
+                <time>12.40.80</time>
+                <time>14.37.80</time>
+                <time>17.58.80</time>
+                <time>19.57.80</time>
+                <time>20.51.80</time>
+                <time>23.22.80</time>
+            </station>
+            <station name="Pefferlaw/Virginia">
+                <time>05.43.80</time>
+                <time>07.11.80</time>
+                <time>09.57.80</time>
+                <time>12.50.80</time>
+                <time>14.47.80</time>
+                <time>18.08.80</time>
+                <time>20.07.80</time>
+                <time>21.01.80</time>
+                <time>23.32.80</time>
+            </station>
+        </day>
+    </direction>
+    <direction number="1">
+        <day number="1">
+            <station name="Pefferlaw/Virginia">
+                <time>05.48.80</time>
+                <time>07.16.80</time>
+                <time>10.02.80</time>
+                <time>12.55.80</time>
+                <time>14.52.80</time>
+                <time>18.13.80</time>
+                <time>20.12.80</time>
+                <time>21.06.80</time>
+                <time>23.52.80</time>
+            </station>
+            <station name="Port Bolster Lake R./Hw48">
+                <time>05.53.80</time>
+                <time>07.21.80</time>
+                <time>10.07.80</time>
+                <time>13.00.80</time>
+                <time>14.57.80</time>
+                <time>18.18.80</time>
+                <time>20.17.80</time>
+                <time>21.11.80</time>
+                <time>23.57.80</time>
+            </station>
+            <station name="Beaverton Simcoe &amp; Mara">
+                <time>06.03.80</time>
+                <time>07.31.80</time>
+                <time>10.17.80</time>
+                <time>13.10.80</time>
+                <time>15.07.80</time>
+                <time>18.28.80</time>
+                <time>20.27.80</time>
+                <time>21.21.80</time>
+                <time>00.07.80</time>
+            </station>
+        </day>
+    </direction>
+</route>
