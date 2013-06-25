@@ -242,7 +242,7 @@
 				<time>21.40.25</time>
 				<time>23.40.25</time>
             </station>
-            <station name="Milton GO Station"/>
+            <station name="Milton GO Station">
 				<time>17.28.Train</time>
 				<time>17.38.25A</time>
 				<time>18.23.Train</time>

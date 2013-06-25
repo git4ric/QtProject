@@ -73,9 +73,9 @@
                 <time>07.22.Train</time>
                 <time>07.57.Train</time>
             </station>
-            <station name="TrinityCommon Hwy410&amp;Bova"/>
+            <station name="TrinityCommon Hwy410&amp;Bova">
             </station>
-			<station name="Bramalea Transit Terminal"/>
+			<station name="Bramalea Transit Terminal">
             </station>
 			<station name="Bramalea GO Station">
                 <time>06.47.Train</time>
@@ -114,9 +114,11 @@
                 <time>17.24.Train</time>
                 <time>18.24.Train</time>
             </station>
-            <station name="Bramalea Transit Terminal"/>
-            <station name="TrinityCommon Hwy410&amp;Bova"/>
-            <station name="Brampton GO Station">
+            <station name="Bramalea Transit Terminal">
+			</station>
+            <station name="TrinityCommon Hwy410&amp;Bova">
+            </station>
+			<station name="Brampton GO Station">
                 <time>16.17.Train</time>
                 <time>17.03.Train</time>
                 <time>17.33.Train</time>

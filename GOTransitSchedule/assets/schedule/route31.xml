@@ -1,7 +1,9 @@
 <route number="31">
     <direction number="0">
         <day number="1">
-            <station name="Kitchener GO Station">
+			<station name="Kitchener Bus Terminal">
+            </station>
+			<station name="Kitchener GO Station">
                 <time>05.49.Train</time>
                 <time>07.07.Train</time>
                 <time>08.25.30</time>
@@ -534,7 +536,9 @@
                 <time>00.25.31E</time>
                 <time>01.25.31E</time>
             </station>
-        </day>
+			<station name="Union Station">
+			</station>
+		</day>
     </direction>
     <direction number="1">
         <day number="1">

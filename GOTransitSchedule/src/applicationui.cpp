@@ -442,8 +442,8 @@ void ApplicationUI::onClicked(){
             localFile->setDirection("1");
 
         localFile->setStation(textInput->text());
-        localFile->setHour(05);
-        localFile->setMinute(00);
+        localFile->setHour(QTime::currentTime().hour());
+        localFile->setMinute(QTime::currentTime().minute());
 //        localFile->setHour(QTime::currentTime().hour());
 //        localFile->setMinute(QTime::currentTime().minute());
         localFile->parseXML();
