@@ -42,7 +42,7 @@ Data::Data(QObject* parent, QString routeNumber){
 	direction.appendChild(day);
 
 	QObject::connect(_manager, SIGNAL(finished(QNetworkReply*)),this, SLOT(replyFinished(QNetworkReply*)));
-	_baseUrl = "http://www.gotransit.com/publicroot/en/schedules/pubsched.aspx?table="+routeNumber+"&direction=0&day=1&page=1";
+	_baseUrl = "http://www.gotransit.com/publicroot/en/schedules/pubsched.aspx?table="+routeNumber+"&direction=0&day=1&page=1&new=";
 	_stopFetchFlag = false;
 	_doneSaving = false;
 	_direction = false;
@@ -124,20 +124,19 @@ void Data::saveXMLFile(){
 	QString appFolder(QDir::currentPath());
 	QString fileName = appFolder + "/app/native/assets/schedule/route"+routeNum+".xml";
 	QFile outputXmlFile(fileName);
-		if (!outputXmlFile.open(QIODevice::WriteOnly | QIODevice::Text)){
+	if (!outputXmlFile.open(QIODevice::WriteOnly | QIODevice::Text)){
 
 
-		qDebug() << "Could not open file for writing XML";
+	qDebug() << "Could not open file for writing XML";
 
-		return;
+	return;
 
-		}
-		QTextStream outputXml(&outputXmlFile);
-		_doc.save(outputXml,indent);
-		outputXmlFile.close();
-		_doneSaving = true;
-		qDebug() << "End of Xml output!";
-
+	}
+	QTextStream outputXml(&outputXmlFile);
+	_doc.save(outputXml,indent);
+	outputXmlFile.close();
+	_doneSaving = true;
+	qDebug() << "End of Xml output!";
 }
 QString Data::processStationName(QString input){
 	int indexBegin = input.indexOf(">");
@@ -154,23 +153,22 @@ QPair<QString,QString> Data::processTime(QString input){
 	if (input.mid(lineStart + 6, 1).compare("s") != 0 && input.mid(lineStart + 6, 1).compare("n") != 0
 		&& input.mid(lineStart + 6, 1).compare("k") != 0 && input.mid(lineStart + 6, 1).compare("h") != 0
 		&& input.mid(lineStart + 6, 1).compare("D") != 0 && input.mid(lineStart + 6, 1).compare("d") != 0){
-	time.first = input.mid(lineStart - 2, 2); //Hour of this bus
-	time.second = input.mid(lineStart+ 6, 2); //Minute of this bus
+		time.first = input.mid(lineStart - 2, 2); //Hour of this bus
+		time.second = input.mid(lineStart+ 6, 2); //Minute of this bus
 	}
 	else {
 		time.first = input.mid(lineStart - 4, 2);
 		time.second = input.mid(lineStart - 2, 2);
 	}
+//	qDebug() << "processTime done";
 	return time;
 }
 
 void Data::processFile(){
+	qDebug() << "starting processFile";
 	QString appFolder(QDir::currentPath());
 	QString fileName;
-//	if (_direction == false)
-//	fileName = appFolder + "/app/native/assets/schedule/settings.txt";
-//	else
-		fileName = appFolder + "/app/native/assets/schedule/settings.txt";
+	fileName = appFolder + "/app/native/assets/schedule/settings.txt";
 	QFile file(fileName);
 
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
@@ -178,14 +176,6 @@ void Data::processFile(){
 		return;
 	}
 
-//===== Start XML creation logic ========================
-
-
-
-
-
-
-	//====== Start Parsing Logic============================
 	QStringList stationName;
 	QStringList times;
 	QPair<QString,QString> time;
@@ -202,18 +192,38 @@ void Data::processFile(){
 	 *  id="E" - stands for Gray Table number - Logic sorts them out
 	 */
 	 QStringList busNumbers;
-	 //std::vector <QDomElement> station;
 	 QDomElement station;
+	 bool stationFound = false;
 
-	 int k = 0;
+	 int k = 0; // array index for matching bus numbers to times
+
+	// Loop through the html code (settings.txt) file
 	while (!file.atEnd()) {
 		 QByteArray line = file.readLine();
-		 if (line.contains("id=\"E\""))
-		 	 busNumbers.append(line.mid(line.indexOf("\"E\">") + 4, line.indexOf("</td>") - (line.indexOf("\"E\">") + 4)));
-		 else if (line.contains("id=\"bbb\""))
-			 busNumbers.append("Train");
+
+		 // if a Route number is found, then reset the busNumbers to prepare for adding new bus routes
+		 // that will come next
+		 if(line.contains("Route Number")){
+			 stationFound = false;
+			 busNumbers.clear();
+		 }
+
+		 // if a station is not found and and bus routes start to appear
+		 if(!stationFound){
+			 if (line.contains("id=\"E\"")){
+				 busNumbers.append(line.mid(line.indexOf("\"E\">") + 4, line.indexOf("</td>") - (line.indexOf("\"E\">") + 4)));
+				 qDebug() << "busNumbers ka size: " + QString::number(busNumbers.size());
+			 }
+			 else if (line.contains("id=\"bbb\"")){
+				 busNumbers.append(QString::number(0));
+			 }
+		 }
+
 		 QDomElement timeTag;
+		 // everytime a new station is found, add it to root doc and stop looking for bus numbers
 		 if (line.contains("/publicroot/en/travelling/stations.aspx?station=")){
+
+			 stationFound = true;
 			 QString name = processStationName(line);
 			 name.replace("-", " ");
 			 //Special case is for station names that are fucked up in HTML code.
@@ -227,6 +237,7 @@ void Data::processFile(){
 			 station = _doc.createElement("station");
 			 station.setAttribute("name",stationName[i]);
 			 QString temp;
+			 // check if a station name is already added to root doc
 			 for(QDomElement n = day.firstChildElement("station"); !n.isNull(); n = n.nextSiblingElement("station"))
 			 {
 			 	if(stationName[i].compare(n.attribute("name",QString(""))) == 0){
@@ -238,28 +249,68 @@ void Data::processFile(){
 
 			 i++;
 		 }
+		 // Debug if
 		 else if(line.contains("Transfer Node")){
 			 qDebug() << "Transfer required after station: " << stationName[i-1];
 		 }
-		 else if (line.contains("id=\"G\"") or line.contains("id=\"Y\"") or line.contains("id=\"y\"")){
+		 // if a time with a yellow background is found, add bus
+		 else if (line.contains("id=\"Y\"") or line.contains("id=\"y\"")){
+
 			 time = processTime(line);
+			 qDebug() << "The value of k is " << QString::number(k);
+			 //qDebug() << "busNumbers ka size: " + QString::number(busNumbers.size());
 			 time.second = time.second + "." + busNumbers[k];
 			 k++;
 			 qDebug() << "time is: " << time.first << "." << time.second;
-			 times.append(time.first + "." + time.second);
 
-			 // Every time a new time is encountered, create a new tag eg: <time>17.35</time>
-			 timeTag = _doc.createElement("time");
-			 QString timeDot = time.first.append(".");
-			 QString fullTime = timeDot.append(time.second);
+			 // Remove times that are a result of bad html code
+			 if((time.first.compare("") != 0) or (time.second.compare("ti") != 0)){
+				 times.append(time.first + "." + time.second);
 
-			 QDomText timeText = _doc.createTextNode(fullTime);
-			 timeTag.appendChild(timeText);
+				 // Every time a new time is encountered, create a new tag eg: <time>17.35</time>
+				 timeTag = _doc.createElement("time");
+				 QString timeDot = time.first.append(".");
+				 QString fullTime = timeDot.append(time.second);
 
-			 station.appendChild(timeTag);
+				 QDomText timeText = _doc.createTextNode(fullTime);
+				 timeTag.appendChild(timeText);
+
+				 if(!hasTimeTag(&station,&timeText)){
+					 station.appendChild(timeTag);
+				 }
+			 }
+
 		 }
-		 else if (line.contains("id=\"bbb\"") or line.contains("id=\"YY\""))
+		 // if a time with a green background is found, add train
+		 else if(line.contains("Trip Departure Time or Transfer required") and line.contains("id=\"G\"")){
+			 time = processTime(line);
+//			 qDebug() << "busNumbers ka size: " + QString::number(busNumbers.size());
+			 time.second = time.second + "." + "Train";
 			 k++;
+			 qDebug() << "time is: " << time.first << "." << time.second;
+
+			 // Remove times that are a result of bad html code
+			 if((time.first.compare("") != 0) or (time.second.compare("ti") != 0)){
+				 times.append(time.first + "." + time.second);
+
+				 // Every time a new time is encountered, create a new tag eg: <time>17.35</time>
+				 timeTag = _doc.createElement("time");
+				 QString timeDot = time.first.append(".");
+				 QString fullTime = timeDot.append(time.second);
+
+				 QDomText timeText = _doc.createTextNode(fullTime);
+				 timeTag.appendChild(timeText);
+
+				 if(!hasTimeTag(&station,&timeText)){
+					 station.appendChild(timeTag);
+				 }
+
+			 }
+		 }
+		 // Increment value of index incase a blank spot is found in the row of route numbers
+		 else if (line.contains("id=\"bbb\"") or line.contains("id=\"YY\"") or line.contains("id=\"GG\"")){
+			 k++;
+		 }
 	}
 	file.close();
 	qDebug() << "End of Parsing!";
@@ -267,4 +318,17 @@ void Data::processFile(){
 	//===== End of Parsing logic===========
 }
 
-
+/*
+ * Checks if a time tag to be appended to station tag contains the times which are previously already added
+ * @return true if timeTag containing given timeText is found
+ * 		   false otherwise
+ */
+bool Data::hasTimeTag(QDomElement* station, QDomText* timeText){
+	QDomNodeList timeList = station->childNodes();
+	for(int i=0;i<timeList.size();i++){
+		if(timeList.item(i).lastChild().toText().data().compare(timeText->data()) == 0){
+			return true;
+		}
+	}
+	return false;
+}

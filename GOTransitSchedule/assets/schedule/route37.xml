@@ -62,9 +62,9 @@
                 <time>07.07.37</time>
                 <time>07.42.37</time>
                 <time>08.50.37</time>
-                <time>08.55.&amp;nbsp;</time>
+                <time>08.55.37A</time>
                 <time>13.25.37</time>
-                <time>13.35.Train</time>
+                <time>13.35.31</time>
                 <time>20.25.37</time>
                 <time>20.35.31</time>
             </station>
@@ -73,13 +73,15 @@
                 <time>07.22.Train</time>
                 <time>07.57.Train</time>
             </station>
-            <station name="TrinityCommon Hwy410&amp;Bova"/>
-            <station name="Bramalea Transit Terminal"/>
-            <station name="Bramalea GO Station">
+            <station name="TrinityCommon Hwy410&amp;Bova">
+            </station>
+			<station name="Bramalea Transit Terminal">
+            </station>
+			<station name="Bramalea GO Station">
                 <time>06.47.Train</time>
                 <time>07.30.Train</time>
                 <time>08.05.Train</time>
-                <time>09.16.&amp;nbsp;</time>
+                <time>09.16.37A</time>
                 <time>09.40.Train</time>
             </station>
             <station name="Union Station">
@@ -89,7 +91,7 @@
                 <time>10.18.Train</time>
             </station>
             <station name="Toronto Union Bus Term">
-                <time>14.20.Train</time>
+                <time>14.20.31</time>
                 <time>21.20.31</time>
             </station>
         </day>
@@ -97,8 +99,8 @@
     <direction number="1">
         <day number="1">
             <station name="Toronto Union Bus Term">
-                <time>09.30.Train</time>
-                <time>19.15.&amp;nbsp;</time>
+                <time>09.30.31</time>
+                <time>19.15.31</time>
             </station>
             <station name="Union Station">
                 <time>15.30.Train</time>
@@ -112,22 +114,24 @@
                 <time>17.24.Train</time>
                 <time>18.24.Train</time>
             </station>
-            <station name="Bramalea Transit Terminal"/>
-            <station name="TrinityCommon Hwy410&amp;Bova"/>
-            <station name="Brampton GO Station">
+            <station name="Bramalea Transit Terminal">
+			</station>
+            <station name="TrinityCommon Hwy410&amp;Bova">
+            </station>
+			<station name="Brampton GO Station">
                 <time>16.17.Train</time>
                 <time>17.03.Train</time>
                 <time>17.33.Train</time>
                 <time>18.33.Train</time>
             </station>
             <station name="Brampton Bus Terminal">
-                <time>10.25.Train</time>
+                <time>10.25.31</time>
                 <time>10.35.37</time>
                 <time>16.25.37</time>
                 <time>17.13.37</time>
                 <time>17.43.37</time>
                 <time>18.43.37</time>
-                <time>19.55.&amp;nbsp;</time>
+                <time>19.55.31</time>
                 <time>20.15.37</time>
             </station>
             <station name="Snelgrove at Mayfield">
