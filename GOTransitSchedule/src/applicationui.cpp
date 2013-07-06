@@ -312,7 +312,7 @@ void ApplicationUI::onDisplayDirectionAboutToChange(){
 
 void ApplicationUI::createSettingsTab(){
     page2 = new Page();
-    Container* contentContainer = Container::create().top(100);
+    Container* contentContainer = Container::create().top(65);
     TextStyle *whiteStyle = new TextStyle();
                 whiteStyle->setColor(Color::White);
 
@@ -328,7 +328,7 @@ void ApplicationUI::createSettingsTab(){
     TextArea *textArea2 = new TextArea();
     textArea2->setText("DISCLAIMER:");
     textArea->setText("This application, its creators, or contributors are NOT in any way associated with GO Transit, MetroLinx, or any of its partners. Everything used in this application has been used with permission from its owners and its copyright holders. "
-            "The creators of this application take no responsibility for incorrect, inaccurate or missing information in regards to schedules.");
+            "The creators of this application take no responsibility for incorrect, inaccurate or missing information in regards to schedules. This app is limited at the moment to schedules ONLY ON WEEKDAYS. The app does not show special trips such as Wonderland.");
     if (Q10){
     textArea->textStyle()->setBase(*whiteStyle);
     textArea2->textStyle()->setBase(*whiteStyle);
@@ -442,8 +442,8 @@ void ApplicationUI::onClicked(){
             localFile->setDirection("1");
 
         localFile->setStation(textInput->text());
-        localFile->setHour(05);
-        localFile->setMinute(00);
+        localFile->setHour(QTime::currentTime().hour());
+        localFile->setMinute(QTime::currentTime().minute());
 //        localFile->setHour(QTime::currentTime().hour());
 //        localFile->setMinute(QTime::currentTime().minute());
         localFile->parseXML();
@@ -498,13 +498,13 @@ void ApplicationUI::setUpScheduleUI(){
 
             QList <QStringList> buses = localFile->getBuses();
             buses = specialCases(buses);
-//            for (int ii = 0; ii < 3; ii++) {
-//            		qDebug() << "BUS " + QString::number(ii + 1);
-//            		QStringList temporary = buses.at(ii);
-//            		for (int j = 0; j < buses.at(ii).length(); j++)
-//            			qDebug() << "Time: " + temporary[j];
-//            	}
-//            	qDebug() << "Finished displaying...";
+            for (int ii = 0; ii < 3; ii++) {
+            		qDebug() << "BUS " + QString::number(ii + 1);
+            		QStringList temporary = buses.at(ii);
+            		for (int j = 0; j < buses.at(ii).length(); j++)
+            			qDebug() << "Time: " + temporary[j];
+            	}
+            	qDebug() << "Finished displaying...";
             QStringList y;
             for (indexOfCurrentStationShowing = 0; indexOfCurrentStationShowing < stationsToShow+1 && indexOfCurrentStationShowing < buses.at(0).length()+1; indexOfCurrentStationShowing++) {//b = the container with the row of station
                 pContainer2 = new Container();
@@ -545,6 +545,7 @@ void ApplicationUI::setUpScheduleUI(){
                             ta1->setText("  " + b1[indexOfCurrentStationShowing-1]);
                         else{
                         	ta1->setText(y[0] + ":" + y[1]);
+                        	qDebug() << y[0] << y[1] << y[2];
                         	if (y[2].contains("_")){
                         		showRedDisplay = true;
                         		ta1->textStyle()->setBase(*redStyle);
@@ -736,7 +737,7 @@ void ApplicationUI::loadMoreTimes(bb::cascades::TouchEvent* event){
 		}
 
 		// Do not update the times if ALL 15 times are returned as N.A_ which means there were no more buses on that route.
-		if(terminate == 15){
+		if(terminate == stationsSize*buses.size()){
 			redDisplay->setText("These are the last Bus/Train on this route.");
 			redDisplay->setVisible(true);
 			return;

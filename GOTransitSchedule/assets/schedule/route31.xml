@@ -1,16 +1,18 @@
 <route number="31">
     <direction number="0">
         <day number="1">
-            <station name="Kitchener GO Station">
+			<station name="Kitchener Bus Terminal">
+            </station>
+			<station name="Kitchener GO Station">
                 <time>05.49.Train</time>
                 <time>07.07.Train</time>
                 <time>08.25.30</time>
             </station>
 			<station name="University of Guelph">
                 <time>05.10.31C</time>
-                <time>05.56.Train</time>
-                <time>08.10.Train</time>
-                <time>08.35.30</time>
+                <time>05.56.33</time>
+                <time>08.10.33</time>
+                <time>08.35.39</time>
                 <time>08.45.31A</time>
                 <time>10.45.33</time>
                 <time>12.45.33</time>
@@ -23,8 +25,8 @@
             </station>
             <station name="Guelph Central GO">
                 <time>05.20.31C</time>
+				<time>06.06.33</time>
                 <time>06.13.Train</time>
-                <time>06.06.33</time>
                 <time>07.31.Train</time>
                 <time>08.25.39</time>
                 <time>08.20.33</time>
@@ -43,8 +45,8 @@
             </station>
             <station name="Rockwood">
                 <time>05.33.31C</time>
-                <time>06.19.Train</time>
-                <time>08.33.Train</time>
+                <time>06.19.33</time>
+                <time>08.33.33</time>
                 <time>09.08.31A</time>
                 <time>11.08.33</time>
                 <time>13.08.33</time>
@@ -75,9 +77,9 @@
                 <time>04.44.31D</time>
                 <time>05.50.33B</time>
                 <time>05.58.31C</time>
-                <time>06.44.Train</time>
+                <time>06.44.33</time>
                 <time>08.10.31K</time>
-                <time>08.58.Train</time>
+                <time>08.58.33</time>
                 <time>09.33.31A</time>
                 <time>10.50.31R</time>
                 <time>11.33.33</time>
@@ -534,7 +536,9 @@
                 <time>00.25.31E</time>
                 <time>01.25.31E</time>
             </station>
-        </day>
+			<station name="Union Station">
+			</station>
+		</day>
     </direction>
     <direction number="1">
         <day number="1">
@@ -545,18 +549,6 @@
                 <time>17.15.Train</time>
                 <time>17.45.Train</time>
                 <time>18.50.Train</time>
-            </station>
-            <station name="Kitchener GO Station">
-                <time>16.10.30</time>
-                <time>17.44.30</time>
-                <time>18.45.Train</time>
-                <time>19.45.Train</time>
-                <time>20.49.30</time>
-            </station>
-            <station name="Kitchener Bus Terminal">
-                <time>16.15.30</time>
-                <time>17.49.30</time>
-                <time>20.54.30</time>
             </station>
             <station name="Toronto Union Bus Term">
                 <time>05.50.31H</time>
@@ -642,10 +634,10 @@
                 <time>14.45.33</time>
                 <time>15.15.33E</time>
                 <time>15.45.33</time>
-                <time>16.15.Train</time>
-                <time>16.50.33B</time>
-                <time>17.15.Train</time>
-                <time>17.45.33</time>
+                <time>16.15.33B</time>
+                <time>16.50.33</time>
+                <time>17.15.33A</time>
+                <time>17.45.33B</time>
                 <time>18.25.33A</time>
             </station>
             <station name="Yorkdale Bus Terminal">
@@ -655,10 +647,10 @@
                 <time>14.55.33</time>
                 <time>15.25.33E</time>
                 <time>15.57.33</time>
-                <time>16.27.Train</time>
-                <time>17.02.33B</time>
-                <time>17.27.Train</time>
-                <time>17.57.33</time>
+                <time>16.27.33B</time>
+                <time>17.02.33</time>
+                <time>17.27.33A</time>
+                <time>17.57.33B</time>
                 <time>18.37.33A</time>
             </station>
             <station name="Malton GO Station">
@@ -727,7 +719,7 @@
                 <time>19.29.Train</time>
                 <time>19.39.30</time>
                 <time>19.39.39</time>
-                <time>.ti.31N</time>
+                <time>19.50.31N</time>
                 <time>19.55.31N</time>
                 <time>20.10.31N</time>
                 <time>20.30.31N</time>
@@ -780,10 +772,10 @@
                 <time>15.20.33</time>
                 <time>15.50.33E</time>
                 <time>16.25.33</time>
-                <time>16.55.Train</time>
-                <time>17.30.33B</time>
-                <time>17.55.Train</time>
-                <time>18.25.33</time>
+                <time>16.55.33B</time>
+                <time>17.30.33</time>
+                <time>17.55.33A</time>
+                <time>18.25.33B</time>
                 <time>19.00.33A</time>
                 <time>19.42.31F</time>
                 <time>19.47.31F</time>
@@ -826,10 +818,10 @@
                 <time>15.25.33</time>
                 <time>15.55.33E</time>
                 <time>16.30.33</time>
-                <time>17.00.Train</time>
-                <time>17.36.33B</time>
-                <time>18.01.Train</time>
-                <time>18.30.33</time>
+                <time>17.00.33B</time>
+                <time>17.36.33</time>
+                <time>18.01.33A</time>
+                <time>18.30.33B</time>
                 <time>19.05.33A</time>
                 <time>19.46.31F</time>
                 <time>19.51.31F</time>
@@ -886,10 +878,10 @@
                 <time>15.40.33</time>
                 <time>16.10.33E</time>
                 <time>16.45.33</time>
-                <time>17.15.Train</time>
-                <time>17.55.33B</time>
-                <time>18.15.Train</time>
-                <time>18.45.33</time>
+                <time>17.15.33B</time>
+                <time>17.55.33</time>
+                <time>18.15.33A</time>
+                <time>18.45.33B</time>
                 <time>19.15.33A</time>
                 <time>20.00.31F</time>
                 <time>20.05.31F</time>
@@ -924,9 +916,9 @@
                 <time>15.47.33</time>
                 <time>16.17.33E</time>
                 <time>16.52.33</time>
-                <time>17.22.Train</time>
-                <time>18.01.33B</time>
-                <time>18.51.33</time>
+                <time>17.22.33B</time>
+                <time>18.01.33</time>
+                <time>18.51.33B</time>
                 <time>20.06.31F</time>
                 <time>20.11.31F</time>
                 <time>20.21.31F</time>
@@ -1003,9 +995,9 @@
                 <time>16.03.33</time>
                 <time>16.33.33E</time>
                 <time>17.08.33</time>
-                <time>17.38.Train</time>
-                <time>18.15.33B</time>
-                <time>19.05.33</time>
+                <time>17.38.33B</time>
+                <time>18.15.33</time>
+                <time>19.05.33B</time>
                 <time>19.59.31G</time>
                 <time>20.20.31F</time>
                 <time>20.25.31F</time>
@@ -1040,9 +1032,9 @@
                 <time>16.08.33</time>
                 <time>16.38.33E</time>
                 <time>17.13.33</time>
-                <time>17.43.Train</time>
-                <time>18.19.33B</time>
-                <time>19.09.33</time>
+                <time>17.43.33B</time>
+                <time>18.19.33</time>
+                <time>19.09.33B</time>
                 <time>20.03.31G</time>
                 <time>20.24.31F</time>
                 <time>20.29.31F</time>
@@ -1111,9 +1103,9 @@
                 <time>15.05.31R</time>
                 <time>16.20.33</time>
                 <time>17.36.33</time>
-                <time>18.04.Train</time>
-                <time>18.36.Train</time>
-                <time>19.20.33A</time>
+                <time>18.04.33B</time>
+                <time>18.36.33A</time>
+                <time>19.20.33B</time>
                 <time>22.00.31A</time>
                 <time>00.25.31E</time>
                 <time>01.00.31</time>
@@ -1145,14 +1137,14 @@
                 <time>14.40.31A</time>
                 <time>16.45.33</time>
                 <time>18.01.33</time>
-                <time>19.01.Train</time>
+                <time>19.01.33</time>
                 <time>22.25.31A</time>
                 <time>01.25.31</time>
             </station>
             <station name="Aberfoyle GO Park &amp; Ride">
                 <time>15.40.39</time>
                 <time>17.09.39</time>
-                <time>20.19.Train</time>
+                <time>20.19.39</time>
             </station>
             <station name="Guelph Central GO">
                 <time>07.40.33F</time>
@@ -1174,21 +1166,33 @@
                 <time>01.40.31</time>
             </station>
             <station name="University of Guelph">
-                <time>07.50.33F</time>
-                <time>08.20.33F</time>
-                <time>09.10.33</time>
-                <time>11.15.31</time>
-                <time>13.05.31</time>
-                <time>14.15.31A</time>
-                <time>15.15.31A</time>
-                <time>16.00.39</time>
-                <time>17.29.39</time>
-                <time>17.20.33</time>
-                <time>20.34.Train</time>
-                <time>18.36.33</time>
-                <time>19.26.Train</time>
-                <time>22.50.31A</time>
                 <time>01.50.31</time>
+				<time>07.50.33F</time>
+				<time>08.20.33F</time>
+				<time>09.10.33</time>
+				<time>11.15.31</time>
+				<time>13.05.31</time>
+				<time>14.15.31A</time>
+				<time>15.15.31A</time>
+				<time>16.00.39</time>
+				<time>17.20.33</time>
+				<time>17.29.39</time>
+				<time>18.36.33</time>
+				<time>19.26.33</time>
+				<time>20.34.39</time>
+				<time>22.50.31A</time>
+            </station>
+			<station name="Kitchener GO Station">
+                <time>16.10.30</time>
+                <time>17.44.30</time>
+                <time>18.45.Train</time>
+                <time>19.45.Train</time>
+                <time>20.49.30</time>
+            </station>
+            <station name="Kitchener Bus Terminal">
+                <time>16.15.30</time>
+                <time>17.49.30</time>
+                <time>20.54.30</time>
             </station>
         </day>
     </direction>

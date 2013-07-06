@@ -27,7 +27,7 @@ public:
 	QString processStationName(QString input);
 	QPair<QString,QString> processTime(QString input);
 	bool _stopFetchFlag, _direction, _doneSaving;
-
+	bool hasTimeTag(QDomElement*, QDomText*);
 
 private:
 	QNetworkAccessManager* _manager;

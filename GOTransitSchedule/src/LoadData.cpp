@@ -35,7 +35,7 @@ LoadData::LoadData(QObject* parent, QString fileInput) {
 	QFile *file = new QFile(fileExtension);
 
 	if (!file->open(QIODevice::ReadOnly | QIODevice::Text)) {
-		////qDebug() << "Failed to open " + fileName;
+		//qDebug() << "Failed to open " + fileName;
 		//Now download file...
 		failFlag = true;
 		return;
@@ -51,7 +51,6 @@ LoadData::LoadData(QObject* parent, QString fileInput) {
 		//Delete file, redownload
 		file->remove();
 		failFlag = true;
-		////qDebug() << *errorMsg;
 		return;
 	}
 	file->close();
@@ -121,7 +120,6 @@ void LoadData::setMinute(int m) {
  *	Runs methods to find correct times according to current time
  */
 void LoadData::parseXML() {
-
 	//Get first child and check its direction with what user entered
 	QDomNode n = root.firstChild();
 	QDomElement e = n.toElement();
@@ -158,7 +156,6 @@ void LoadData::parseXML() {
 			temp = checkSpecialCases(a.value());
 			nodeNumber++;
 		}
-
 		//If we went through all of them, there is an error if it is still not found; return
 		if (QString::compare(temp, station, Qt::CaseInsensitive) != 0)
 			return;
@@ -167,6 +164,10 @@ void LoadData::parseXML() {
 		QDomNode m = n;
 		//Access the children of the correct station node (times at that station)
 		n = n.firstChild();
+		if (n.isNull()){
+			stations[0] = "No buses/trains from here!";
+			return;
+		}
 		addBusTimes(n); //Run method to add first row of times
 
 		int i;
@@ -373,9 +374,9 @@ QString LoadData::checkSpecialCases(QString name) {
 		return "North Rouge Kingston Rd. & Port Union";
 	else if (name.compare("Clarington N. P&R/Carpool") == 0)
 		return "Clarington North Carpool Lot";
-	else if (name.compare("Peterborough South P&amp;R/Ca") == 0)
+	else if (name.compare("Peterborough South P&R/Ca") == 0)
 		return "Peterborough South Carpool Lot";
-	else if (name.compare("Cavan P&amp;R/Carpool") == 0)
+	else if (name.compare("Cavan P&R/Carpool") == 0)
 		return "Cavan Carpool Lot";
 	else
 		return name;
