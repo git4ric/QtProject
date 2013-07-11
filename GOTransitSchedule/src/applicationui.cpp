@@ -846,11 +846,7 @@ void ApplicationUI::setRouteNumber(QString r){
     qDebug() << "route = " + r  ;
     if (r.contains("Waterloo/Mississauga") )
         routeFile = "25";
-    else if (r.contains("Lakeshore West") )
-        routeFile = "01";
-    else if (r.contains("Lakeshore East(") )
-        routeFile = "09";
-    else if (r.contains("Lakeshore East & West") )
+    else if (r.contains("Lakeshore East") )
         routeFile = "10";
     else if (r.contains("Niagara Falls/Toronto") )
         routeFile = "12";
