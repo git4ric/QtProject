@@ -577,6 +577,7 @@
                 <time>20.20.21H</time>
                 <time>20.30.21D</time>
                 <time>20.35.21H</time>
+				<time>20.40.21D</time>
                 <time>20.40.21B</time>
                 <time>20.50.21D</time>
                 <time>20.50.21H</time>
@@ -593,7 +594,9 @@
                 <time>22.00.21B</time>
                 <time>22.20.21H</time>
                 <time>22.20.21D</time>
+				<time>22.30.21D</time>
                 <time>22.30.21B</time>
+				<time>22.50.21D</time>
                 <time>22.50.21H</time>
                 <time>23.20.21D</time>
                 <time>23.20.21H</time>
@@ -801,11 +804,14 @@
                 <time>20.27.21D</time>
                 <time>20.42.21D</time>
                 <time>21.00.21D</time>
+				<time>21.10.21D</time>
                 <time>21.20.21D</time>
                 <time>21.40.21D</time>
                 <time>22.00.21D</time>
                 <time>22.20.21D</time>
                 <time>22.50.21D</time>
+				<time>23.00.21D</time>
+				<time>23.20.21D</time>
                 <time>23.50.21D</time>
                 <time>00.49.21N</time>
                 <time>01.49.21N</time>
@@ -843,11 +849,14 @@
                 <time>20.42.21D</time>
                 <time>20.57.21D</time>
                 <time>21.15.21D</time>
+				<time>21.25.21D</time>
                 <time>21.35.21D</time>
                 <time>21.55.21D</time>
                 <time>22.15.21D</time>
                 <time>22.33.21D</time>
                 <time>23.05.21D</time>
+				<time>23.15.21D</time>
+				<time>23.35.21D</time>
                 <time>00.05.21D</time>
                 <time>01.01.21N</time>
                 <time>02.01.21N</time>
@@ -984,11 +993,14 @@
                 <time>21.00.21D</time>
                 <time>21.15.21D</time>
                 <time>21.30.21D</time>
+				<time>20.40.21D</time>
                 <time>21.50.21D</time>
                 <time>22.10.21D</time>
                 <time>22.30.21D</time>
                 <time>22.50.21D</time>
                 <time>23.20.21D</time>
+				<time>23.30.21D</time>
+				<time>23.50.21D</time>
                 <time>00.20.21D</time>
             </station>
             <station name="Milton GO Station">

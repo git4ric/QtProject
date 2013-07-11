@@ -50,11 +50,8 @@
                 <time>12.00.71</time>
                 <time>12.30.71C</time>
                 <time>13.00.71C</time>
-                <time>13.30.71C</time>
                 <time>14.00.71</time>
-                <time>14.30.71C</time>
                 <time>15.00.71C</time>
-                <time>15.30.71C</time>
                 <time>16.00.71</time>
                 <time>16.30.71C</time>
                 <time>17.00.71</time>
@@ -90,11 +87,8 @@
                 <time>12.06.71</time>
                 <time>12.36.71C</time>
                 <time>13.06.71C</time>
-                <time>13.36.71C</time>
                 <time>14.06.71</time>
-                <time>14.36.71C</time>
                 <time>15.06.71C</time>
-                <time>15.36.71C</time>
                 <time>16.06.71</time>
                 <time>16.35.71C</time>
                 <time>17.06.71</time>
@@ -134,11 +128,8 @@
                 <time>12.20.71</time>
                 <time>12.50.71C</time>
                 <time>13.20.71C</time>
-                <time>13.50.71C</time>
                 <time>14.20.71</time>
-                <time>14.50.71C</time>
                 <time>15.20.71C</time>
-                <time>15.50.71C</time>
                 <time>16.20.71</time>
                 <time>16.50.71C</time>
                 <time>17.20.71</time>
@@ -179,11 +170,8 @@
                 <time>12.25.71</time>
                 <time>12.55.71C</time>
                 <time>13.25.71C</time>
-                <time>13.55.71C</time>
                 <time>14.25.71</time>
-                <time>14.55.71C</time>
                 <time>15.25.71C</time>
-                <time>15.55.71C</time>
                 <time>16.25.71</time>
                 <time>16.55.71C</time>
                 <time>17.25.71</time>
@@ -219,11 +207,8 @@
                 <time>12.31.71</time>
                 <time>13.01.71C</time>
                 <time>13.31.71C</time>
-                <time>14.01.71C</time>
                 <time>14.31.71</time>
-                <time>15.01.71C</time>
                 <time>15.31.71C</time>
-                <time>16.01.71C</time>
                 <time>16.31.71</time>
                 <time>17.01.71C</time>
                 <time>17.31.71</time>
@@ -265,11 +250,8 @@
                 <time>12.40.71</time>
                 <time>13.10.71C</time>
                 <time>13.40.71C</time>
-                <time>14.10.71C</time>
                 <time>14.40.71</time>
-                <time>15.10.71C</time>
                 <time>15.40.71C</time>
-                <time>16.10.71C</time>
                 <time>16.40.71</time>
                 <time>17.10.71C</time>
                 <time>17.40.71</time>
@@ -337,11 +319,8 @@
                 <time>13.10.71</time>
                 <time>13.40.71C</time>
                 <time>14.10.71C</time>
-                <time>14.40.71C</time>
                 <time>15.10.71</time>
-                <time>15.40.71C</time>
                 <time>16.10.71C</time>
-                <time>16.40.71C</time>
                 <time>17.15.71</time>
                 <time>17.45.71C</time>
                 <time>18.15.71</time>
@@ -382,8 +361,7 @@
                 <time>20.00.71D</time>
                 <time>20.10.71F</time>
                 <time>20.20.71D</time>
-                <time>20.30.71F</time>
-                <time>20.50.71F</time>
+                <time>20.40.71F</time>
                 <time>20.50.71A</time>
                 <time>21.10.71F</time>
                 <time>21.20.71D</time>
@@ -467,8 +445,7 @@
                 <time>19.53.Train</time>
                 <time>20.20.71F</time>
                 <time>20.40.71F</time>
-                <time>21.00.71F</time>
-                <time>21.20.71F</time>
+                <time>21.10.71F</time>
                 <time>21.40.71F</time>
                 <time>22.05.71F</time>
                 <time>22.35.71F</time>
@@ -505,8 +482,7 @@
                 <time>19.59.Train</time>
                 <time>20.30.71F</time>
                 <time>20.50.71F</time>
-                <time>21.10.71F</time>
-                <time>21.30.71F</time>
+                <time>21.20.71F</time>
                 <time>21.50.71F</time>
                 <time>22.15.71F</time>
                 <time>22.42.71F</time>
@@ -650,8 +626,8 @@
                 <time>19.23.71B</time>
                 <time>19.40.Train</time>
                 <time>19.50.71B</time>
-                <time>20.28.Train</time>
-                <time>20.38.70B</time>
+                <time>20.26.Train</time>
+                <time>20.36.70B</time>
                 <time>20.55.71D</time>
                 <time>21.15.71D</time>
                 <time>21.45.71A</time>
@@ -665,7 +641,7 @@
                 <time>02.35.71C</time>
                 <time>03.35.71C</time>
             </station>
-            <station name="Goodwood Hwy 47&amp;Front">
+			<station name="Goodwood Hwy 47&amp;Front">
                 <time>09.01.71</time>
                 <time>10.56.71</time>
                 <time>12.51.71</time>
@@ -678,7 +654,7 @@
                 <time>18.49.71B</time>
                 <time>19.29.71B</time>
                 <time>19.56.71B</time>
-                <time>20.44.70B</time>
+                <time>20.42.70B</time>
                 <time>21.51.71A</time>
                 <time>22.46.71A</time>
                 <time>23.41.71A</time>
@@ -697,7 +673,7 @@
                 <time>19.03.71B</time>
                 <time>19.43.71B</time>
                 <time>20.10.71B</time>
-                <time>20.58.70B</time>
+                <time>20.56.70B</time>
                 <time>22.05.71A</time>
                 <time>23.00.71A</time>
                 <time>23.55.71A</time>

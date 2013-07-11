@@ -1,3 +1,4 @@
+
 /*
   TODO: Custom icons for tabbed pane icons (GO and Presto)
   TODO: Add coming soon screen for PRESTO tab
@@ -15,6 +16,7 @@
 // Default empty project template
 #include "applicationui.hpp"
 
+#include <bb/system/SystemDialog>
 #include <bb/cascades/Application>
 #include <bb/cascades/QmlDocument>
 #include <bb/cascades/OrientationSupport>
@@ -436,6 +438,18 @@ void ApplicationUI::onClicked(){
             onClicked();
             return;
         }
+
+        if (routeFile.compare("80") == 0 || routeFile.compare("94") == 0 || routeFile.compare("95") == 0){
+        	bb::system::SystemDialog* menu = new bb::system::SystemDialog("ok");
+        	menu->setTitle("Route no longer operative");
+        	if (routeFile.compare("80") == 0 )
+        		menu->setBody("As of June 30, all bus service between Pefferlaw and Beaverton will be transferred to York Region Transit. GO will no longer operate this route.");
+        	else
+        		menu->setBody("GO Bus route " + routeFile + " will be discontinued. New GO Bus routes and Durham Region Transit will provide options");
+        	menu->show();
+        	return;
+        }
+
         if (d == 0)
             localFile->setDirection("0");
         else
@@ -894,12 +908,10 @@ void ApplicationUI::setRouteNumber(QString r){
         routeFile = "81";
     else if (r.contains("Peterborough/Oshawa")  )
         routeFile = "88";
+    else if (r.contains("Oshawa/Yorkdale")  )
+        routeFile = "92";
     else if (r.contains("Durham College/UOIT/Scarborough Express")  )
         routeFile = "93";
-    else if (r.contains("Oshawa/Yorkdale")  )
-        routeFile = "94";
-    else if (r.contains("Oshawa/Finch(")  )
-        routeFile = "95";
     else if (r.contains("Oshawa/Finch Express")  )
         routeFile = "96";
     else if(r.contains("Pickering/Finch Express"))
