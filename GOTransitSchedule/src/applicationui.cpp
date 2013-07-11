@@ -902,6 +902,8 @@ void ApplicationUI::setRouteNumber(QString r){
         routeFile = "95";
     else if (r.contains("Oshawa/Finch Express")  )
         routeFile = "96";
+    else if(r.contains("Pickering/Finch Express"))
+    	routeFile = "98";
     else
         routeFile = "00"; //This should never happen...
 

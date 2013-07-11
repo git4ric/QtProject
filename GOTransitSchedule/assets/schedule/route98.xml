@@ -1,0 +1,171 @@
+<route number="98">
+    <direction number="0">
+        <day number="1">
+            <station name="Pickering GO Station">
+                <time>05.50.98</time>
+                <time>06.10.98</time>
+                <time>06.25.98</time>
+                <time>06.45.98</time>
+                <time>07.00.98</time>
+                <time>07.20.98</time>
+                <time>07.40.98</time>
+                <time>08.00.98</time>
+                <time>08.20.98</time>
+            </station>
+            <station name="Liverpool @ Pickering">
+                <time>05.51.98</time>
+                <time>06.11.98</time>
+                <time>06.26.98</time>
+                <time>06.46.98</time>
+                <time>07.01.98</time>
+                <time>07.21.98</time>
+                <time>07.41.98</time>
+                <time>08.01.98</time>
+                <time>08.21.98</time>
+            </station>
+            <station name="Pickering Hwy2@Walnut">
+                <time>05.53.98</time>
+                <time>06.13.98</time>
+                <time>06.28.98</time>
+                <time>06.48.98</time>
+                <time>07.03.98</time>
+                <time>07.23.98</time>
+                <time>07.43.98</time>
+                <time>08.03.98</time>
+                <time>08.23.98</time>
+            </station>
+            <station name="Pickering Hwy 2@Fairport">
+                <time>05.55.98</time>
+                <time>06.15.98</time>
+                <time>06.30.98</time>
+                <time>06.50.98</time>
+                <time>07.05.98</time>
+                <time>07.25.98</time>
+                <time>07.45.98</time>
+                <time>08.05.98</time>
+                <time>08.25.98</time>
+            </station>
+            <station name="Scarborough Centre">
+                <time>06.10.98</time>
+                <time>06.30.98</time>
+                <time>06.50.98</time>
+                <time>07.10.98</time>
+                <time>07.30.98</time>
+                <time>07.50.98</time>
+                <time>08.10.98</time>
+                <time>08.30.98</time>
+                <time>08.50.98</time>
+            </station>
+            <station name="Yonge St. @ Sheppard Ave.">
+                <time>06.25.98</time>
+                <time>06.45.98</time>
+                <time>07.05.98</time>
+                <time>07.30.98</time>
+                <time>07.55.98</time>
+                <time>08.15.98</time>
+                <time>08.35.98</time>
+                <time>09.00.98</time>
+                <time>09.20.98</time>
+            </station>
+            <station name="Finch GO Bus Terminal">
+                <time>06.30.98</time>
+                <time>06.50.98</time>
+                <time>07.15.98</time>
+                <time>07.40.98</time>
+                <time>08.05.98</time>
+                <time>08.25.98</time>
+                <time>08.45.98</time>
+                <time>09.10.98</time>
+                <time>09.30.98</time>
+            </station>
+        </day>
+    </direction>
+    <direction number="1">
+        <day number="1">
+            <station name="Finch GO Bus Terminal">
+                <time>15.03.98</time>
+                <time>15.18.98</time>
+                <time>15.38.98</time>
+                <time>15.58.98</time>
+                <time>16.18.98</time>
+                <time>16.33.98</time>
+                <time>16.53.98</time>
+                <time>17.13.98</time>
+                <time>17.28.98</time>
+                <time>17.53.98</time>
+            </station>
+            <station name="Yonge St. @ Sheppard Ave.">
+                <time>15.10.98</time>
+                <time>15.25.98</time>
+                <time>15.45.98</time>
+                <time>16.05.98</time>
+                <time>16.25.98</time>
+                <time>16.40.98</time>
+                <time>17.00.98</time>
+                <time>17.20.98</time>
+                <time>17.35.98</time>
+                <time>18.00.98</time>
+            </station>
+            <station name="Scarborough Centre">
+                <time>15.28.98</time>
+                <time>15.48.98</time>
+                <time>16.08.98</time>
+                <time>16.28.98</time>
+                <time>16.48.98</time>
+                <time>17.08.98</time>
+                <time>17.28.98</time>
+                <time>17.48.98</time>
+                <time>18.08.98</time>
+                <time>18.28.98</time>
+            </station>
+            <station name="Pickering Hwy 2@Fairport">
+                <time>15.41.98</time>
+                <time>16.01.98</time>
+                <time>16.21.98</time>
+                <time>16.41.98</time>
+                <time>17.01.98</time>
+                <time>17.22.98</time>
+                <time>17.42.98</time>
+                <time>18.02.98</time>
+                <time>18.22.98</time>
+                <time>18.42.98</time>
+            </station>
+            <station name="Pickering Hwy2@Walnut">
+                <time>15.43.98</time>
+                <time>16.03.98</time>
+                <time>16.23.98</time>
+                <time>16.43.98</time>
+                <time>17.03.98</time>
+                <time>17.25.98</time>
+                <time>17.45.98</time>
+                <time>18.05.98</time>
+                <time>18.25.98</time>
+                <time>18.45.98</time>
+            </station>
+            <station name="Liverpool @ Pickering">
+                <time>15.45.98</time>
+                <time>16.05.98</time>
+                <time>16.25.98</time>
+                <time>16.45.98</time>
+                <time>17.05.98</time>
+                <time>17.28.98</time>
+                <time>17.48.98</time>
+                <time>18.08.98</time>
+                <time>18.28.98</time>
+                <time>18.48.98</time>
+            </station>
+            <station name="Pickering GO Station">
+                <time>15.48.98</time>
+                <time>16.08.98</time>
+                <time>16.28.98</time>
+                <time>16.48.98</time>
+                <time>17.08.98</time>
+                <time>17.33.98</time>
+                <time>17.53.98</time>
+                <time>18.13.98</time>
+                <time>18.33.98</time>
+                <time>18.53.98</time>
+            </station>
+        </day>
+    </direction>
+</route>
