@@ -1,13 +1,6 @@
 <route number="61">
     <direction number="0">
         <day number="1">
-            <station name="Union Station">
-                <time>07.11.Train</time>
-                <time>07.41.Train</time>
-                <time>08.13.Train</time>
-                <time>08.43.Train</time>
-                <time>10.06.Train</time>
-            </station>
             <station name="Richmond Hill GO Station">
                 <time>05.10.61</time>
                 <time>05.35.61A</time>
@@ -16,6 +9,7 @@
                 <time>06.55.Train</time>
                 <time>07.25.Train</time>
                 <time>07.55.Train</time>
+                <time>08.25.61A</time>
                 <time>08.30.61A</time>
                 <time>09.20.Train</time>
                 <time>10.20.61</time>
@@ -25,18 +19,18 @@
                 <time>14.15.61</time>
             </station>
             <station name="Langstaff GO Station">
-                <time>5.22.61</time>
-                <time>5.52.61</time>
+                <time>05.22.61</time>
+                <time>05.52.61</time>
                 <time>06.31.Train</time>
                 <time>07.01.Train</time>
                 <time>07.31.Train</time>
                 <time>08.01.Train</time>
                 <time>09.26.Train</time>
-                <time>10.35.61</time>
+                <time>10.30.61</time>
                 <time>11.35.61</time>
                 <time>12.35.61</time>
-                <time>13.35.61</time>
-                <time>14.30.61</time>
+               	<time>13.35.61</time>
+               	<time>14.30.61</time>
             </station>
             <station name="Old Cummer GO Station">
                 <time>06.39.Train</time>
@@ -56,12 +50,20 @@
                 <time>05.50.61</time>
                 <time>06.05.61A</time>
                 <time>06.20.61</time>
-                <time>09.30.Train</time>
-                <time>11.10.Train</time>
-                <time>12.10.Train</time>
-                <time>13.10.Train</time>
+                <time>09.25.61A</time>
+                <time>09.30.61A</time>
+                <time>11.10.61</time>
+                <time>12.10.61</time>
+                <time>13.10.61</time>
                 <time>14.10.61</time>
                 <time>15.10.61</time>
+            </station>
+            <station name="Union Station">
+                <time>07.11.Train</time>
+                <time>07.41.Train</time>
+                <time>08.13.Train</time>
+                <time>08.43.Train</time>
+                <time>10.06.Train</time>
             </station>
         </day>
     </direction>

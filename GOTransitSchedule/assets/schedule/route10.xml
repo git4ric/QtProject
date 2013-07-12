@@ -554,101 +554,95 @@
                 <time>00.01.Train</time>
             </station>
             <station name="Union Station">
-                <time>06.10.Train</time>
-                <time>06.38.Train</time>
-                <time>07.06.Train</time>
-                <time>07.25.Train</time>
-                <time>07.45.Train</time>
-                <time>07.43.Train</time>
-                <time>08.11.Train</time>
-                <time>06.13.Train</time>
-                <time>06.41.Train</time>
-                <time>07.28.Train</time>
-                <time>07.40.Train</time>
-                <time>07.50.Train</time>
-                <time>08.13.Train</time>
-                <time>08.05.Train</time>
-                <time>08.15.Train</time>
-                <time>08.25.Train</time>
-                <time>08.33.Train</time>
-                <time>08.32.Train</time>
-                <time>08.52.Train</time>
-                <time>09.15.Train</time>
-                <time>09.33.Train</time>
-                <time>10.11.Train</time>
-                <time>08.43.Train</time>
-                <time>09.17.Train</time>
-                <time>09.43.Train</time>
-                <time>10.13.Train</time>
-                <time>10.41.Train</time>
-                <time>11.11.Train</time>
-                <time>11.41.Train</time>
-                <time>12.11.Train</time>
-                <time>12.41.Train</time>
-                <time>13.11.Train</time>
-                <time>13.41.Train</time>
-                <time>14.11.Train</time>
-                <time>10.43.Train</time>
-                <time>11.13.Train</time>
-                <time>11.43.Train</time>
-                <time>12.13.Train</time>
-                <time>12.43.Train</time>
-                <time>13.13.Train</time>
-                <time>13.43.Train</time>
-                <time>14.13.Train</time>
-                <time>14.41.Train</time>
-                <time>15.11.Train</time>
-                <time>15.41.Train</time>
-                <time>16.23.Train</time>
-                <time>16.41.Train</time>
-                <time>.it.Train</time>
-                <time>.ti.Train</time>
-                <time>14.43.Train</time>
-                <time>15.13.Train</time>
-                <time>15.43.Train</time>
-                <time>16.10.Train</time>
-                <time>16.25.Train</time>
-                <time>16.30.Train</time>
-                <time>16.53.Train</time>
-                <time>17.05.Train</time>
-                <time>17.10.Train</time>
-                <time>17.15.Train</time>
-                <time>17.41.Train</time>
-                <time>18.16.Train</time>
-                <time>18.31.Train</time>
-                <time>19.07.Train</time>
-                <time>19.41.Train</time>
-                <time>17.20.Train</time>
-                <time>17.35.Train</time>
-                <time>17.53.Train</time>
-                <time>18.18.Train</time>
-                <time>18.43.Train</time>
-                <time>19.17.Train</time>
-                <time>19.43.Train</time>
-                <time>20.11.Train</time>
-                <time>20.41.Train</time>
-                <time>21.11.Train</time>
-                <time>21.41.Train</time>
-                <time>22.11.Train</time>
-                <time>22.41.Train</time>
-                <time>23.11.Train</time>
-                <time>20.13.Train</time>
-                <time>20.43.Train</time>
-                <time>21.13.Train</time>
-                <time>21.43.Train</time>
-                <time>22.13.Train</time>
-                <time>22.43.Train</time>
-                <time>23.13.Train</time>
-                <time>00.11.Train</time>
-                <time>00.13.Train</time>
+		<time>06.10.Train</time>
+		<time>06.38.Train</time>
+		<time>07.06.Train</time>
+		<time>07.25.Train</time>
+		<time>07.40.Train</time>
+		<time>07.45.Train</time>
+		<time>07.50.Train</time>
+		<time>08.05.Train</time>
+		<time>08.11.Train</time>
+		<time>08.13.Train</time>
+		<time>08.15.Train</time>
+		<time>08.25.Train</time>
+		<time>08.32.Train</time>
+		<time>08.33.Train</time>
+		<time>08.43.Train</time>
+		<time>08.52.Train</time>
+		<time>09.15.Train</time>
+		<time>09.17.Train</time>
+		<time>09.33.Train</time>
+		<time>09.43.Train</time>
+		<time>10.11.Train</time>
+		<time>10.13.Train</time>
+		<time>10.41.Train</time>
+		<time>10.43.Train</time>
+		<time>11.11.Train</time>
+		<time>11.13.Train</time>
+		<time>11.41.Train</time>
+		<time>11.43.Train</time>
+		<time>12.11.Train</time>
+		<time>12.13.Train</time>
+		<time>12.41.Train</time>
+		<time>12.43.Train</time>
+		<time>13.11.Train</time>
+		<time>13.13.Train</time>
+		<time>13.41.Train</time>
+		<time>13.43.Train</time>
+		<time>14.11.Train</time>
+		<time>14.13.Train</time>
+		<time>14.41.Train</time>
+		<time>14.43.Train</time>
+		<time>15.11.Train</time>
+		<time>15.13.Train</time>
+		<time>15.41.Train</time>
+		<time>15.43.Train</time>
+		<time>16.10.Train</time>
+		<time>16.23.Train</time>
+		<time>16.25.Train</time>
+		<time>16.30.Train</time>
+		<time>16.41.Train</time>
+		<time>16.53.Train</time>
+		<time>17.05.Train</time>
+		<time>17.10.Train</time>
+		<time>17.15.Train</time>
+		<time>17.20.Train</time>
+		<time>17.35.Train</time>
+		<time>17.41.Train</time>
+		<time>17.53.Train</time>
+		<time>18.16.Train</time>
+		<time>18.18.Train</time>
+		<time>18.31.Train</time>
+		<time>18.43.Train</time>
+		<time>19.07.Train</time>
+		<time>19.17.Train</time>
+		<time>19.41.Train</time>
+		<time>19.43.Train</time>
+		<time>20.11.Train</time>
+		<time>20.13.Train</time>
+		<time>20.41.Train</time>
+		<time>20.43.Train</time>
+		<time>21.11.Train</time>
+		<time>21.13.Train</time>
+		<time>21.41.Train</time>
+		<time>21.43.Train</time>
+		<time>22.11.Train</time>
+		<time>22.13.Train</time>
+		<time>22.41.Train</time>
+		<time>22.43.Train</time>
+		<time>23.11.Train</time>
+		<time>23.13.Train</time>
+		<time>00.11.Train</time>
+		<time>00.13.Train</time>
             </station>
             <station name="Toronto Union Bus Term">
                 <time>05.20.18G</time>
                 <time>05.40.18H</time>
                 <time>22.44.Train</time>
-                <time>01.20.0</time>
-                <time>01.25.0</time>
-                <time>02.20.0</time>
+                <time>01.20.90B</time>
+                <time>01.25.90B</time>
+                <time>02.20.90B</time>
             </station>
             <station name="Danforth GO Station">
                 <time>06.23.Train</time>
@@ -881,7 +875,9 @@
                 <time>23.21.Train</time>
                 <time>23.51.Train</time>
                 <time>00.51.Train</time>
-                <time>.ti.0</time>
+                <time>01.50.90B</time>
+                <time>01.55.90B</time>
+                <time>02.50.90B</time>
             </station>
             <station name="Ajax GO Station">
                 <time>06.56.Train</time>
@@ -923,7 +919,9 @@
                 <time>23.26.Train</time>
                 <time>23.56.Train</time>
                 <time>00.56.Train</time>
-                <time>.ti.0</time>
+                <time>01.57.90B</time>
+                <time>02.02.90B</time>
+                <time>02.57.90B</time>
             </station>
             <station name="Whitby GO Station">
                 <time>07.04.Train</time>
@@ -965,92 +963,96 @@
                 <time>23.33.Train</time>
                 <time>00.03.Train</time>
                 <time>01.03.Train</time>
-                <time>.ti.0</time>
+                <time>02.05.90B</time>
+                <time>02.10.90B</time>
+                <time>03.05.90B</time>
             </station>
             <station name="Oshawa GO Station">
-                <time>07.11.Train</time>
-                <time>07.39.Train</time>
-                <time>08.26.Train</time>
-                <time>08.48.Train</time>
-                <time>09.11.Train</time>
-                <time>07.21.90</time>
-                <time>07.49.90</time>
-                <time>08.36.90</time>
-                <time>08.58.90</time>
-                <time>09.21.90</time>
-                <time>09.41.Train</time>
-                <time>10.15.Train</time>
-                <time>10.41.Train</time>
-                <time>11.11.Train</time>
-                <time>09.51.90</time>
-                <time>10.25.90</time>
-                <time>10.51.90</time>
-                <time>11.21.90</time>
-                <time>11.41.Train</time>
-                <time>12.11.Train</time>
-                <time>12.41.Train</time>
-                <time>13.11.Train</time>
-                <time>13.41.Train</time>
-                <time>14.11.Train</time>
-                <time>14.41.Train</time>
-                <time>15.11.Train</time>
-                <time>11.51.90</time>
-                <time>12.21.90</time>
-                <time>12.51.90</time>
-                <time>13.21.90</time>
-                <time>13.51.90</time>
-                <time>14.21.90</time>
-                <time>14.51.90</time>
-                <time>15.21.90</time>
-                <time>15.41.Train</time>
-                <time>16.14.Train</time>
-                <time>16.41.Train</time>
-                <time>17.01.Train</time>
-                <time>17.12.Train</time>
-                <time>17.31.Train</time>
-                <time>17.40.Train</time>
-                <time>17.58.Train</time>
-                <time>15.46.90</time>
-                <time>16.24.90</time>
-                <time>16.51.90</time>
-                <time>17.11.91</time>
-                <time>17.11.90</time>
-                <time>17.22.90A</time>
-                <time>17.50.91</time>
-                <time>17.50.90</time>
-                <time>18.08.91</time>
-                <time>18.16.Train</time>
-                <time>18.40.Train</time>
-                <time>19.19.Train</time>
-                <time>19.41.Train</time>
-                <time>20.15.Train</time>
-                <time>20.41.Train</time>
-                <time>18.08.90A</time>
-                <time>18.26.90</time>
-                <time>18.50.91</time>
-                <time>18.50.90</time>
-                <time>19.29.90</time>
-                <time>19.51.90</time>
-                <time>20.25.90</time>
-                <time>20.51.90</time>
-                <time>21.11.Train</time>
-                <time>21.41.Train</time>
-                <time>22.11.Train</time>
-                <time>22.41.Train</time>
-                <time>23.11.Train</time>
-                <time>23.41.Train</time>
-                <time>00.11.Train</time>
-                <time>21.21.90</time>
-                <time>21.51.90</time>
-                <time>22.21.90</time>
-                <time>22.51.90</time>
-                <time>23.21.90</time>
-                <time>23.51.90</time>
-                <time>00.21.90</time>
-                <time>01.11.Train</time>
-                <time>.ti.0</time>
-                <time>01.21.90</time>
-            </station>
+		<time>07.11.Train</time>
+		<time>07.21.90</time>
+		<time>07.39.Train</time>
+		<time>07.49.90</time>
+		<time>08.26.Train</time>
+		<time>08.36.90</time>
+		<time>08.48.Train</time>
+		<time>08.58.90</time>
+		<time>09.11.Train</time>
+		<time>09.21.90</time>
+		<time>09.41.Train</time>
+		<time>09.51.90</time>
+		<time>10.15.Train</time>
+		<time>10.25.90</time>
+		<time>10.41.Train</time>
+		<time>10.51.90</time>
+		<time>11.11.Train</time>
+		<time>11.21.90</time>
+		<time>11.41.Train</time>
+		<time>11.51.90</time>
+		<time>12.11.Train</time>
+		<time>12.21.90</time>
+		<time>12.41.Train</time>
+		<time>12.51.90</time>
+		<time>13.11.Train</time>
+		<time>13.21.90</time>
+		<time>13.41.Train</time>
+		<time>13.51.90</time>
+		<time>14.11.Train</time>
+		<time>14.21.90</time>
+		<time>14.41.Train</time>
+		<time>14.51.90</time>
+		<time>15.11.Train</time>
+		<time>15.21.90</time>
+		<time>15.41.Train</time>
+		<time>15.46.90</time>
+		<time>16.14.Train</time>
+		<time>16.24.90</time>
+		<time>16.41.Train</time>
+		<time>16.51.90</time>
+		<time>17.01.Train</time>
+		<time>17.11.90</time>
+		<time>17.11.91</time>
+		<time>17.12.Train</time>
+		<time>17.22.90A</time>
+		<time>17.31.Train</time>
+		<time>17.40.Train</time>
+		<time>17.50.90</time>
+		<time>17.50.91</time>
+		<time>17.58.Train</time>
+		<time>18.08.90A</time>
+		<time>18.08.91</time>
+		<time>18.16.Train</time>
+		<time>18.26.90</time>
+		<time>18.40.Train</time>
+		<time>18.50.90</time>
+		<time>18.50.91</time>
+		<time>19.19.Train</time>
+		<time>19.29.90</time>
+		<time>19.41.Train</time>
+		<time>19.51.90</time>
+		<time>20.15.Train</time>
+		<time>20.25.90</time>
+		<time>20.41.Train</time>
+		<time>20.51.90</time>
+		<time>21.11.Train</time>
+		<time>21.21.90</time>
+		<time>21.41.Train</time>
+		<time>21.51.90</time>
+		<time>22.11.Train</time>
+		<time>22.21.90</time>
+		<time>22.41.Train</time>
+		<time>22.51.90</time>
+		<time>23.11.Train</time>
+		<time>23.21.90</time>
+		<time>23.41.Train</time>
+		<time>23.51.90</time>
+		<time>00.11.Train</time>
+		<time>00.21.90</time>
+		<time>01.11.Train</time>
+		<time>01.21.90</time>
+                <time>02.15.90B</time>
+                <time>02.20.90B</time>
+                <time>03.15.90B</time>
+	    </station>
             <station name="Oshawa Centre Mall">
                 <time>07.25.90</time>
                 <time>07.53.90</time>
@@ -1355,27 +1357,6 @@
     </direction>
     <direction number="1">
         <day number="1">
-            <station name="McMaster U Bus Term.">
-                <time>07.41.0</time>
-                <time>08.23.90A</time>
-                <time>09.18.0</time>
-                <time>09.38.0</time>
-                <time>10.07.0</time>
-                <time>11.08.90A</time>
-                <time>12.08.90</time>
-                <time>13.08.90</time>
-                <time>14.08.90</time>
-                <time>15.08.90</time>
-                <time>16.13.90</time>
-                <time>17.30.0</time>
-                <time>18.06.0</time>
-                <time>18.35.0</time>
-                <time>19.45.90</time>
-                <time>20.08.90</time>
-                <time>21.08.90</time>
-                <time>22.08.90</time>
-                <time>23.08.90</time>
-            </station>
             <station name="Newcastle Bus Loop">
                 <time>05.02.90</time>
                 <time>05.52.91</time>
@@ -1545,7 +1526,6 @@
                 <time>07.28.90A</time>
                 <time>07.15.91</time>
                 <time>07.47.91</time>
-                <time>.ti.90</time>
             </station>
             <station name="Courtice King/Courtice">
                 <time>05.05.90A</time>
@@ -1567,7 +1547,7 @@
                 <time>12.18.90</time>
                 <time>12.48.90</time>
                 <time>13.18.90</time>
-                <time>13.8&lt;.90</time>
+                <time>13.38.90</time>
                 <time>14.18.90</time>
                 <time>14.48.90</time>
                 <time>15.18.90</time>
@@ -1662,88 +1642,88 @@
                 <time>23.11.90</time>
             </station>
             <station name="Oshawa GO Station">
-                <time>05.32.90A</time>
-                <time>05.57.90</time>
-                <time>06.12.90A</time>
-                <time>06.32.91</time>
-                <time>06.45.90</time>
-                <time>07.00.91</time>
                 <time>04.15.90B</time>
-                <time>05.07.Train</time>
-                <time>05.47.Train</time>
-                <time>06.12.Train</time>
-                <time>06.27.Train</time>
-                <time>06.47.Train</time>
-                <time>07.00.Train</time>
-                <time>07.15.Train</time>
-                <time>07.13.90A</time>
-                <time>07.38.90</time>
-                <time>07.38.91</time>
-                <time>08.10.90</time>
-                <time>08.10.91</time>
-                <time>08.23.90A</time>
-                <time>08.53.90</time>
-                <time>07.28.Train</time>
-                <time>07.53.Train</time>
-                <time>08.25.Train</time>
-                <time>08.38.Train</time>
-                <time>09.08.Train</time>
-                <time>09.23.90</time>
-                <time>09.53.90</time>
-                <time>10.23.90</time>
-                <time>10.53.90</time>
-                <time>11.23.90</time>
-                <time>11.53.90</time>
-                <time>12.23.90</time>
-                <time>12.53.90</time>
-                <time>09.38.Train</time>
-                <time>10.08.Train</time>
-                <time>10.38.Train</time>
-                <time>11.08.Train</time>
-                <time>11.38.Train</time>
-                <time>12.08.Train</time>
-                <time>12.38.Train</time>
-                <time>13.08.Train</time>
-                <time>13.23.90</time>
-                <time>13.53.90</time>
-                <time>14.13.90</time>
-                <time>14.53.90</time>
-                <time>15.23.90</time>
-                <time>13.38.Train</time>
-                <time>14.08.Train</time>
-                <time>14.28.Train</time>
-                <time>15.08.Train</time>
-                <time>15.38.Train</time>
-                <time>15.53.90</time>
-                <time>16.09.90</time>
-                <time>16.56.90</time>
-                <time>17.26.90</time>
-                <time>16.08.Train</time>
-                <time>16.24.Train</time>
-                <time>16.56.Train</time>
-                <time>17.11.Train</time>
-                <time>17.22.Train</time>
-                <time>17.41.Train</time>
-                <time>18.23.90</time>
-                <time>18.53.90</time>
-                <time>19.23.90</time>
-                <time>19.53.90</time>
-                <time>20.23.90</time>
-                <time>20.53.90</time>
-                <time>21.23.90</time>
-                <time>21.53.90</time>
-                <time>18.38.Train</time>
-                <time>19.08.Train</time>
-                <time>19.38.Train</time>
-                <time>20.08.Train</time>
-                <time>20.38.Train</time>
-                <time>21.08.Train</time>
-                <time>21.38.Train</time>
-                <time>22.08.Train</time>
-                <time>22.23.90</time>
-                <time>23.23.90</time>
-                <time>22.38.Train</time>
-                <time>23.38.Train</time>
+		<time>05.07.Train</time>
+		<time>05.32.90A</time>
+		<time>05.47.Train</time>
+		<time>05.57.90</time>
+		<time>06.12.90A</time>
+		<time>06.12.Train</time>
+		<time>06.27.Train</time>
+		<time>06.32.91</time>
+		<time>06.45.90</time>
+		<time>06.47.Train</time>
+		<time>07.00.91</time>
+		<time>07.00.Train</time>
+		<time>07.13.90A</time>
+		<time>07.15.Train</time>
+		<time>07.28.Train</time>
+		<time>07.38.90</time>
+		<time>07.38.91</time>
+		<time>07.53.Train</time>
+		<time>08.10.90</time>
+		<time>08.10.91</time>
+		<time>08.23.90A</time>
+		<time>08.25.Train</time>
+		<time>08.38.Train</time>
+		<time>08.53.90</time>
+		<time>09.08.Train</time>
+		<time>09.23.90</time>
+		<time>09.38.Train</time>
+		<time>09.53.90</time>
+		<time>10.08.Train</time>
+		<time>10.23.90</time>
+		<time>10.38.Train</time>
+		<time>10.53.90</time>
+		<time>11.08.Train</time>
+		<time>11.23.90</time>
+		<time>11.38.Train</time>
+		<time>11.53.90</time>
+		<time>12.08.Train</time>
+		<time>12.23.90</time>
+		<time>12.38.Train</time>
+		<time>12.53.90</time>
+		<time>13.08.Train</time>
+		<time>13.23.90</time>
+		<time>13.38.Train</time>
+		<time>13.53.90</time>
+		<time>14.08.Train</time>
+		<time>14.13.90</time>
+		<time>14.28.Train</time>
+		<time>14.53.90</time>
+		<time>15.08.Train</time>
+		<time>15.23.90</time>
+		<time>15.38.Train</time>
+		<time>15.53.90</time>
+		<time>16.08.Train</time>
+		<time>16.09.90</time>
+		<time>16.24.Train</time>
+		<time>16.56.90</time>
+		<time>16.56.Train</time>
+		<time>17.11.Train</time>
+		<time>17.22.Train</time>
+		<time>17.26.90</time>
+		<time>17.41.Train</time>
+		<time>18.23.90</time>
+		<time>18.38.Train</time>
+		<time>18.53.90</time>
+		<time>19.08.Train</time>
+		<time>19.23.90</time>
+		<time>19.38.Train</time>
+		<time>19.53.90</time>
+		<time>20.08.Train</time>
+		<time>20.23.90</time>
+		<time>20.38.Train</time>
+		<time>20.53.90</time>
+		<time>21.08.Train</time>
+		<time>21.23.90</time>
+		<time>21.38.Train</time>
+		<time>21.53.90</time>
+		<time>22.08.Train</time>
+		<time>22.23.90</time>
+		<time>22.38.Train</time>
+		<time>23.23.90</time>
+		<time>23.38.Train</time>
             </station>
             <station name="Whitby GO Station">
                 <time>04.25.90B</time>
@@ -2079,95 +2059,94 @@
                 <time>00.27.Train</time>
             </station>
             <station name="Union Station">
-                <time>06.10.Train</time>
-                <time>06.50.Train</time>
-                <time>07.15.Train</time>
-                <time>07.30.Train</time>
-                <time>07.38.Train</time>
-                <time>07.50.Train</time>
-                <time>08.08.Train</time>
-                <time>08.05.Train</time>
-                <time>06.13.Train</time>
-                <time>06.55.Train</time>
-                <time>08.13.Train</time>
-                <time>08.18.Train</time>
-                <time>08.42.Train</time>
-                <time>08.43.Train</time>
-                <time>09.10.Train</time>
-                <time>09.18.Train</time>
-                <time>09.41.Train</time>
-                <time>10.11.Train</time>
-                <time>08.46.Train</time>
-                <time>09.13.Train</time>
-                <time>09.43.Train</time>
-                <time>10.13.Train</time>
-                <time>10.41.Train</time>
-                <time>11.11.Train</time>
-                <time>11.41.Train</time>
-                <time>12.11.Train</time>
-                <time>12.41.Train</time>
-                <time>13.11.Train</time>
-                <time>13.41.Train</time>
-                <time>14.11.Train</time>
-                <time>10.43.Train</time>
-                <time>11.13.Train</time>
-                <time>11.43.Train</time>
-                <time>12.13.Train</time>
-                <time>12.43.Train</time>
-                <time>13.13.Train</time>
-                <time>13.43.Train</time>
-                <time>14.13.Train</time>
-                <time>14.41.Train</time>
-                <time>15.11.Train</time>
-                <time>15.31.Train</time>
-                <time>16.11.Train</time>
-                <time>16.41.Train</time>
-                <time>.ti.Train</time>
-                <time>14.43.Train</time>
-                <time>15.13.Train</time>
-                <time>15.43.Train</time>
-                <time>16.10.Train</time>
-                <time>16.13.Train</time>
-                <time>16.30.Train</time>
-                <time>16.43.Train</time>
-                <time>16.47.Train</time>
-                <time>17.02.Train</time>
-                <time>17.11.Train</time>
-                <time>17.27.Train</time>
-                <time>17.45.Train</time>
-                <time>18.00.Train</time>
-                <time>18.21.Train</time>
-                <time>18.41.Train</time>
-                <time>17.13.Train</time>
-                <time>17.15.Train</time>
-                <time>17.23.Train</time>
-                <time>17.34.Train</time>
-                <time>17.43.Train</time>
-                <time>18.15.Train</time>
-                <time>18.20.Train</time>
-                <time>18.35.Train</time>
-                <time>18.43.Train</time>
-                <time>19.05.Train</time>
-                <time>19.41.Train</time>
-                <time>20.41.Train</time>
-                <time>21.11.Train</time>
-                <time>21.41.Train</time>
-                <time>22.11.Train</time>
-                <time>22.41.Train</time>
-                <time>23.11.Train</time>
-                <time>19.13.Train</time>
-                <time>19.43.Train</time>
-                <time>20.13.Train</time>
-                <time>20.43.Train</time>
-                <time>21.13.Train</time>
-                <time>21.43.Train</time>
-                <time>22.13.Train</time>
-                <time>22.43.Train</time>
-                <time>23.13.Train</time>
-                <time>23.41.Train</time>
-                <time>00.41.Train</time>
-                <time>23.43.Train</time>
-                <time>00.43.Train</time>
+		<time>06.10.Train</time>
+		<time>06.13.Train</time>
+		<time>06.50.Train</time>
+		<time>06.55.Train</time>
+		<time>07.15.Train</time>
+		<time>07.30.Train</time>
+		<time>07.38.Train</time>
+		<time>07.50.Train</time>
+		<time>08.05.Train</time>
+		<time>08.08.Train</time>
+		<time>08.13.Train</time>
+		<time>08.18.Train</time>
+		<time>08.42.Train</time>
+		<time>08.43.Train</time>
+		<time>08.46.Train</time>
+		<time>09.10.Train</time>
+		<time>09.13.Train</time>
+		<time>09.18.Train</time>
+		<time>09.41.Train</time>
+		<time>09.43.Train</time>
+		<time>10.11.Train</time>
+		<time>10.13.Train</time>
+		<time>10.41.Train</time>
+		<time>10.43.Train</time>
+		<time>11.11.Train</time>
+		<time>11.13.Train</time>
+		<time>11.41.Train</time>
+		<time>11.43.Train</time>
+		<time>12.11.Train</time>
+		<time>12.13.Train</time>
+		<time>12.41.Train</time>
+		<time>12.43.Train</time>
+		<time>13.11.Train</time>
+		<time>13.13.Train</time>
+		<time>13.41.Train</time>
+		<time>13.43.Train</time>
+		<time>14.11.Train</time>
+		<time>14.13.Train</time>
+		<time>14.41.Train</time>
+		<time>14.43.Train</time>
+		<time>15.11.Train</time>
+		<time>15.13.Train</time>
+		<time>15.31.Train</time>
+		<time>15.43.Train</time>
+		<time>16.10.Train</time>
+		<time>16.11.Train</time>
+		<time>16.13.Train</time>
+		<time>16.30.Train</time>
+		<time>16.41.Train</time>
+		<time>16.43.Train</time>
+		<time>16.47.Train</time>
+		<time>17.02.Train</time>
+		<time>17.11.Train</time>
+		<time>17.13.Train</time>
+		<time>17.15.Train</time>
+		<time>17.23.Train</time>
+		<time>17.27.Train</time>
+		<time>17.34.Train</time>
+		<time>17.43.Train</time>
+		<time>17.45.Train</time>
+		<time>18.00.Train</time>
+		<time>18.15.Train</time>
+		<time>18.20.Train</time>
+		<time>18.21.Train</time>
+		<time>18.35.Train</time>
+		<time>18.41.Train</time>
+		<time>18.43.Train</time>
+		<time>19.05.Train</time>
+		<time>19.13.Train</time>
+		<time>19.41.Train</time>
+		<time>19.43.Train</time>
+		<time>20.13.Train</time>
+		<time>20.41.Train</time>
+		<time>20.43.Train</time>
+		<time>21.11.Train</time>
+		<time>21.13.Train</time>
+		<time>21.41.Train</time>
+		<time>21.43.Train</time>
+		<time>22.11.Train</time>
+		<time>22.13.Train</time>
+		<time>22.41.Train</time>
+		<time>22.43.Train</time>
+		<time>23.11.Train</time>
+		<time>23.13.Train</time>
+		<time>23.41.Train</time>
+		<time>23.43.Train</time>
+		<time>00.41.Train</time>
+		<time>00.43.Train</time>		
             </station>
             <station name="Toronto Union Bus Term">
                 <time>05.20.90B</time>
@@ -2329,9 +2308,9 @@
                 <time>23.38.Train</time>
                 <time>00.08.Train</time>
                 <time>01.08.Train</time>
-                <time>>D.01.18C</time>
-                <time>>D.01.18D</time>
-                <time>>D.02.18C</time>
+                <time>01.48.18C</time>
+                <time>01.48.18D</time>
+                <time>02.48.18C</time>
             </station>
             <station name="Clarkson GO Station">
                 <time>06.44.Train</time>
@@ -2378,9 +2357,9 @@
                 <time>23.44.Train</time>
                 <time>00.14.Train</time>
                 <time>01.14.Train</time>
-                <time>>D.01.18C</time>
-                <time>>D.01.18D</time>
-                <time>>D.02.18C</time>
+                <time>01.58.18C</time>
+                <time>01.58.18D</time>
+                <time>02.58.18C</time>
             </station>
             <station name="Oakville GO Station">
                 <time>06.51.Train</time>
@@ -2426,9 +2405,9 @@
                 <time>23.52.Train</time>
                 <time>00.22.Train</time>
                 <time>01.22.Train</time>
-                <time>>D.02.18C</time>
-                <time>>D.01.18F</time>
-                <time>>D.03.18C</time>
+                <time>01.52.18F</time>
+                <time>02.07.18C</time>
+                <time>03.07.18C</time>
             </station>
             <station name="Bronte GO Station">
                 <time>06.57.Train</time>
@@ -2473,9 +2452,9 @@
                 <time>23.58.Train</time>
                 <time>00.28.Train</time>
                 <time>01.28.Train</time>
-                <time>>D.02.18C</time>
-                <time>>D.02.18F</time>
-                <time>>D.03.18C</time>
+                <time>02.00.18F</time>
+                <time>02.15.18C</time>
+                <time>03.15.18C</time>
             </station>
             <station name="Appleby GO Station">
                 <time>07.03.Train</time>
@@ -2521,9 +2500,9 @@
                 <time>00.05.Train</time>
                 <time>00.35.Train</time>
                 <time>01.35.Train</time>
-                <time>>D.02.18C</time>
-                <time>>D.02.18F</time>
-                <time>>D.03.18C</time>
+                <time>02.10.18C</time>
+                <time>02.25.18F</time>
+                <time>03.25.18C</time>
             </station>
             <station name="Burlington GO Station">
                 <time>07.10.Train</time>
@@ -2550,7 +2529,8 @@
                 <time>17.22.Train</time>
                 <time>17.35.Train</time>
                 <time>17.54.Train</time>
-                <time>17.08.0</time>
+                <time>17.08.15A</time>
+                <time>17.08.18A</time>
                 <time>18.04.Train</time>
                 <time>18.13.Train</time>
                 <time>18.26.Train</time>
@@ -2569,187 +2549,213 @@
                 <time>00.12.Train</time>
                 <time>00.42.Train</time>
                 <time>01.42.Train</time>
-                <time>>D.02.18C</time>
-                <time>>D.02.18F</time>
-                <time>>D.03.18C</time>
+                <time>02.15.18C</time>
+                <time>02.30.18F</time>
+                <time>03.30.18C</time>
             </station>
             <station name="Aldershot GO Station">
-                <time>07.16.Train</time>
-                <time>07.58.Train</time>
-                <time>08.53.Train</time>
-                <time>09.18.Train</time>
-                <time>07.26.0</time>
-                <time>08.08.90A</time>
-                <time>08.08.90</time>
-                <time>09.03.0</time>
-                <time>09.28.0</time>
-                <time>09.28.91</time>
-                <time>09.47.Train</time>
-                <time>10.18.Train</time>
-                <time>10.48.Train</time>
-                <time>11.18.Train</time>
-                <time>09.57.0</time>
-                <time>10.28.0</time>
-                <time>10.58.90A</time>
-                <time>10.58.0</time>
-                <time>11.28.90</time>
-                <time>11.48.Train</time>
-                <time>12.18.Train</time>
-                <time>12.48.Train</time>
-                <time>13.18.Train</time>
-                <time>13.48.Train</time>
-                <time>14.18.Train</time>
-                <time>14.48.Train</time>
-                <time>15.18.Train</time>
-                <time>11.58.90</time>
-                <time>11.58.18</time>
-                <time>12.28.90</time>
-                <time>12.58.90</time>
-                <time>12.58.18</time>
-                <time>13.28.90</time>
-                <time>13.58.90</time>
-                <time>13.58.0</time>
-                <time>14.28.90</time>
-                <time>14.58.90</time>
-                <time>14.58.0</time>
-                <time>15.28.90</time>
-                <time>15.48.Train</time>
-                <time>16.18.Train</time>
-                <time>16.47.Train</time>
-                <time>17.18.0</time>
-                <time>17.18.Train</time>
-                <time>17.28.Train</time>
-                <time>17.41.Train</time>
-                <time>18.00.Train</time>
-                <time>15.58.90</time>
-                <time>15.58.0</time>
-                <time>16.28.90</time>
-                <time>16.57.90</time>
-                <time>17.51.0</time>
-                <time>18.10.Train</time>
-                <time>18.19.Train</time>
-                <time>18.32.Train</time>
-                <time>18.48.Train</time>
-                <time>19.20.Train</time>
-                <time>19.33.Train</time>
-                <time>19.48.Train</time>
-                <time>18.20.0</time>
-                <time>18.58.90</time>
-                <time>19.30.90</time>
-                <time>19.30.&amp;nbsp;</time>
-                <time>19.58.90</time>
-                <time>19.58.18</time>
-                <time>20.18.Train</time>
-                <time>20.48.Train</time>
-                <time>21.18.Train</time>
-                <time>21.48.Train</time>
-                <time>22.18.Train</time>
-                <time>22.48.Train</time>
-                <time>23.18.Train</time>
-                <time>23.48.Train</time>
-                <time>00.18.Train</time>
-                <time>20.28.0</time>
-                <time>20.58.90</time>
-                <time>20.58.18</time>
-                <time>21.28.90</time>
-                <time>21.58.90</time>
-                <time>21.58.0</time>
-                <time>22.28.90</time>
-                <time>22.58.90</time>
-                <time>22.58.0</time>
-                <time>23.28.90</time>
-                <time>00.28.90</time>
-                <time>00.48.Train</time>
-                <time>01.48.Train</time>
-                <time>>D.02.18C</time>
-                <time>>D.02.18F</time>
-                <time>>D.03.18C</time>
-                <time>00.58.90</time>
-                <time>01.58.90</time>
+		<time>07.16.Train</time>
+		<time>07.26.15</time>
+		<time>07.26.18</time>
+		<time>07.58.Train</time>
+		<time>08.08.15</time>
+		<time>08.08.18</time>
+		<time>08.53.Train</time>
+		<time>09.03.15</time>
+		<time>09.03.18</time>
+		<time>09.18.Train</time>
+		<time>09.28.15</time>
+		<time>09.28.18</time>
+		<time>09.47.Train</time>
+		<time>09.57.15</time>
+		<time>09.57.18</time>
+		<time>10.18.Train</time>
+		<time>10.28.18</time>
+		<time>10.48.Train</time>
+		<time>10.58.15</time>
+		<time>10.58.18</time>
+		<time>11.18.Train</time>
+		<time>11.28.18</time>
+		<time>11.48.Train</time>
+		<time>11.58.15</time>
+		<time>11.58.18</time>
+		<time>12.18.Train</time>
+		<time>12.28.90</time>
+		<time>12.48.Train</time>
+		<time>12.58.15</time>
+		<time>12.58.18</time>
+		<time>13.18.Train</time>
+		<time>13.28.18</time>
+		<time>13.48.Train</time>
+		<time>13.58.15</time>
+		<time>13.58.18</time>
+		<time>14.18.Train</time>
+		<time>14.28.18</time>
+		<time>14.48.Train</time>
+		<time>14.58.15</time>
+		<time>14.58.18</time>
+		<time>15.18.Train</time>
+		<time>15.28.18</time>
+		<time>15.48.Train</time>
+		<time>15.58.15</time>
+		<time>15.58.18</time>
+		<time>16.18.Train</time>
+		<time>16.28.18</time>
+		<time>16.47.Train</time>
+		<time>16.57.18</time>
+		<time>17.18.18A</time>
+		<time>17.18.Train</time>
+		<time>17.28.Train</time>
+		<time>17.41.Train</time>
+		<time>17.51.15</time>
+		<time>17.51.18</time>
+		<time>18.00.Train</time>
+		<time>18.10.Train</time>
+		<time>18.19.Train</time>
+		<time>18.20.15</time>
+		<time>18.20.18</time>
+		<time>18.32.Train</time>
+		<time>18.48.Train</time>
+		<time>18.58.18</time>
+		<time>19.20.Train</time>
+		<time>19.30.15</time>
+		<time>19.30.18</time>
+		<time>19.33.Train</time>
+		<time>19.48.Train</time>
+		<time>19.58.15</time>
+		<time>19.58.18</time>
+		<time>20.18.Train</time>
+		<time>20.28.18</time>
+		<time>20.48.Train</time>
+		<time>20.58.15</time>
+		<time>20.58.18</time>
+		<time>21.18.Train</time>
+		<time>21.28.18</time>
+		<time>21.48.Train</time>
+		<time>21.58.15</time>
+		<time>21.58.18</time>
+		<time>22.18.Train</time>
+		<time>22.28.18</time>
+		<time>22.48.Train</time>
+		<time>22.58.15</time>
+		<time>22.58.18</time>
+		<time>23.18.Train</time>
+		<time>23.28.18</time>
+		<time>23.48.Train</time>
+		<time>00.18.Train</time>
+		<time>00.28.18</time>
+		<time>00.48.Train</time>
+		<time>00.58.18</time>
+		<time>01.48.Train</time>
+		<time>01.58.18</time>
+		<time>02.25.18F</time>
+		<time>02.40.18C</time>
+		<time>03.40.18C</time>
             </station>
             <station name="Hamilton Main &amp; Longwood">
-                <time>07.36.0</time>
-                <time>08.18.90</time>
-                <time>09.13.0</time>
-                <time>09.38.91</time>
-                <time>10.04.0</time>
-                <time>10.35.0</time>
-                <time>11.05.0</time>
-                <time>11.35.90</time>
+                <time>07.36.18</time>
+                <time>08.18.18</time>
+                <time>09.13.18</time>
+                <time>09.38.18</time>
+                <time>10.04.18</time>
+                <time>10.35.18</time>
+                <time>11.05.18</time>
+                <time>11.35.18</time>
                 <time>12.05.18</time>
                 <time>12.35.90</time>
                 <time>13.05.18</time>
-                <time>13.35.90</time>
-                <time>14.05.0</time>
-                <time>14.35.90</time>
-                <time>15.05.0</time>
-                <time>15.38.90</time>
-                <time>16.08.0</time>
-                <time>16.38.90</time>
-                <time>17.07.90</time>
-                <time>17.28.0</time>
-                <time>18.01.0</time>
-                <time>18.30.0</time>
-                <time>19.08.90</time>
-                <time>19.40.&amp;nbsp;</time>
+                <time>13.35.18</time>
+                <time>14.05.18</time>
+                <time>14.35.18</time>
+                <time>15.05.18</time>
+                <time>15.38.18</time>
+                <time>16.08.18</time>
+                <time>16.38.18</time>
+                <time>17.07.18</time>
+                <time>17.28.18A</time>
+                <time>18.01.18</time>
+                <time>18.30.18</time>
+                <time>19.08.18</time>
+                <time>19.40.18</time>
                 <time>20.05.18</time>
-                <time>20.35.0</time>
+                <time>20.35.18</time>
                 <time>21.05.18</time>
-                <time>21.35.90</time>
-                <time>22.05.0</time>
-                <time>22.35.90</time>
-                <time>23.05.0</time>
-                <time>23.35.90</time>
-                <time>00.35.90</time>
-                <time>01.05.90</time>
-                <time>02.05.90</time>
-                <time>>D.02.18C</time>
-                <time>>D.02.18F</time>
-                <time>>D.03.18C</time>
+                <time>21.35.18</time>
+                <time>22.05.18</time>
+                <time>22.35.18</time>
+                <time>23.05.18</time>
+                <time>23.35.18</time>
+                <time>00.35.18</time>
+                <time>01.05.18</time>
+                <time>02.05.18</time>
+		<time>02.32.18F</time>
+		<time>02.47.18C</time>
+		<time>03.47.18C</time>
             </station>
             <station name="Hamilton GO Centre">
-                <time>07.46.0</time>
-                <time>08.28.90</time>
-                <time>09.23.0</time>
-                <time>09.48.91</time>
-                <time>10.12.0</time>
-                <time>10.43.0</time>
-                <time>11.13.0</time>
-                <time>11.43.90</time>
+                <time>07.46.18</time>
+                <time>08.28.18</time>
+                <time>09.23.18</time>
+                <time>09.48.18</time>
+                <time>10.12.18</time>
+                <time>10.43.18</time>
+                <time>11.13.18</time>
+                <time>11.43.18</time>
                 <time>12.13.18</time>
                 <time>12.43.90</time>
                 <time>13.13.18</time>
-                <time>13.43.90</time>
-                <time>14.13.0</time>
-                <time>14.43.90</time>
-                <time>15.13.0</time>
-                <time>15.47.90</time>
-                <time>16.18.0</time>
-                <time>16.48.90</time>
-                <time>17.17.90</time>
-                <time>17.38.0</time>
+                <time>13.43.18</time>
+                <time>14.13.18</time>
+                <time>14.43.18</time>
+                <time>15.13.18</time>
+                <time>15.47.18</time>
+                <time>16.18.18</time>
+                <time>16.48.18</time>
+                <time>17.17.18</time>
+                <time>17.38.18</time>
                 <time>17.45.Train</time>
-                <time>18.11.0</time>
+                <time>18.11.18</time>
                 <time>18.17.Train</time>
-                <time>18.40.0</time>
+                <time>18.40.18</time>
                 <time>18.49.Train</time>
-                <time>19.18.90</time>
-                <time>19.50.&amp;nbsp;</time>
+                <time>19.18.18</time>
+                <time>19.50.18</time>
                 <time>19.50.Train</time>
                 <time>20.13.18</time>
-                <time>20.43.0</time>
+                <time>20.43.18</time>
                 <time>21.13.18</time>
-                <time>21.43.90</time>
-                <time>22.13.0</time>
-                <time>22.43.90</time>
-                <time>23.10.0</time>
-                <time>23.43.90</time>
-                <time>00.43.90</time>
-                <time>01.13.90</time>
-                <time>02.13.90</time>
-                <time>>D.02.18C</time>
-                <time>>D.02.18F</time>
-                <time>>D.03.18C</time>
+                <time>21.43.18</time>
+                <time>22.13.18</time>
+                <time>22.43.18</time>
+                <time>23.10.18</time>
+                <time>23.43.18</time>
+                <time>00.43.18</time>
+                <time>01.13.18</time>
+                <time>02.13.18</time>
+		<time>02.40.18F</time>
+		<time>02.55.18C</time>
+		<time>03.55.18C</time>
+            </station>
+            <station name="McMaster U Bus Term.">
+                <time>07.41.15</time>
+                <time>08.23.15</time>
+                <time>09.18.15</time>
+                <time>09.38.15</time>
+                <time>10.07.15</time>
+                <time>11.08.15</time>
+                <time>12.08.15</time>
+                <time>13.08.15</time>
+                <time>14.08.15</time>
+                <time>15.08.15</time>
+                <time>16.13.15</time>
+                <time>17.30.15</time>
+                <time>18.06.15</time>
+                <time>18.35.15</time>
+                <time>19.45.15</time>
+                <time>20.08.15</time>
+                <time>21.08.15</time>
+                <time>22.08.15</time>
+                <time>23.08.15</time>
             </station>
         </day>
     </direction>

@@ -55,41 +55,41 @@
                 <time>16.33.27A</time>
                 <time>17.33.27A</time>
             </station>
-            <station name="Mdwvale Derry &amp; Winston">
-                <time>05.30.27</time>
-                <time>05.50.27</time>
-                <time>06.07.27</time>
-                <time>06.27.27</time>
-                <time>06.32.27B</time>
-                <time>06.47.27</time>
-                <time>07.02.27</time>
-                <time>07.17.27</time>
-                <time>07.22.27B</time>
-                <time>07.28.27</time>
-                <time>07.38.27</time>
-                <time>09.37.21B</time>
-                <time>10.47.27A</time>
-                <time>14.17.27A</time>
-                <time>16.47.27A</time>
-                <time>17.47.27A</time>
+            <station name="Derry Rd &amp; 9th Line">
+                <time>05.28.27</time>
+                <time>05.48.27</time>
+                <time>06.05.27</time>
+                <time>06.25.27</time>
+                <time>06.30.27B</time>
+                <time>06.45.27</time>
+                <time>07.00.27</time>
+                <time>07.15.27</time>
+                <time>07.20.27B</time>
+                <time>07.26.27</time>
+                <time>07.36.27</time>
+                <time>09.35.21B</time>
+                <time>10.45.27A</time>
+                <time>14.15.27A</time>
+                <time>16.45.27A</time>
+                <time>17.45.27A</time>
             </station>
             <station name="Meadowvale Town Centre">
-                <time>05.33.27</time>
-                <time>05.53.27</time>
-                <time>06.12.27</time>
-                <time>06.32.27</time>
-                <time>06.37.27B</time>
-                <time>06.52.27</time>
-                <time>07.07.27</time>
-                <time>07.22.27</time>
-                <time>07.27.27B</time>
-                <time>07.36.27</time>
-                <time>07.46.27</time>
-                <time>09.44.21B</time>
-                <time>10.54.27A</time>
-                <time>14.24.27A</time>
-                <time>>1.54.27A</time>
-                <time>17.54.27A</time>
+                <time>05.31.27</time>
+                <time>05.51.27</time>
+                <time>06.10.27</time>
+                <time>06.30.27</time>
+                <time>06.35.27B</time>
+                <time>06.50.27</time>
+                <time>07.05.27</time>
+                <time>07.20.27</time>
+                <time>07.25.27B</time>
+                <time>07.34.27</time>
+                <time>07.44.27</time>
+                <time>09.42.21B</time>
+                <time>10.52.27A</time>
+                <time>14.22.27A</time>
+                <time>16.52.27A</time>
+                <time>17.52.27A</time>
             </station>
             <station name="Meadowvale GO Station">
                 <time>05.40.27</time>
@@ -105,7 +105,7 @@
                 <time>07.55.27</time>
                 <time>08.55.27D</time>
                 <time>09.50.21B</time>
-                <time>>h.10.21F</time>
+                <time>>h.10.27F</time>
                 <time>11.00.27A</time>
                 <time>12.00.27F</time>
                 <time>13.00.27F</time>
@@ -132,7 +132,7 @@
                 <time>07.48.27</time>
                 <time>07.58.27</time>
                 <time>08.58.27D</time>
-                <time>10.03.21F</time>
+                <time>10.03.27F</time>
                 <time>11.03.27A</time>
                 <time>12.03.27F</time>
                 <time>13.03.27F</time>
@@ -147,14 +147,14 @@
                 <time>20.03.27F</time>
             </station>
             <station name="Meadowvale  Business Park">
-                <time>10.06.21F</time>
+                <time>10.06.27F</time>
                 <time>11.06.27A</time>
                 <time>12.06.27F</time>
                 <time>13.06.27F</time>
                 <time>14.06.27F</time>
                 <time>14.36.27A</time>
                 <time>15.06.27F</time>
-                <time>15.40.27F</time>
+                <time>15.36.27F</time>
                 <time>16.10.27F</time>
                 <time>16.40.27F</time>
                 <time>17.10.27A</time>
@@ -172,14 +172,14 @@
                 <time>08.25.27</time>
                 <time>08.35.27</time>
                 <time>09.30.27D</time>
-                <time>10.30.21F</time>
+                <time>10.30.27F</time>
                 <time>11.30.27A</time>
                 <time>12.30.27F</time>
                 <time>13.30.27F</time>
                 <time>14.30.27F</time>
                 <time>15.00.27A</time>
                 <time>15.30.27F</time>
-                <time>16.10.27F</time>
+                <time>16.00.27F</time>
                 <time>16.40.27F</time>
                 <time>17.10.27F</time>
                 <time>17.45.27A</time>
@@ -197,16 +197,16 @@
                 <time>08.30.27</time>
                 <time>08.40.27</time>
                 <time>09.35.27D</time>
-                <time>10.35.21F</time>
+                <time>10.35.27F</time>
                 <time>11.35.27A</time>
                 <time>12.35.27F</time>
                 <time>13.35.27F</time>
                 <time>14.35.27F</time>
                 <time>15.05.27A</time>
                 <time>15.35.27F</time>
-                <time>16.15.27F</time>
+                <time>16.05.27F</time>
                 <time>16.45.27F</time>
-                <time>17.45.27F</time>
+                <time>17.15.27F</time>
                 <time>17.50.27A</time>
                 <time>18.50.27A</time>
                 <time>20.35.27F</time>
@@ -226,14 +226,14 @@
                 <time>08.40.27</time>
                 <time>08.50.27</time>
                 <time>09.45.27D</time>
-                <time>10.45.21F</time>
+                <time>10.45.27F</time>
                 <time>11.45.27A</time>
                 <time>12.45.27F</time>
                 <time>13.45.27F</time>
                 <time>14.45.27F</time>
                 <time>15.15.27A</time>
                 <time>15.45.27F</time>
-                <time>16.25.27F</time>
+                <time>16.15.27F</time>
                 <time>16.55.27F</time>
                 <time>17.25.27F</time>
                 <time>18.00.27A</time>
@@ -251,14 +251,14 @@
                 <time>08.50.27</time>
                 <time>09.00.27</time>
                 <time>09.55.27D</time>
-                <time>10.55.21F</time>
+                <time>10.55.27F</time>
                 <time>11.55.27A</time>
                 <time>12.55.27F</time>
                 <time>13.55.27F</time>
                 <time>14.55.27F</time>
                 <time>15.25.27A</time>
                 <time>15.55.27F</time>
-                <time>16.35.27F</time>
+                <time>16.25.27F</time>
                 <time>17.05.27F</time>
                 <time>17.35.27F</time>
                 <time>18.10.27A</time>
@@ -287,7 +287,7 @@
                 <time>19.08.27</time>
                 <time>19.58.27</time>
             </station>
-            <station name="Mdwvale Derry &amp; Winston">
+            <station name="Derry Rd &amp; 9th Line">
                 <time>07.28.27A</time>
                 <time>08.48.27A</time>
                 <time>10.18.27A</time>
@@ -306,40 +306,40 @@
                 <time>20.03.27</time>
             </station>
             <station name="Milton Thompson &amp; Derry">
-                <time>07.40.27A</time>
-                <time>09.00.27A</time>
-                <time>10.30.27A</time>
-                <time>13.25.27A</time>
-                <time>15.55.27</time>
-                <time>16.37.27</time>
-                <time>17.02.27</time>
-                <time>17.37.27B</time>
-                <time>17.42.27</time>
-                <time>17.57.27</time>
-                <time>18.07.27</time>
-                <time>18.32.27B</time>
-                <time>18.42.27</time>
-                <time>18.57.27</time>
-                <time>19.25.27</time>
-                <time>20.15.27</time>
+                <time>07.38.27A</time>
+                <time>08.58.27A</time>
+                <time>10.28.27A</time>
+                <time>13.23.27A</time>
+                <time>15.53.27</time>
+                <time>16.35.27</time>
+                <time>17.00.27</time>
+                <time>17.35.27B</time>
+                <time>17.40.27</time>
+                <time>17.55.27</time>
+                <time>18.05.27</time>
+                <time>18.30.27B</time>
+                <time>18.40.27</time>
+                <time>18.55.27</time>
+                <time>19.23.27</time>
+                <time>20.13.27</time>
             </station>
             <station name="Milton GO Station">
-                <time>07.47.27A</time>
-                <time>09.05.27A</time>
-                <time>10.35.27A</time>
-                <time>13.30.27A</time>
-                <time>16.00.27</time>
-                <time>16.45.27</time>
-                <time>17.10.27</time>
-                <time>17.45.27B</time>
-                <time>17.50.27</time>
-                <time>18.05.27</time>
-                <time>18.15.27</time>
-                <time>18.40.27B</time>
-                <time>18.50.27</time>
-                <time>19.05.27</time>
-                <time>19.30.27</time>
-                <time>20.20.27</time>
+                <time>07.45.27A</time>
+                <time>09.03.27A</time>
+                <time>10.33.27A</time>
+                <time>13.28.27A</time>
+                <time>15.58.27</time>
+                <time>16.43.27</time>
+                <time>17.08.27</time>
+                <time>17.43.27B</time>
+                <time>17.48.27</time>
+                <time>18.03.27</time>
+                <time>18.13.27</time>
+                <time>18.38.27B</time>
+                <time>18.48.27</time>
+                <time>19.03.27</time>
+                <time>19.28.27</time>
+                <time>20.18.27</time>
             </station>
             <station name="Milton Main &amp; Martin">
                 <time>07.55.27A</time>

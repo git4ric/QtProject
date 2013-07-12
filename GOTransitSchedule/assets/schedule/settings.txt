@@ -36,14 +36,34 @@ TD#bbb { background: #FFFFFF; text-align: center; vertical alignment: top; borde
 #schednote-#66CC99	{ background-color: #66CC99;}
 </style>
 <script type="text/javascript" src='http://www.gotransit.com/publicroot/js/jquery.tools.min.js'></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-40226028-2']);
+  _gaq.push(['_setDomainName', 'gotransit.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
 </head>
 <body>
 <a href="#content"><img style="border-width:0px; float:left" src='http://www.gotransit.com/publicroot/en/images/skipnav.gif' alt="Bypass navigation and go to content" width="1" height="1" /></a>
-<form name="aspnetForm" method="post" action="/publicroot/en/schedules/pubsched.aspx?table=31&amp;direction=1&amp;day=1&amp;page=9" id="aspnetForm">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="pI7if5TDuFuQiHsfgjCi26/hI/5hQJOkOSe3cuUL7IywDUIgNgkJU2PCuqXtTqLazu1Wz965igQDRx3g05GoebEzTmzajonRYmTm8IIEHNoaSD1E+neN+JYebDqqji2kXxSinQ==" />
+<form name="aspnetForm" method="post" action="/publicroot/en/schedules/pubsched.aspx?table=96&amp;direction=1&amp;day=1&amp;page=6&amp;new=" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="17FVZYe18PKui7K4JoR0PsV3omgULuaQLey4zYmYpx8pMw0YoE2+329Evvx4wOiVtMg2ku8M6grwFI9nCby9wkd9JJcNAAL/fMJUfBxOMz1/Vga3xf/diEQicxVV2BNliCz7yw==" />
 
 <div id="container">
 <div class="innertube">
+<a name="content"></a>
  
 
 <HEAD>
@@ -60,25 +80,25 @@ TD#bbb { background: #FFFFFF; text-align: center; vertical alignment: top; borde
     [<a href="findsch.aspx?station=&amp;frMap=Y&amp;new=">Schedule 
 	Finder</a>]</td>
       <td width="20%" align="left">
-[<a href="/publicroot/en/PDF/Timetables/CurrentBoard/Table31.pdf"><img border="0" src="/publicroot/en/PDF/adobe.gif" width="16" height="16"/> 
+[<a href="/publicroot/en/PDF/Timetables/CurrentBoard/Table96.pdf"><img border="0" src="/publicroot/en/PDF/adobe.gif" width="16" height="16"/> 
 PDF Regular schedule</a>]
 </td>
-   <td width="20%" align="left">[<a href="pubsched.aspx?table=31&amp;direction=0&amp;day=1&amp;New=&amp;station=">Return 
+   <td width="20%" align="left">[<a href="pubsched.aspx?table=96&amp;direction=0&amp;day=1&amp;New=&amp;station=">Return 
 	Trip</a>]<br/>
-    <a href="pubsched.aspx?table=41  &amp;direction=0&amp;day=1&amp;page=1&amp;New=&amp;station=">[Connecting 
+    <a href="pubsched.aspx?table=&amp;direction=0&amp;day=1&amp;page=1&amp;New=&amp;station=">[Connecting 
 	Trip]</a></td>
   </tr>
     </table>
 
 <!===================== Schedule Description ================================>
-<div style='background-color: white; float: left;  color: white; font-family:Arial; font-size:x-small; font-weight: bold;  color: #008000;'>
+<div style='background-color: white; float: left;  color: white; font-family:Arial; font-size:x-small; font-weight: bold;  color: #CC3300;'>
 &nbsp;Table&nbsp;</div>
-<div style='background-color: #008000; float: left;  color: white; font-weight: bold; font-size: 15px;'>
-&nbsp;31&nbsp;</div>
-<div style='background-color: white; float: left; margin-left: 4px; padding-left: 8px;  color: #008000; font-family:Arial; font-size:x-small; font-weight: bold;'>
-Kitchener (formerly Georgetown)<font color=black>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Westbound) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Effective 06-Apr-13&nbsp;&nbsp;
+<div style='background-color: #CC3300; float: left;  color: white; font-weight: bold; font-size: 15px;'>
+&nbsp;96&nbsp;</div>
+<div style='background-color: white; float: left; margin-left: 4px; padding-left: 8px;  color: #CC3300; font-family:Arial; font-size:x-small; font-weight: bold;'>
+Oshawa/Finch Express<font color=black>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Eastbound) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Effective 29-Jun-13&nbsp;&nbsp;
 <br/>
-<strong>Toronto-> Brampton-> Georgetown-> Acton-> Guelph -> Kitchener</strong></font></div>
+<strong>Finch ->Scarborough Centre->Ajax ->Whitby ->Oshawa</strong></font></div>
 <hr color=#ffffff>
 
 <!===================== Schedule times ====================================>
@@ -117,28 +137,10 @@ Kitchener (formerly Georgetown)<font color=black>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 <tr>
 <td title="Note Keyword" width="10%" align=center >
 <div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
-<img src="../images/handicapT.jpg" alt="Keyword Image"/>
-</div><td>
-<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
-    <div class="schednote">GO Train service  is accessible to passengers using mobility devices ONLY at locations shown with this accessible symbol. Bus trips shown on this schedule are NOT accessible.&nbsp;</div>
-  </td>
-  </tr>
-<tr>
-<td title="Note Keyword" width="10%" align=center >
-<div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
 <img src="../images/handicapB.jpg" alt="Keyword Image"/>
 </div><td>
 <td title="Schedule Note" width=90% bgcolor=#e0e0e0>
     <div class="schednote">GO Bus service  is accessible to passengers using mobility devices ONLY at locations shown with this accessible symbol.&nbsp;</div>
-  </td>
-  </tr>
-<tr>
-<td title="Note Keyword" width="10%" align=center >
-<div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
-<img src="../images/handicap.jpg" alt="Keyword Image"/>
-</div><td>
-<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
-    <div class="schednote">GO Train and bus service is accessible to passengers using mobility devices ONLY at locations shown with this accessible symbol.&nbsp;</div>
   </td>
   </tr>
 <tr>
@@ -152,49 +154,17 @@ Kitchener (formerly Georgetown)<font color=black>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 <tr>
 <td title="Note Keyword" width="10%" align=center >
 <div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
-<b>h</b></div><td>
+<b>Designated Stops Only</b></div><td>
 <td title="Schedule Note" width=90% bgcolor=#e0e0e0>
-    <div class="schednote">Normally holds for connection.&nbsp;</div>
+    <div class="schednote">Bus services designated stops on Hwy. 2 (Durham Region) ONLY.  Local stops are made in the vicinity of Scarborough Centre and on Yonge St. between Hwy 401 and the  Finch GO Terminal.&nbsp;</div>
   </td>
   </tr>
 <tr>
 <td title="Note Keyword" width="10%" align=center >
 <div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
-<b>D</b></div><td>
+<b>Additional Service</b></div><td>
 <td title="Schedule Note" width=90% bgcolor=#e0e0e0>
-    <div class="schednote">Stops  to discharge on passenger request ONLY.&nbsp;</div>
-  </td>
-  </tr>
-<tr>
-<td title="Note Keyword" width="10%" align=center >
-<div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
-<b>D</b></div><td>
-<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
-    <div class="schednote">Stops  to discharge on passenger request ONLY.&nbsp;</div>
-  </td>
-  </tr>
-<tr>
-<td title="Note Keyword" width="10%" align=center >
-<div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
-<b>Hwy #407 West Bus Service</b></div><td>
-<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
-    <div class="schednote">For weekday connections in Bramalea to the  Hwy #407 West bus service see <a href="../schedule/pubsched.aspx?table=46&direction=0&day=1&page=1&New=&station="> Table 46</a>.&nbsp;</div>
-  </td>
-  </tr>
-<tr>
-<td title="Note Keyword" width="10%" align=center >
-<div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
-<b>Dixon/Brampton Local - Hwy 427  - Hwy #27</b></div><td>
-<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
-    <div class="schednote">For additional bus services between Brampton and York Mills, please see <a href="../schedule/pubsched.aspx?table=34&direction=1&day=1&New=&station=">Table 34</a>.&nbsp;</div>
-  </td>
-  </tr>
-<tr>
-<td title="Note Keyword" width="10%" align=center >
-<div style='background-color: #FFFFFF; margin-left: 4px; padding-left: 4px; '>
-<b>Brampton via Trinity Commons</b></div><td>
-<td title="Schedule Note" width=90% bgcolor=#e0e0e0>
-    <div class="schednote">For additional bus service between Brampton and Finch Bus Terminal, please see <a href="../schedule/pubsched.aspx?table=32&direction=1&day=9&New=&station=">Table 32</a>.&nbsp;</div>
+    <div class="schednote">For additional bus service between Durham Region, Scarborough Centre and the Finch GO Terminal (via all stops on Yonge St.) see  <a href="../schedule/pubsched.aspx?table=95&direction=0&day=1&page=1&New=&station=">Table 95</a> & <a href="../schedule/pubsched.aspx?table=94&direction=0&day=1&page=1&New=&station=">Table 94</a>.&nbsp;</div>
   </td>
   </tr>
 <tr>

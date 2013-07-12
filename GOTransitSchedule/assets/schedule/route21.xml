@@ -85,59 +85,59 @@
                 <time>15.45.21D</time>
                 <time>16.45.21D</time>
             </station>
-            <station name="Mdwvale Derry &amp; Winston">
-                <time>05.05.21B</time>
-                <time>05.25.21B</time>
-                <time>05.45.21B</time>
-                <time>08.57.21B</time>
-                <time>09.17.21B</time>
-                <time>09.37.21B</time>
-                <time>10.07.21B</time>
-                <time>10.37.21B</time>
-                <time>11.07.21B</time>
-                <time>11.37.21B</time>
-                <time>12.07.21B</time>
-                <time>12.37.21B</time>
-                <time>13.07.21B</time>
-                <time>13.37.21B</time>
-                <time>14.37.21B</time>
-                <time>15.37.21B</time>
-                <time>16.37.21B</time>
-                <time>17.37.21N</time>
-                <time>18.37.21N</time>
-                <time>19.40.21</time>
-                <time>20.40.21</time>
-                <time>21.40.21</time>
-                <time>22.40.21</time>
-                <time>23.40.21</time>
-                <time>00.40.21</time>
+            <station name="Derry Rd &amp; 9th Line">
+                <time>05.03.21B</time>
+                <time>05.23.21B</time>
+                <time>05.43.21B</time>
+                <time>08.55.21B</time>
+                <time>09.15.21B</time>
+                <time>09.35.21B</time>
+                <time>10.05.21B</time>
+                <time>10.35.21B</time>
+                <time>11.05.21B</time>
+                <time>11.35.21B</time>
+                <time>12.05.21B</time>
+                <time>12.35.21B</time>
+                <time>13.05.21B</time>
+                <time>13.35.21B</time>
+                <time>14.35.21B</time>
+                <time>15.35.21B</time>
+                <time>16.35.21B</time>
+                <time>17.35.21N</time>
+                <time>18.35.21N</time>
+                <time>19.38.21</time>
+                <time>20.38.21</time>
+                <time>21.38.21</time>
+                <time>22.38.21</time>
+                <time>23.38.21</time>
+                <time>00.38.21</time>
             </station>
             <station name="Meadowvale Town Centre">
-                <time>05.11.21B</time>
-                <time>05.31.21B</time>
-                <time>05.51.21B</time>
-                <time>09.04.21B</time>
-                <time>09.24.21B</time>
-                <time>09.44.21B</time>
-                <time>10.14.21B</time>
-                <time>10.44.21B</time>
-                <time>11.14.21B</time>
-                <time>11.44.21B</time>
-                <time>12.14.21B</time>
-                <time>12.44.21B</time>
-                <time>13.14.21B</time>
-                <time>13.44.21B</time>
-                <time>14.44.21B</time>
-                <time>15.44.21B</time>
-                <time>16.44.21B</time>
-                <time>17.44.21N</time>
-                <time>18.44.21N</time>
-                <time>19.46.21</time>
-                <time>20.46.21</time>
-                <time>21.46.21</time>
-                <time>22.46.21</time>
-                <time>23.46.21</time>
-                <time>00.46.21</time>
+                <time>05.09.21B</time>
+                <time>05.29.21B</time>
+                <time>05.49.21B</time>
+                <time>09.02.21B</time>
+                <time>09.22.21B</time>
+                <time>09.42.21B</time>
+                <time>10.12.21B</time>
+                <time>10.42.21B</time>
+                <time>11.12.21B</time>
+                <time>11.42.21B</time>
+                <time>12.12.21B</time>
+                <time>12.42.21B</time>
+                <time>13.12.21B</time>
+                <time>13.42.21B</time>
+                <time>14.42.21B</time>
+                <time>15.42.21B</time>
+                <time>16.42.21B</time>
+                <time>17.42.21N</time>
+                <time>18.42.21N</time>
+                <time>19.44.21</time>
+                <time>20.44.21</time>
+                <time>21.44.21</time>
+                <time>22.44.21</time>
+                <time>23.44.21</time>
+                <time>00.44.21</time>
             </station>
             <station name="Meadowvale GO Station">
                 <time>05.15.21B</time>
@@ -259,8 +259,8 @@
             </station>
             <station name="Square One GO Terminal">
                 <time>05.35.21H</time>
-                <time>08.35.Train</time>
-                <time>08.45.Train</time>
+                <time>08.35.21K</time>
+                <time>08.45.21K</time>
                 <time>09.10.21H</time>
                 <time>09.35.21K</time>
                 <time>09.45.21H</time>
@@ -428,7 +428,6 @@
                 <time>09.45.21C</time>
                 <time>09.50.21F</time>
                 <time>09.50.21G</time>
-                <time>09.45.21C</time>
                 <time>09.55.21E</time>
                 <time>09.55.21L</time>
                 <time>09.55.21B</time>
@@ -515,8 +514,8 @@
                 <time>07.50.21H</time>
                 <time>08.20.21H</time>
                 <time>08.20.21N</time>
-                <time>09.20.21N</time>
                 <time>09.20.21H</time>
+                <time>09.20.21N</time>
                 <time>09.50.21H</time>
                 <time>10.20.21H</time>
                 <time>10.20.21N</time>
@@ -577,7 +576,6 @@
                 <time>20.20.21H</time>
                 <time>20.30.21D</time>
                 <time>20.35.21H</time>
-				<time>20.40.21D</time>
                 <time>20.40.21B</time>
                 <time>20.50.21D</time>
                 <time>20.50.21H</time>
@@ -589,17 +587,18 @@
                 <time>21.30.21D</time>
                 <time>21.35.21H</time>
                 <time>21.40.21B</time>
-                <time>21.50.21D</time>
                 <time>21.50.21H</time>
+                <time>21.50.21D</time>
                 <time>22.00.21B</time>
+                <time>22.05.21H</time>
+                <time>22.10.21D</time>
                 <time>22.20.21H</time>
-                <time>22.20.21D</time>
-				<time>22.30.21D</time>
+                <time>22.30.21D</time>
                 <time>22.30.21B</time>
-				<time>22.50.21D</time>
                 <time>22.50.21H</time>
-                <time>23.20.21D</time>
+                <time>22.50.21D</time>
                 <time>23.20.21H</time>
+                <time>23.20.21D</time>
                 <time>23.30.21B</time>
                 <time>23.50.21H</time>
                 <time>00.20.21H</time>
@@ -668,6 +667,7 @@
                 <time>21.37.21H</time>
                 <time>21.52.21H</time>
                 <time>22.07.21H</time>
+                <time>22.22.21H</time>
                 <time>22.37.21H</time>
                 <time>23.07.21H</time>
                 <time>23.37.21H</time>
@@ -720,6 +720,7 @@
                 <time>21.47.21H</time>
                 <time>22.02.21H</time>
                 <time>22.17.21H</time>
+                <time>22.32.21H</time>
                 <time>22.47.21H</time>
                 <time>23.17.21H</time>
                 <time>23.47.21H</time>
@@ -752,7 +753,7 @@
                 <time>16.10.21J</time>
                 <time>16.20.21J</time>
                 <time>16.35.21H</time>
-                <time>20.05.20J</time>
+                <time>20.05.21J</time>
                 <time>20.10.21J</time>
                 <time>20.20.21J</time>
                 <time>20.40.21H</time>
@@ -764,6 +765,7 @@
                 <time>22.00.21H</time>
                 <time>22.15.21H</time>
                 <time>22.30.21H</time>
+                <time>22.45.21H</time>
                 <time>23.00.21H</time>
                 <time>23.30.21H</time>
                 <time>00.00.21H</time>
@@ -804,14 +806,13 @@
                 <time>20.27.21D</time>
                 <time>20.42.21D</time>
                 <time>21.00.21D</time>
-				<time>21.10.21D</time>
                 <time>21.20.21D</time>
                 <time>21.40.21D</time>
                 <time>22.00.21D</time>
                 <time>22.20.21D</time>
-                <time>22.50.21D</time>
-				<time>23.00.21D</time>
-				<time>23.20.21D</time>
+                <time>22.40.21D</time>
+                <time>23.00.21D</time>
+                <time>23.20.21D</time>
                 <time>23.50.21D</time>
                 <time>00.49.21N</time>
                 <time>01.49.21N</time>
@@ -849,14 +850,13 @@
                 <time>20.42.21D</time>
                 <time>20.57.21D</time>
                 <time>21.15.21D</time>
-				<time>21.25.21D</time>
                 <time>21.35.21D</time>
                 <time>21.55.21D</time>
                 <time>22.15.21D</time>
                 <time>22.33.21D</time>
-                <time>23.05.21D</time>
-				<time>23.15.21D</time>
-				<time>23.35.21D</time>
+                <time>22.55.21D</time>
+                <time>23.15.21D</time>
+                <time>23.35.21D</time>
                 <time>00.05.21D</time>
                 <time>01.01.21N</time>
                 <time>02.01.21N</time>
@@ -934,7 +934,7 @@
                 <time>02.12.21N</time>
                 <time>03.28.21</time>
             </station>
-            <station name="Mdwvale Derry &amp; Winston">
+            <station name="Derry Rd &amp; 9th Line">
                 <time>07.48.21</time>
                 <time>08.38.21N</time>
                 <time>09.38.21N</time>
@@ -993,33 +993,31 @@
                 <time>21.00.21D</time>
                 <time>21.15.21D</time>
                 <time>21.30.21D</time>
-				<time>20.40.21D</time>
                 <time>21.50.21D</time>
                 <time>22.10.21D</time>
                 <time>22.30.21D</time>
                 <time>22.50.21D</time>
-                <time>23.20.21D</time>
-				<time>23.30.21D</time>
-				<time>23.50.21D</time>
+                <time>23.10.21D</time>
+                <time>23.30.21D</time>
+                <time>23.50.21D</time>
                 <time>00.20.21D</time>
             </station>
             <station name="Milton GO Station">
-                <time>08.07.21</time>
-                <time>08.57.21N</time>
-                <time>09.57.21N</time>
-                <time>10.47.21N</time>
-                <time>11.47.21N</time>
-                <time>12.32.21B</time>
-                <time>13.32.21B</time>
-                <time>14.02.21B</time>
-                <time>14.32.21B</time>
-                <time>14.52.21B</time>
-                <time>15.15.21B</time>
-                <time>15.40.21B</time>
-                <time>15.58.21B</time>
-                <time>16.18.21B</time>
-                <time>16.38.21B</time>
-                <time>16.48.21B</time>
+                <time>08.05.21</time>
+                <time>08.55.21N</time>
+                <time>09.55.21N</time>
+                <time>10.45.21N</time>
+                <time>11.45.21N</time>
+                <time>13.30.21B</time>
+                <time>14.00.21B</time>
+                <time>14.30.21B</time>
+                <time>14.50.21B</time>
+                <time>15.13.21B</time>
+                <time>15.38.21B</time>
+                <time>15.56.21B</time>
+                <time>16.16.21B</time>
+                <time>16.36.21B</time>
+                <time>16.46.21B</time>
                 <time>16.58.Train</time>
                 <time>17.28.Train</time>
                 <time>17.48.Train</time>
@@ -1028,20 +1026,20 @@
                 <time>18.38.Train</time>
                 <time>19.13.Train</time>
                 <time>19.58.Train</time>
-                <time>20.35.21B</time>
-                <time>20.45.21B</time>
-                <time>21.00.21B</time>
-                <time>21.20.21B</time>
-                <time>21.40.21B</time>
-                <time>21.57.21B</time>
-                <time>22.17.21B</time>
-                <time>22.37.21B</time>
-                <time>22.57.21B</time>
-                <time>23.27.21B</time>
-                <time>00.27.21B</time>
-                <time>01.33.21N</time>
-                <time>02.33.21N</time>
-                <time>03.48.21</time>
+                <time>20.33.21B</time>
+                <time>20.43.21B</time>
+                <time>20.58.21B</time>
+                <time>21.18.21B</time>
+                <time>21.38.21B</time>
+                <time>21.55.21B</time>
+                <time>22.15.21B</time>
+                <time>22.35.21B</time>
+                <time>22.55.21B</time>
+                <time>23.25.21B</time>
+                <time>00.25.21B</time>
+                <time>01.31.21N</time>
+                <time>02.31.21N</time>
+                <time>03.46.21</time>
             </station>
             <station name="Milton Main &amp; Martin">
                 <time>08.15.21</time>
