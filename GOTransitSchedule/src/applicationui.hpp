@@ -12,6 +12,12 @@
 #include <bb/cascades/ImageView>
 #include <bb/system/InvokeRequest>
 #include <bb/system/InvokeTargetReply>
+#include <bb/cascades/ScrollView>
+#include <bb/cascades/TitleBar>
+#include <bb/cascades/ScrollMode>
+#include <bb/cascades/Tab>
+#include <bb/cascades/Sheet>
+#include <bb/cascades/WebView>
 #include <bb/system/InvokeManager>
 #include "data.hpp"
 #include "LoadData.hpp"
@@ -54,18 +60,23 @@ public slots:
 	void addDirection(int index);
 	void enableButton();
 	void setRouteNumber(QString r);
+	void loadServiceUpdates();
+	void closeSheet();
 private:
 
 	bb::cascades::Label *label;
-	bb::cascades::Page *page, *page2;
+	bb::cascades::Page *page, *page2,*page3;
 	bb::cascades::DropDown *dropDownTo;
 	bb::cascades::DropDown *dropDownFrom;
 	bb::cascades::Option *Oakville;
 	bb::cascades::Option *McMaster;
 	bb::cascades::Option *option;
+	bb::cascades::Container* _page3Container;
 	QStringList stationName;
 	bb::system::InvokeManager* _manager;
 	bb::system::InvokeTargetReply* _reply;
+	bb::cascades::Tab* _tab2;
+	bb::cascades::Sheet* _webSheet;
 	QTimer *timer;
 	Data* data;
 	bool _saveData;

@@ -246,13 +246,22 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
         tab->setTitle("GO Transit");
         tab->setDescription("Get Bus route timings from any station for GO Transit!");
 
-        //Tab* tab2 = new Tab();
-        //tab2->setTitle("PRESTO Card");
-        //tab2->setDescription("Get balance and other info about your PRESTO Card!");
+        _tab2 = new Tab();
+        _tab2->setTitle("Service Update");
+        _tab2->setDescription("Get latest service updates from GO transit website");
 
         Tab* tab3 = new Tab();
         tab3->setTitle("Disclaimer");
         tab3->setDescription("App settings and specifications");
+
+        page3 = new Page();
+		_page3Container = Container::create().top(100);
+		Button* checkUpdate = Button::create().text("Check Service Update").horizontal(HorizontalAlignment::Center).vertical(VerticalAlignment::Center);
+		_page3Container->add(checkUpdate);
+		page3->setContent(_page3Container);
+		QObject::connect(checkUpdate,SIGNAL(clicked()),this,SLOT(loadServiceUpdates()));
+
+
 
         page = new Page();
         if (Q10)
@@ -264,10 +273,10 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
         navigationPane->push(page);
         tab->setContent(navigationPane);
         tabbedPane->add(tab);
-        //tabbedPane->add(tab2);
+        tabbedPane->add(_tab2);
         createSettingsTab();
         tab3->setContent(page2);
-
+        _tab2->setContent(page3);
         tabbedPane->add(tab3);
 
         res = QObject::connect(OrientationSupport::instance(), SIGNAL(displayDirectionAboutToChange(bb::cascades::DisplayDirection::Type,
@@ -311,6 +320,31 @@ void ApplicationUI::onDisplayDirectionAboutToChange(){
         }
     }
 }
+
+void ApplicationUI::loadServiceUpdates(){
+	_webSheet = Sheet::create();
+	Page* updatesPage = Page::create();
+	Container* tempContainer = Container::create();
+	WebView* web = new WebView(tempContainer);
+	web->setUrl(QUrl("http://www.gotransit.com/publicroot/en/updates/status.aspx"));
+	tempContainer->add(web);
+	ScrollView* view = ScrollView::create(tempContainer).scrollMode(ScrollMode::Both).pinchToZoomEnabled(true);
+	updatesPage->setContent(view);
+	TitleBar* tb = new TitleBar();
+	ActionItem* aItem = ActionItem::create().title("Back");
+	QObject::connect(aItem,SIGNAL(triggered()),this,SLOT(closeSheet()));
+	tb->setDismissAction(aItem);
+	tb->setAcceptAction(0);
+	updatesPage->setTitleBar(tb);
+	_webSheet->setContent(updatesPage);
+	_webSheet->open();
+}
+
+void ApplicationUI::closeSheet(){
+	_webSheet->close();
+	delete _webSheet;
+}
+
 
 void ApplicationUI::createSettingsTab(){
     page2 = new Page();
