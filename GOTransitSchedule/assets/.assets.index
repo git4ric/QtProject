@@ -1,17 +1,21 @@
 1
-49
-images/go-transit.png
+47
+AppSettings.txt
+images/fav-image-selected.png
+images/fav-image-unselected.png
+images/fav-image.png
+images/favbutton.psd
+images/go-tab-icon-2.png
+images/go-tab-icon.png
+images/go-tab-icon.psd
+images/ic_view_details.png
 images/ld.png
 images/logo-landscape.png
 images/logo-landscape.psd
 images/logo-portrait.png
 images/logo-portrait.psd
+images/Untitled-1.png
 main.qml
-schedule/.dropbox
-schedule/fromMcMaster.txt
-schedule/fromOakville.txt
-schedule/route01.xml
-schedule/route09.xml
 schedule/route10.xml
 schedule/route12.xml
 schedule/route16.xml
@@ -36,16 +40,10 @@ schedule/route71.xml
 schedule/route80.xml
 schedule/route81.xml
 schedule/route88.xml
+schedule/route92.xml
 schedule/route93.xml
-schedule/route94.xml
-schedule/route95.xml
 schedule/route96.xml
-schedule/routes.txt
-schedule/rwzr.py
+schedule/route98.xml
 schedule/settings.txt
 schedule/settings2.txt
-schedule/special cases.txt
-schedule/stations - backup - backup.txt
-schedule/stations - backup.txt
 schedule/stations.txt
-schedule/stationsList.txt

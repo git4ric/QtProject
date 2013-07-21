@@ -14,14 +14,13 @@
  */
 // Default empty project template
 #include "applicationui.hpp"
+#include "settingAndHelp.hpp"
 #include <bb/system/SystemToast>
 #include <bb/system/SystemUiPosition>
 #include <bb/cascades/ImageButton>
-
 #include <bb/cascades/Menu>
 #include <bb/cascades/HelpActionItem>
 #include <bb/cascades/SettingsActionItem>
-
 #include <bb/system/SystemDialog>
 #include <bb/cascades/Application>
 #include <bb/cascades/QmlDocument>
@@ -76,13 +75,14 @@ ImageButton* imageFavOne, *imageFavTwo, *imageFavThree, *imageFavFour;
 float progressIndicatorValue = 0.0;
 bb::cascades::TextField *suggestion1, *suggestion2, *suggestion3, *suggestion4, *textInput;
 bb::cascades::ImageView *logo;
-DropDown *routeDropDown, *directionDropDown;
+DropDown *routeDropDown, *directionDropDown, *customTimeHour, *customTimeMinute;
 bool Q10 = false;
 Container* contentContainer;
 QList<QString> favStations;
-bool showFavoriteButton, firstLaunch = true;
+bool showFavoriteButton, firstLaunch = true, firstTimeAppLaunched = false;
 QList<bb::cascades::CheckBox*> c;
 ToggleButton *t;
+QString hour, minute;
 Page *page3;
 
 void ApplicationUI::getDeviceInformation(){
@@ -124,6 +124,31 @@ void ApplicationUI::getSettingsInfo(){
 	        	 break;
 	     }
 	     file.close();
+
+	     fileName = appFolder + "/app/native/assets/firstLaunch.txt";
+	     QFile file2(fileName);
+	     if (!file2.open(QIODevice::ReadOnly | QIODevice::Text)){
+	    	 firstTimeAppLaunched = false;
+	    	 return;
+	     }
+	     QTextStream inn(&file2);
+	     QString readLine = inn.readLine();
+		if (readLine.compare("true") == 0){
+			firstTimeAppLaunched = true;
+			file2.close();
+
+			QFile file3(fileName);
+
+			if (!file3.open(QIODevice::WriteOnly | QIODevice::Text))
+			{ return;}
+
+			QTextStream out(&file3);
+			out << "false";
+			file3.close();
+		}
+		else
+			firstTimeAppLaunched = false;
+	     file2.close();
 }
 ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 : QObject(app)
@@ -285,6 +310,40 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 		else
 			directionDropDown->setPreferredWidth(690);
 	}
+
+	Container *customTimeContainer = new Container();
+	StackLayout *customTimeLayout = new StackLayout();
+	customTimeLayout->setOrientation( LayoutOrientation::LeftToRight );
+	customTimeContainer->setLayout(customTimeLayout);
+
+	CheckBox *customTimeCheckBox = new CheckBox();
+	customTimeCheckBox->setText("Leaving Now?");
+	customTimeCheckBox->setChecked(true);
+	customTimeCheckBox->setVerticalAlignment(VerticalAlignment::Center);
+	customTimeCheckBox->setHorizontalAlignment(HorizontalAlignment::Center);
+	customTimeHour = new DropDown();
+	customTimeHour->setPreferredWidth(50);
+	customTimeHour->setTitle("Hour:");
+	for (int i = 0; i < 24; i++){
+		Option *opt = new Option();
+		opt->setText(QString::number(i));
+		customTimeHour->add(opt);
+	}
+	customTimeHour->setVisible(false);
+	customTimeMinute = new DropDown();
+	customTimeMinute->setPreferredWidth(50);
+	customTimeMinute->setTitle("Min:");
+	for (int i = 0; i < 12; i++){
+		Option *opt = new Option();
+		opt->setText(QString::number(i * 5));
+		customTimeMinute->add(opt);
+	}
+	customTimeMinute->setVisible(false);
+
+	customTimeContainer->add(customTimeCheckBox);
+	customTimeContainer->add(customTimeHour);
+	customTimeContainer->add(customTimeMinute);
+
 	fetchData = Button::create().text("Find Schedule");
 	fetchData->setEnabled(false);
 	fetchData->setHorizontalAlignment(HorizontalAlignment::Center);
@@ -297,6 +356,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	contentContainer->add(suggestion4Container);
 	contentContainer->add(routeDropDown);
 	contentContainer->add(directionDropDown);
+	contentContainer->add(customTimeContainer);
 	contentContainer->add(fetchData);
 	contentContainer->add(lab);
 	bool res = QObject::connect(fetchData, SIGNAL(clicked()), this,SLOT(onClicked()));
@@ -305,6 +365,11 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	res = QObject::connect(textInput, SIGNAL(textChanging(QString)), this,
 			SLOT(showSuggestions(QString)));
 	Q_ASSERT(res);
+
+	res = QObject::connect(customTimeCheckBox, SIGNAL(checkedChanged(bool)), this,
+				SLOT(customTimeCheckBoxChanged(bool)));
+		Q_ASSERT(res);
+
 	res = QObject::connect(textInput, SIGNAL(focusedChanged(bool)), this,
 			SLOT(removeUI(bool)));
 	Q_ASSERT(res);
@@ -321,7 +386,6 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 			SLOT(suggestionFourHighlight()));
 	Q_ASSERT(res);
 
-	if (showFavoriteButton){
 			res = QObject::connect(imageFavOne, SIGNAL(touch(bb::cascades::TouchEvent*)),this,SLOT(firstFavClicked(bb::cascades::TouchEvent*)));
 			Q_ASSERT(res);
 			res = QObject::connect(imageFavTwo, SIGNAL(touch(bb::cascades::TouchEvent*)), this, SLOT(secondFavClicked(bb::cascades::TouchEvent*)));
@@ -329,7 +393,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 			res = QObject::connect(imageFavThree, SIGNAL(touch(bb::cascades::TouchEvent*)), this, SLOT(thirdFavClicked(bb::cascades::TouchEvent*)));
 			Q_ASSERT(res);
 			res = QObject::connect(imageFavFour, SIGNAL(touch(bb::cascades::TouchEvent*)), this, SLOT(fourthFavClicked(bb::cascades::TouchEvent*)));
-	}
+
 	Q_ASSERT(res);
 	res = QObject::connect(routeDropDown, SIGNAL(selectedIndexChanged(int)), this,
 			SLOT(addDirection(int)));
@@ -356,7 +420,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	Button* checkUpdate = Button::create().text("Check Service Update").horizontal(HorizontalAlignment::Center).vertical(VerticalAlignment::Center);
 	_page3Container->add(checkUpdate);
 	page3->setContent(_page3Container);
-	QObject::connect(checkUpdate,SIGNAL(clicked()),this,SLOT(loadServiceUpdates()));
+	QObject::connect(checkUpdate,SIGNAL(clicked()),this,SLOT(updateButtonClicked()));
 
 	Tab* tab3 = new Tab();
 	tab3->setTitle("Disclaimer");
@@ -376,7 +440,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	tabbedPane->add(tab2);
 	createSettingsTab();
 	tab3->setContent(page2);
-    tab2->setContent(page3);
+	tab2->setContent(page3);
 
 	tabbedPane->add(tab3);
 
@@ -397,29 +461,46 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	}
 
 	// Create the application menu
-		Menu *menu = new Menu;
+	Menu *menu = new Menu;
 
-		// Create the actions to add to the application menu
-		HelpActionItem *help = new HelpActionItem;
-		SettingsActionItem *settings = new SettingsActionItem;
+	// Create the actions to add to the application menu
+	HelpActionItem *help = new HelpActionItem;
+	SettingsActionItem *settings = new SettingsActionItem;
 
-		// Create the application menu and add the actions
-		menu->setHelpAction(help);
-		menu->setSettingsAction(settings);
-		// Set the menu of the application
-		Application::instance()->setMenu(menu);
+	// Create the application menu and add the actions
+	menu->setHelpAction(help);
+	menu->setSettingsAction(settings);
+	// Set the menu of the application
+	Application::instance()->setMenu(menu);
 
-		res = QObject::connect(settings, SIGNAL(triggered()), this,
-				SLOT(settings_clicked()));
-		Q_ASSERT(res);
+	res = QObject::connect(settings, SIGNAL(triggered()), this,
+			SLOT(settings_clicked()));
+	Q_ASSERT(res);
 
-		res = QObject::connect(help, SIGNAL(triggered()), this,
-				SLOT(help_clicked()));
-		Q_ASSERT(res);
-		app->setScene(tabbedPane);
+	res = QObject::connect(help, SIGNAL(triggered()), this,
+			SLOT(help_clicked()));
+	Q_ASSERT(res);
+
+	if (firstTimeAppLaunched == true){
+		bb::system::SystemDialog* menuDialog = new bb::system::SystemDialog("ok");
+		menuDialog->setTitle("Accessing the Menu");
+		menuDialog->setBody("Now swipe down from the top to access the application menu!");
+		menuDialog->show();
+	}
+	app->setScene(tabbedPane);
 
 }
 
+void ApplicationUI::customTimeCheckBoxChanged(bool changed){
+	if (changed){
+		customTimeHour->setVisible(false);
+		customTimeMinute->setVisible(false);
+	}
+	else {
+		customTimeHour->setVisible(true);
+		customTimeMinute->setVisible(true);
+	}
+}
 void ApplicationUI::help_clicked(){
 	Page *helpPage = new Page();
 	Container *cc = Container::create().top(40);
@@ -430,17 +511,39 @@ void ApplicationUI::help_clicked(){
 	l->setHorizontalAlignment(HorizontalAlignment::Center);
 	l->setText("GO Schedule Finder Help");
 	l->textStyle()->setBase(*t);
+
+	Label *donationLabel = new Label();
+	donationLabel->setMultiline(true);
+	donationLabel->setText("Message from developer: This GO Schedule finder was made for free but with many hours of contribution"
+			"from the developer. I would really appreciate if you could spare some money to help out the developer"
+			"as this application requires constant updates for GO schedules. If you can, please donate below. Thank you.");
+
+	Button *donateButton = new Button();
+	donateButton->setText("Click to Donate with PayPal");
+	donateButton->setHorizontalAlignment(HorizontalAlignment::Center);
+	QObject::connect(donateButton,SIGNAL(clicked()),this,SLOT(donateButtonClicked()));
+
 	cc->add(l);
+	cc->add(donationLabel);
+	cc->add(donateButton);
+
 	helpPage->setContent(cc);
 	navigationPane->push(helpPage);
 }
 
-void ApplicationUI::loadServiceUpdates(){
+void ApplicationUI::donateButtonClicked(){
+	loadServiceUpdates("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3WRP59B6BNM3J");
+}
+
+void ApplicationUI::updateButtonClicked(){
+	loadServiceUpdates("http://www.gotransit.com/publicroot/en/updates/status.aspx");
+}
+void ApplicationUI::loadServiceUpdates(QString link){
 	_webSheet = Sheet::create();
 	Page* updatesPage = Page::create();
 	Container* tempContainer = Container::create();
 	WebView* web = new WebView(tempContainer);
-	web->setUrl(QUrl("http://www.gotransit.com/publicroot/en/updates/status.aspx"));
+	web->setUrl(QUrl(link));
 	tempContainer->add(web);
 	ScrollView* view = ScrollView::create(tempContainer).scrollMode(ScrollMode::Both).pinchToZoomEnabled(true);
 	updatesPage->setContent(view);
@@ -505,7 +608,6 @@ void ApplicationUI::settings_clicked(){
 
 	p->setContent(contentContainer);
 	navigationPane->push(p);
-	navigationPane->setPeekEnabled(false);
 }
 void ApplicationUI::reinitialize_App_Screen(){
 	if (showFavoriteButton){
@@ -551,8 +653,6 @@ void ApplicationUI::saveSettings(){
 				favStations.removeAll(c.at(i)->text());
 		}
 		file.close();
-		navigationPane->setBackButtonsVisible(true);
-		navigationPane->setPeekEnabled(true);
 		navigationPane->pop();
 }
 void ApplicationUI::onDisplayDirectionAboutToChange(){
@@ -569,9 +669,10 @@ void ApplicationUI::onDisplayDirectionAboutToChange(){
 		}
 		lab->setTopMargin(0);
 		contentContainer->setTopPadding(0);
-		lab->setText("This application or its creators are not associated with GO Transit or Metrolinx.");
+		lab->setVisible(false);
 	}
 	else{ //Changing to portrait
+		lab->setVisible(true);
 		routeDropDown->setPreferredWidth(690);
 		directionDropDown->setPreferredWidth(690);
 		if (!Q10){
@@ -616,9 +717,16 @@ void ApplicationUI::createSettingsTab(){
 	pButton1->setHorizontalAlignment(HorizontalAlignment::Center);
 	textArea->setHorizontalAlignment(HorizontalAlignment::Center);
 	textArea2->setHorizontalAlignment(HorizontalAlignment::Center);
+
+	Button *donateButton = new Button();
+	donateButton->setText("Donate Money to Developers With PayPal");
+	donateButton->setHorizontalAlignment(HorizontalAlignment::Center);
+	QObject::connect(donateButton,SIGNAL(clicked()),this,SLOT(donateButtonClicked()));
+
 	contentContainer->add( pButton1 );
 	contentContainer->add( textArea2 );
 	contentContainer->add( textArea );
+	contentContainer->add( donateButton );
 	QObject::connect(pButton1,SIGNAL(clicked()),this,SLOT(onOpenWebsiteClicked()));
 	page2->setContent(contentContainer);
 
@@ -732,10 +840,15 @@ void ApplicationUI::onClicked(){
 			localFile->setDirection("1");
 
 		localFile->setStation(textInput->text());
-		localFile->setHour(QTime::currentTime().hour());
-		localFile->setMinute(QTime::currentTime().minute());
-		//        localFile->setHour(QTime::currentTime().hour());
-		//        localFile->setMinute(QTime::currentTime().minute());
+		if (customTimeHour->isVisible() && customTimeMinute->isVisible()){
+			bool ok;
+			localFile->setHour(customTimeHour->selectedOption()->text().toInt(&ok, 10));
+			localFile->setMinute(customTimeMinute->selectedOption()->text().toInt(&ok, 10));
+		}
+		else {
+			localFile->setHour(QTime::currentTime().hour());
+			localFile->setMinute(QTime::currentTime().minute());
+		}
 		localFile->parseXML();
 		setUpScheduleUI();
 
@@ -917,7 +1030,6 @@ void ApplicationUI::loadMoreStations(bb::cascades::TouchEvent* event){
 		//		}
 		//		for (int ii = 0; ii < stations.length(); ii++)
 		//			qDebug() << "i =" << ii << "... stations[i] =" <<stations[ii];
-		qDebug() << "Finished displaying...";
 
 		if (stations.length() < stationsToShow)
 			return;
@@ -1117,15 +1229,16 @@ void ApplicationUI::removeUI(bool focused){
 
 		bool checkStatus = false;
 		int i = 0;
+		//Check and set checkStatus if current selected station is one of favorite stations
 		for (i = 0; i < favStations.length(); i++) {
 			if (favStations[i].compare(textInput->text()) == 0 ) {
 				checkStatus = true;
 				break; }}
 
+		//if checkStatus or text field is empty
 		if (checkStatus || (favStations.length() > 0 && textInput->text().length() < 1)){
 			int count = 0;
 			for (int j = 0; j < favStations.length(); j++){
-				qDebug() << "favStations at " << j << "is " << favStations[j];
 				if (i != j) {
 					if (count == 0){
 						suggestion1->setText(favStations[j]);
@@ -1290,7 +1403,11 @@ void ApplicationUI::enableDropDown(QStringList elements){
 	}
 	routeDropDown->setTitle("Route:");
 	routeDropDown->setEnabled(true);
+	if (firstLaunch == false || favStations.length() == 0){
 	routeDropDown->setExpanded(true);
+	}
+	else
+		firstLaunch = false;
 }
 
 void ApplicationUI::addDirection(int index){
@@ -1460,9 +1577,8 @@ void ApplicationUI::showSuggestions(QString text){//Called whenever a new charac
 }
 QString ApplicationUI::addFavoriteStation(QString stationName){
 	QString outputMessage;
-	if (favStations.length() >= 5){
+	if (favStations.length() >= 5)
 		return "Max. 5 stations already added to favourites";
-	}
 	QString appFolder(QDir::currentPath());
 	QString fileName = appFolder + "/app/native/assets/AppSettings.txt";
 	QFile file(fileName);
@@ -1487,7 +1603,6 @@ QString ApplicationUI::addFavoriteStation(QString stationName){
 	}
 
 	file.close();
-	qDebug() << stationName;
 	return "Added " + stationName + " to favourite stations!";
 }
 
@@ -1520,10 +1635,9 @@ QString ApplicationUI::removeFavoriteStation(QString stationName){
 
 }
 
+
 void ApplicationUI::firstFavClicked(bb::cascades::TouchEvent* event){
-	qDebug() << "Favourite first";
 	if(event->touchType() == bb::cascades::TouchType::Down){
-		textInput->requestFocus();
 		QString message;
 		//Adding to favorites
 		if (imageFavOne->defaultImage().source().toString().compare("asset:///images/fav-image-unselected.png") == 0) {
@@ -1536,17 +1650,17 @@ void ApplicationUI::firstFavClicked(bb::cascades::TouchEvent* event){
 		}
 
 		bb::system::SystemToast *toast = new bb::system::SystemToast(this);
-		toast->setBody(message);
-		toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
-		toast->show();
+
+		    toast->setBody(message);
+		    toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
+		    toast->show();
+
 	}
 }
 
 void ApplicationUI::secondFavClicked(bb::cascades::TouchEvent* event){
-	qDebug() << "Favourite second";
 	if(event->touchType() == bb::cascades::TouchType::Down){
 		QString message;
-		textInput->requestFocus();
 		if (imageFavTwo->defaultImage().source().toString().compare("asset:///images/fav-image-unselected.png") == 0){
 			message = addFavoriteStation(suggestion2->text());
 			imageFavTwo->setDefaultImage("asset:///images/fav-image-selected.png");
@@ -1556,18 +1670,16 @@ void ApplicationUI::secondFavClicked(bb::cascades::TouchEvent* event){
 		}
 		bb::system::SystemToast *toast = new bb::system::SystemToast(this);
 
-		toast->setBody(message);
-		toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
-		toast->show();
+		    toast->setBody(message);
+		    toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
+		    toast->show();
 
 	}
 }
 
 void ApplicationUI::thirdFavClicked(bb::cascades::TouchEvent* event){
-	qDebug() << "Favourite third";
 	if(event->touchType() == bb::cascades::TouchType::Down){
 		QString message;
-		textInput->requestFocus();
 		if (imageFavThree->defaultImage().source().toString().compare("asset:///images/fav-image-unselected.png") == 0){
 			message = addFavoriteStation(suggestion3->text());
 			imageFavThree->setDefaultImage("asset:///images/fav-image-selected.png");
@@ -1577,18 +1689,16 @@ void ApplicationUI::thirdFavClicked(bb::cascades::TouchEvent* event){
 		}
 		bb::system::SystemToast *toast = new bb::system::SystemToast(this);
 
-		toast->setBody(message);
-		toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
-		toast->show();
+		    toast->setBody(message);
+		    toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
+		    toast->show();
 
 	}
 }
 
 void ApplicationUI::fourthFavClicked(bb::cascades::TouchEvent* event){
-	qDebug() << "Favourite fourth";
 	if(event->touchType() == bb::cascades::TouchType::Down){
 		QString message;
-		textInput->requestFocus();
 		if (imageFavFour->defaultImage().source().toString().compare("asset:///images/fav-image-unselected.png") == 0){
 			message = addFavoriteStation(suggestion4->text());
 			imageFavFour->setDefaultImage("asset:///images/fav-image-selected.png");
@@ -1598,9 +1708,9 @@ void ApplicationUI::fourthFavClicked(bb::cascades::TouchEvent* event){
 		}
 		bb::system::SystemToast *toast = new bb::system::SystemToast(this);
 
-		toast->setBody(message);
-		toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
-		toast->show();
+		    toast->setBody(message);
+		    toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
+		    toast->show();
 
 	}
 }

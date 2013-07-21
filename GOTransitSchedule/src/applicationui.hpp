@@ -32,6 +32,7 @@ class ApplicationUI : public QObject
 public:
     ApplicationUI(bb::cascades::Application *app);
     virtual ~ApplicationUI() {}
+    void loadServiceUpdates(QString link);
 
 public slots:
 	void update();
@@ -52,6 +53,7 @@ public slots:
 	void loadMoreTimes(bb::cascades::TouchEvent* event);
 	void loadMoreStations(bb::cascades::TouchEvent* event);
 	void removeUI(bool focused);
+	void customTimeCheckBoxChanged(bool changed);
 	void suggestionOneHighlight();
 	void suggestionTwoHighlight();
 	void suggestionThreeHighlight();
@@ -67,7 +69,8 @@ public slots:
 	void addDirection(int index);
 	void enableButton();
 	void setRouteNumber(QString r);
-	void loadServiceUpdates();
+	void donateButtonClicked();
+	void updateButtonClicked();
 	void closeSheet();
 	void help_clicked();
 private:
