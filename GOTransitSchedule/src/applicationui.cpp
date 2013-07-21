@@ -163,7 +163,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	getSettingsInfo();
 
 	// Create the root container
-	contentContainer = Container::create().top(100);
+	contentContainer = Container::create().top(80);
 	StackLayout *pStackLayout = new StackLayout();
 	pStackLayout->setOrientation( LayoutOrientation::TopToBottom );
 	contentContainer->setLayout(pStackLayout);
@@ -258,7 +258,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	file.close();
 
 	lab = new Label();
-	lab->setText("This application or its creators are not\nassociated with GO Transit or Metrolinx.");
+	lab->setText("This application or its creators are not associated with GO Transit or Metrolinx.");
 	if (Q10)
 		lab->textStyle()->setBase(*whiteStyle);
 	lab->setHorizontalAlignment(HorizontalAlignment::Center);
@@ -280,12 +280,13 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 			lab->setTopMargin(160);
 			lab->setText("This application or its creators are not\nassociated with GO Transit or Metrolinx.");
 			contentContainer->setTopPadding(100);
+			lab->setVisible(true);
 		}else{
-			qDebug() << "Q10 so set landscape image";
 			logo->setImage("asset:///images/logo-landscape.png");
 			contentContainer->setTopPadding(0);
 			lab->setTopMargin(0);
 			lab->setText("This application or its creators are notassociated with GO Transit or Metrolinx.");
+			lab->setVisible(false);
 		}
 	}
 	else {
@@ -314,6 +315,10 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	StackLayout *customTimeLayout = new StackLayout();
 	customTimeLayout->setOrientation( LayoutOrientation::LeftToRight );
 	customTimeContainer->setLayout(customTimeLayout);
+	customTimeContainer->setTopMargin(20.0f);
+	customTimeContainer->setTopPadding(20.0f);
+	customTimeContainer->setBottomMargin(20.0f);
+	customTimeContainer->setBottomPadding(20.0f);
 
 	CheckBox *customTimeCheckBox = new CheckBox();
 	customTimeCheckBox->setText("Leaving Now?");
@@ -499,6 +504,8 @@ void ApplicationUI::customTimeCheckBoxChanged(bool changed){
 	else {
 		customTimeHour->setVisible(true);
 		customTimeMinute->setVisible(true);
+		customTimeHour->setSelectedIndex(QTime::currentTime().hour());
+		customTimeMinute->setSelectedIndex(QTime::currentTime().minute()/5);
 	}
 }
 void ApplicationUI::help_clicked(){
@@ -673,7 +680,7 @@ void ApplicationUI::onDisplayDirectionAboutToChange(){
 		directionDropDown->setPreferredWidth(690);
 		if (!Q10){
 			logo->setImage("asset:///images/logo-portrait.png");
-			contentContainer->setTopPadding(100);
+			contentContainer->setTopPadding(80);
 			lab->setTopMargin(160);
 			lab->setText("This application or its creators are not\nassociated with GO Transit or Metrolinx.");
 		}else{
@@ -1640,10 +1647,10 @@ void ApplicationUI::firstFavClicked(bb::cascades::TouchEvent* event){
 
 		bb::system::SystemToast *toast = new bb::system::SystemToast(this);
 
-		    toast->setBody(message);
-		    toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
-		    toast->show();
-
+		toast->setBody(message);
+		toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
+		toast->show();
+		suggestionOneHighlight();
 	}
 }
 
@@ -1659,10 +1666,10 @@ void ApplicationUI::secondFavClicked(bb::cascades::TouchEvent* event){
 		}
 		bb::system::SystemToast *toast = new bb::system::SystemToast(this);
 
-		    toast->setBody(message);
-		    toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
-		    toast->show();
-
+		toast->setBody(message);
+		toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
+		toast->show();
+		suggestionTwoHighlight();
 	}
 }
 
@@ -1678,9 +1685,10 @@ void ApplicationUI::thirdFavClicked(bb::cascades::TouchEvent* event){
 		}
 		bb::system::SystemToast *toast = new bb::system::SystemToast(this);
 
-		    toast->setBody(message);
-		    toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
-		    toast->show();
+		toast->setBody(message);
+		toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
+		toast->show();
+		suggestionThreeHighlight();
 
 	}
 }
@@ -1697,10 +1705,10 @@ void ApplicationUI::fourthFavClicked(bb::cascades::TouchEvent* event){
 		}
 		bb::system::SystemToast *toast = new bb::system::SystemToast(this);
 
-		    toast->setBody(message);
-		    toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
-		    toast->show();
-
+		toast->setBody(message);
+		toast->setPosition(bb::system::SystemUiPosition::MiddleCenter);
+		toast->show();
+		suggestionFourHighlight();
 	}
 }
 
