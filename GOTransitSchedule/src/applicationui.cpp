@@ -14,12 +14,11 @@
  */
 // Default empty project template
 #include "applicationui.hpp"
-#include "settingAndHelp.hpp"
 #include <bb/system/SystemToast>
 #include <bb/system/SystemUiPosition>
 #include <bb/cascades/ImageButton>
 #include <bb/cascades/Menu>
-#include <bb/cascades/HelpActionItem>
+#include <bb/cascades/ActionItem>
 #include <bb/cascades/SettingsActionItem>
 #include <bb/system/SystemDialog>
 #include <bb/cascades/Application>
@@ -423,7 +422,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	QObject::connect(checkUpdate,SIGNAL(clicked()),this,SLOT(updateButtonClicked()));
 
 	Tab* tab3 = new Tab();
-	tab3->setTitle("Disclaimer");
+	tab3->setTitle("Donate");
 	tab3->setDescription("App settings and specifications");
 	tab3->setImage("asset:///images/ic_view_details.png");
 
@@ -464,11 +463,12 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	Menu *menu = new Menu;
 
 	// Create the actions to add to the application menu
-	HelpActionItem *help = new HelpActionItem;
+	ActionItem *help = ActionItem::create();
+	help->setTitle("Disclaimer");
 	SettingsActionItem *settings = new SettingsActionItem;
 
 	// Create the application menu and add the actions
-	menu->setHelpAction(help);
+	menu->addAction(help);
 	menu->setSettingsAction(settings);
 	// Set the menu of the application
 	Application::instance()->setMenu(menu);
@@ -482,9 +482,9 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	Q_ASSERT(res);
 
 	if (firstTimeAppLaunched == true){
-		bb::system::SystemDialog* menuDialog = new bb::system::SystemDialog("ok");
-		menuDialog->setTitle("Accessing the Menu");
-		menuDialog->setBody("Now swipe down from the top to access the application menu!");
+		bb::system::SystemDialog* menuDialog = new bb::system::SystemDialog("Got it!",this);
+		menuDialog->setTitle("New Feature!");
+		menuDialog->setBody("To access the new settings option swipe down from top.");
 		menuDialog->show();
 	}
 	app->setScene(tabbedPane);
@@ -509,24 +509,20 @@ void ApplicationUI::help_clicked(){
 	t->setFontSize(FontSize::XLarge);
 	Label *l = new Label();
 	l->setHorizontalAlignment(HorizontalAlignment::Center);
-	l->setText("GO Schedule Finder Help");
+	l->setText("GO Schedule Finder");
 	l->textStyle()->setBase(*t);
 
-	Label *donationLabel = new Label();
-	donationLabel->setMultiline(true);
-	donationLabel->setText("Message from developer: This GO Schedule finder was made for free but with many hours of contribution"
-			"from the developer. I would really appreciate if you could spare some money to help out the developer"
-			"as this application requires constant updates for GO schedules. If you can, please donate below. Thank you.");
-
-	Button *donateButton = new Button();
-	donateButton->setText("Click to Donate with PayPal");
-	donateButton->setHorizontalAlignment(HorizontalAlignment::Center);
-	QObject::connect(donateButton,SIGNAL(clicked()),this,SLOT(donateButtonClicked()));
+	Button* pButton1 = Button::create().text("Open GO Transit schedule website");
+	pButton1->setHorizontalAlignment(HorizontalAlignment::Center);
+	Label *disclaimerLabel = new Label();
+	disclaimerLabel->setMultiline(true);
+	disclaimerLabel->setText("DISCLAIMER:\n\nThis application, its creators, or contributors are NOT in any way associated with GO Transit, MetroLinx, or any of its partners. Everything used in this application has been used with permission from its owners and its copyright holders. "
+			"The creators of this application take no responsibility for incorrect, inaccurate or missing information in regards to schedules. This app is limited at the moment to schedules ONLY ON WEEKDAYS. The app does not show special trips such as Wonderland.");
 
 	cc->add(l);
-	cc->add(donationLabel);
-	cc->add(donateButton);
-
+	cc->add(disclaimerLabel);
+	cc->add(pButton1);
+	QObject::connect(pButton1,SIGNAL(clicked()),this,SLOT(onOpenWebsiteClicked()));
 	helpPage->setContent(cc);
 	navigationPane->push(helpPage);
 }
@@ -702,32 +698,25 @@ void ApplicationUI::createSettingsTab(){
 		contentContainer->setBackground(Color::Black);
 	else
 		contentContainer->setBackground(Color::White);
-	Button* pButton1 = Button::create().text("Open GO Transit schedule website");
+
 	TextArea *textArea = new TextArea();
-	TextArea *textArea2 = new TextArea();
-	textArea2->setText("DISCLAIMER:");
-	textArea->setText("This application, its creators, or contributors are NOT in any way associated with GO Transit, MetroLinx, or any of its partners. Everything used in this application has been used with permission from its owners and its copyright holders. "
-			"The creators of this application take no responsibility for incorrect, inaccurate or missing information in regards to schedules. This app is limited at the moment to schedules ONLY ON WEEKDAYS. The app does not show special trips such as Wonderland.");
+	textArea->setText("Dear App users:\n\nThis GO Schedule finder was made for free but with many hours of contribution "
+			"from the developers. We want the app to remain free of charge and free of any ads.If you liked this app and find it useful, then please support the developers in keeping it upto date.\n"
+			"If you can, please donate below.\n\nThank you.");
 	if (Q10){
 		textArea->textStyle()->setBase(*whiteStyle);
-		textArea2->textStyle()->setBase(*whiteStyle);
 	}
 	textArea->setEditable(false);
-	textArea2->setEditable(false);
-	pButton1->setHorizontalAlignment(HorizontalAlignment::Center);
+
 	textArea->setHorizontalAlignment(HorizontalAlignment::Center);
-	textArea2->setHorizontalAlignment(HorizontalAlignment::Center);
 
 	Button *donateButton = new Button();
-	donateButton->setText("Donate Money to Developers With PayPal");
+	donateButton->setText("Click to donate With PayPal");
 	donateButton->setHorizontalAlignment(HorizontalAlignment::Center);
 	QObject::connect(donateButton,SIGNAL(clicked()),this,SLOT(donateButtonClicked()));
 
-	contentContainer->add( pButton1 );
-	contentContainer->add( textArea2 );
 	contentContainer->add( textArea );
 	contentContainer->add( donateButton );
-	QObject::connect(pButton1,SIGNAL(clicked()),this,SLOT(onOpenWebsiteClicked()));
 	page2->setContent(contentContainer);
 
 }
