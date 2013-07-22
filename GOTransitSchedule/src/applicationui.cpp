@@ -69,7 +69,7 @@ Label *moreStationsButton ;
 LoadData *localFile;
 OrientationSupport *thisOrientation;
 int deviceWidth, deviceHeight;
-Container *suggestion1Container,*suggestion2Container,*suggestion3Container,*suggestion4Container;
+Container *suggestion1Container,*suggestion2Container,*suggestion3Container,*suggestion4Container, *customTimeContainer ;
 ImageButton* imageFavOne, *imageFavTwo, *imageFavThree, *imageFavFour;
 float progressIndicatorValue = 0.0;
 bb::cascades::TextField *suggestion1, *suggestion2, *suggestion3, *suggestion4, *textInput;
@@ -311,14 +311,14 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 			directionDropDown->setPreferredWidth(690);
 	}
 
-	Container *customTimeContainer = new Container();
+	customTimeContainer = new Container();
 	StackLayout *customTimeLayout = new StackLayout();
 	customTimeLayout->setOrientation( LayoutOrientation::LeftToRight );
 	customTimeContainer->setLayout(customTimeLayout);
-	customTimeContainer->setTopMargin(20.0f);
-	customTimeContainer->setTopPadding(20.0f);
-	customTimeContainer->setBottomMargin(20.0f);
-	customTimeContainer->setBottomPadding(20.0f);
+	customTimeContainer->setTopPadding(20);
+	customTimeContainer->setBottomPadding(20);
+	customTimeContainer->setLeftPadding(200);
+	customTimeContainer->setRightPadding(200);
 
 	CheckBox *customTimeCheckBox = new CheckBox();
 	customTimeCheckBox->setText("Leaving Now?");
@@ -411,17 +411,28 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 
 	TabbedPane* tabbedPane = TabbedPane::create() .showTabsOnActionBar(true);
 	Tab* tab = new Tab();
-	tab->setTitle("GO Transit");
+	tab->setTitle("GO Schedules");
 	tab->setDescription("GO Bus and Train Times");
 	tab->setImage("asset:///images/go-tab-icon-2.png");
 
 	Tab* tab2 = new Tab();
 	tab2->setTitle("GO Service Updates");
 	tab2->setDescription("Latest info about GO Service Updates");
+	tab2->setImage("asset:///images/service-update-icon.png");
 
 	page3 = new Page();
 	_page3Container = Container::create().top(100);
 	Button* checkUpdate = Button::create().text("Check Service Update").horizontal(HorizontalAlignment::Center).vertical(VerticalAlignment::Center);
+	TextStyle *t = new TextStyle();
+	t->setColor(Color::DarkGreen);
+	t->setFontSize(FontSize::XLarge);
+	Label *l = new Label();
+	l->setHorizontalAlignment(HorizontalAlignment::Center);
+	l->setText("GO Service Updates");
+	l->textStyle()->setBase(*t);
+	l->setBottomMargin(75);
+	l->setBottomPadding(75);
+	_page3Container->add(l);
 	_page3Container->add(checkUpdate);
 	page3->setContent(_page3Container);
 	QObject::connect(checkUpdate,SIGNAL(clicked()),this,SLOT(updateButtonClicked()));
@@ -470,6 +481,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	// Create the actions to add to the application menu
 	ActionItem *help = ActionItem::create();
 	help->setTitle("Disclaimer");
+	help->setImage("asset:///images/ic_help.png");
 	SettingsActionItem *settings = new SettingsActionItem;
 
 	// Create the application menu and add the actions
@@ -500,10 +512,14 @@ void ApplicationUI::customTimeCheckBoxChanged(bool changed){
 	if (changed){
 		customTimeHour->setVisible(false);
 		customTimeMinute->setVisible(false);
+		customTimeContainer->setLeftPadding(200);
+		customTimeContainer->setRightPadding(200);
 	}
 	else {
 		customTimeHour->setVisible(true);
 		customTimeMinute->setVisible(true);
+		customTimeContainer->setLeftPadding(0);
+		customTimeContainer->setRightPadding(0);
 		customTimeHour->setSelectedIndex(QTime::currentTime().hour());
 		customTimeMinute->setSelectedIndex(QTime::currentTime().minute()/5);
 	}
