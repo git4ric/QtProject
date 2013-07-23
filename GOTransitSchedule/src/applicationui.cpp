@@ -889,10 +889,10 @@ void ApplicationUI::setUpScheduleUI(){
 	QObject::connect(thisOrientation, SIGNAL(displayDirectionAboutToChange(bb::cascades::DisplayDirection::Type,
 			bb::cascades::UIOrientation::Type)), this, SLOT(scheduleUIDirectionChanging()));
 	QString timeDisplay = t.toString("hh:mm:ss");
-	QString text = "Time: " + timeDisplay;
+	QString text = "Current Time: " + timeDisplay;
 	Label *label = new Label();
 	label->setText(text);
-	label->textStyle()->setBase(*blueStyle);
+//	label->textStyle()->setBase(*blueStyle);
 
 	Container* contentContainer = Container::create().top(30);
 	if (Q10)
