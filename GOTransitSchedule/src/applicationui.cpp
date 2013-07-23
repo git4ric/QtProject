@@ -159,8 +159,8 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	_manager = new bb::system::InvokeManager(this);
 	_saveData = false;
 	navigationPane = NavigationPane::create();
-	QObject::connect(navigationPane, SIGNAL(popTransitionEnded(bb::cascades::Page*)), this, SLOT(onPopTransitionEnded(bb:cascades::Page*)));
-
+	QObject::connect(navigationPane,  SIGNAL(popTransitionEnded(bb::cascades::Page*)),
+	        this, SLOT(popFinished(bb::cascades::Page*)));
 	getSettingsInfo();
 
 	// Create the root container
@@ -423,8 +423,8 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	tab2->setImage("asset:///images/service-update-icon.png");
 
 	navigationPaneService = NavigationPane::create();
-	QObject::connect(navigationPaneService, SIGNAL(popTransitionEnded(bb::cascades::Page*)), this, SLOT(onPopTransitionEnded(bb:cascades::Page*)));
-
+	QObject::connect(navigationPaneService,  SIGNAL(popTransitionEnded(bb::cascades::Page*)),
+	        this, SLOT(popFinished(bb::cascades::Page*)));
 	page3 = new Page();
 	_page3Container = Container::create().top(100);
 	Button* checkUpdate = Button::create().text("Check Service Update").horizontal(HorizontalAlignment::Center).vertical(VerticalAlignment::Center);
@@ -460,7 +460,8 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	tabbedPane->add(tab2);
 	createSettingsTab();
 	navigationPaneDonate = NavigationPane::create();
-	QObject::connect(navigationPaneDonate, SIGNAL(popTransitionEnded(bb::cascades::Page*)), this, SLOT(onPopTransitionEnded(bb:cascades::Page*)));
+	QObject::connect(navigationPaneDonate,  SIGNAL(popTransitionEnded(bb::cascades::Page*)),
+	        this, SLOT(popFinished(bb::cascades::Page*)));
 	navigationPaneDonate->push(page2);
 	tab3->setContent(navigationPaneDonate);
 	navigationPaneService->push(page3);
@@ -1754,8 +1755,11 @@ void ApplicationUI::fourthFavClicked(bb::cascades::TouchEvent* event){
 	}
 }
 
-void onPopTransitionEnded(bb::cascades::Page* page)
+//void onPopTransitionEnded()
+//{
+//}
+void ApplicationUI::popFinished(bb::cascades::Page* page)
 {
 	Application::instance()->setMenuEnabled(true);
-	delete page;
+    delete page;
 }

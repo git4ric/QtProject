@@ -20,6 +20,7 @@
 #include "LoadData.hpp"
 namespace bb { namespace cascades { class Application; }}
 namespace bb { namespace cascades { class Container; }}
+namespace bb { namespace cascades { class Page; }}
 
 /*!
  * @brief Application pane object
@@ -49,7 +50,8 @@ public slots:
 	void getSettingsInfo();
 	void scheduleUIDirectionChanging();
 	void onReplyFinished();
-	void onPopTransitionEnded(bb::cascades::Page* page);
+	//void onPopTransitionEnded(bb::cascades::Page* page);
+	void popFinished(bb::cascades::Page* page);
 	void getDeviceInformation();
 	void loadMoreTimes(bb::cascades::TouchEvent* event);
 	void loadMoreStations(bb::cascades::TouchEvent* event);
