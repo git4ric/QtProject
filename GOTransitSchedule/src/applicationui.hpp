@@ -49,6 +49,7 @@ public slots:
 	void getSettingsInfo();
 	void scheduleUIDirectionChanging();
 	void onReplyFinished();
+	void onPopTransitionEnded(bb::cascades::Page* page);
 	void getDeviceInformation();
 	void loadMoreTimes(bb::cascades::TouchEvent* event);
 	void loadMoreStations(bb::cascades::TouchEvent* event);
@@ -69,7 +70,7 @@ public slots:
 	void addDirection(int index);
 	void enableButton();
 	void setRouteNumber(QString r);
-	void donateButtonClicked();
+	void openScheduleButtonClicked();
 	void updateButtonClicked();
 	void closeSheet();
 	void help_clicked();

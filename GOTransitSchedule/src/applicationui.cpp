@@ -58,8 +58,9 @@ using namespace bb::cascades;
 using namespace bb::device;
 
 QString routeFile;
+TabbedPane *tabbedPane;
 int stationsToShow, indexOfCurrentStationShowing;
-bb::cascades::NavigationPane* navigationPane;
+bb::cascades::NavigationPane* navigationPane, *navigationPaneService, *navigationPaneDonate;
 Button* fetchData;
 Dialog* pMyDialog;
 Label *lab,  *loadMoreButton, *redDisplay;
@@ -158,7 +159,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	_manager = new bb::system::InvokeManager(this);
 	_saveData = false;
 	navigationPane = NavigationPane::create();
-	QObject::connect(navigationPane, SIGNAL(popTransitionEnded(bb::cascades::Page*)), this, SLOT(popFinished(bb:cascades::Page*)));
+	QObject::connect(navigationPane, SIGNAL(popTransitionEnded(bb::cascades::Page*)), this, SLOT(onPopTransitionEnded(bb:cascades::Page*)));
 
 	getSettingsInfo();
 
@@ -410,7 +411,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	// a compiler warning
 	Q_UNUSED(res);
 
-	TabbedPane* tabbedPane = TabbedPane::create() .showTabsOnActionBar(true);
+	tabbedPane = TabbedPane::create() .showTabsOnActionBar(true);
 	Tab* tab = new Tab();
 	tab->setTitle("GO Schedules");
 	tab->setDescription("GO Bus and Train Times");
@@ -420,6 +421,9 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	tab2->setTitle("GO Service Updates");
 	tab2->setDescription("Latest info about GO Service Updates");
 	tab2->setImage("asset:///images/service-update-icon.png");
+
+	navigationPaneService = NavigationPane::create();
+	QObject::connect(navigationPaneService, SIGNAL(popTransitionEnded(bb::cascades::Page*)), this, SLOT(onPopTransitionEnded(bb:cascades::Page*)));
 
 	page3 = new Page();
 	_page3Container = Container::create().top(100);
@@ -455,9 +459,12 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	tabbedPane->add(tab);
 	tabbedPane->add(tab2);
 	createSettingsTab();
-	tab3->setContent(page2);
-	tab2->setContent(page3);
-
+	navigationPaneDonate = NavigationPane::create();
+	QObject::connect(navigationPaneDonate, SIGNAL(popTransitionEnded(bb::cascades::Page*)), this, SLOT(onPopTransitionEnded(bb:cascades::Page*)));
+	navigationPaneDonate->push(page2);
+	tab3->setContent(navigationPaneDonate);
+	navigationPaneService->push(page3);
+	tab2->setContent(navigationPaneService);
 	tabbedPane->add(tab3);
 
 	res = QObject::connect(OrientationSupport::instance(), SIGNAL(displayDirectionAboutToChange(bb::cascades::DisplayDirection::Type,
@@ -530,6 +537,7 @@ void ApplicationUI::customTimeCheckBoxChanged(bool changed){
 	}
 }
 void ApplicationUI::help_clicked(){
+	Application::instance()->setMenuEnabled(false);
 	Page *helpPage = new Page();
 	Container *cc = Container::create().top(40);
 	TextStyle *t = new TextStyle();
@@ -550,13 +558,19 @@ void ApplicationUI::help_clicked(){
 	cc->add(l);
 	cc->add(disclaimerLabel);
 	cc->add(pButton1);
-	QObject::connect(pButton1,SIGNAL(clicked()),this,SLOT(onOpenWebsiteClicked()));
+	QObject::connect(pButton1,SIGNAL(clicked()),this,SLOT(openScheduleButtonClicked()));
 	helpPage->setContent(cc);
-	navigationPane->push(helpPage);
+
+	if (tabbedPane->activeTab()->title().contains("GO Service", Qt::CaseInsensitive))
+		navigationPaneService->push(helpPage);
+	else if (tabbedPane->activeTab()->title().contains("donate", Qt::CaseInsensitive))
+		navigationPaneDonate->push(helpPage);
+	else
+		navigationPane->push(helpPage);
 }
 
-void ApplicationUI::donateButtonClicked(){
-	loadServiceUpdates("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3WRP59B6BNM3J");
+void ApplicationUI::openScheduleButtonClicked(){
+	loadServiceUpdates("http://www.gotransit.com/publicroot/en/schedules/findsch.aspx?station=&frMap=Y&new=");
 }
 
 void ApplicationUI::updateButtonClicked(){
@@ -589,6 +603,7 @@ void ApplicationUI::closeSheet(){
 
 
 void ApplicationUI::settings_clicked(){
+	Application::instance()->setMenuEnabled(false);
 	Page *p = new Page();
 	Container* contentContainer = Container::create().top(32);
 	StackLayout *pStackLayout = new StackLayout();
@@ -631,7 +646,13 @@ void ApplicationUI::settings_clicked(){
 	QObject::connect(b,SIGNAL(clicked()),this,SLOT(saveSettings()));
 
 	p->setContent(contentContainer);
-	navigationPane->push(p);
+
+	if (tabbedPane->activeTab()->title().contains("GO Service", Qt::CaseInsensitive))
+		navigationPaneService->push(p);
+	else if (tabbedPane->activeTab()->title().contains("donate", Qt::CaseInsensitive))
+		navigationPaneDonate->push(p);
+	else
+		navigationPane->push(p);
 }
 void ApplicationUI::reinitialize_App_Screen(){
 	if (showFavoriteButton){
@@ -741,7 +762,7 @@ void ApplicationUI::createSettingsTab(){
 	Button *donateButton = new Button();
 	donateButton->setText("Click to donate With PayPal");
 	donateButton->setHorizontalAlignment(HorizontalAlignment::Center);
-	QObject::connect(donateButton,SIGNAL(clicked()),this,SLOT(donateButtonClicked()));
+	QObject::connect(donateButton,SIGNAL(clicked()),this,SLOT(onOpenWebsiteClicked()));
 
 	contentContainer->add( textArea );
 	contentContainer->add( donateButton );
@@ -751,7 +772,7 @@ void ApplicationUI::createSettingsTab(){
 void ApplicationUI::onOpenWebsiteClicked(){
 	bb::system::InvokeRequest requestWebsite;
 	requestWebsite.setTarget("sys.browser");
-	requestWebsite.setUri(QUrl("http://www.gotransit.com/publicroot/en/schedules/findsch.aspx?station=&frMap=Y&new="));
+	requestWebsite.setUri(QUrl("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3WRP59B6BNM3J"));
 	requestWebsite.setAction("bb.action.OPEN");
 
 	_reply = _manager->invoke(requestWebsite);
@@ -1733,7 +1754,8 @@ void ApplicationUI::fourthFavClicked(bb::cascades::TouchEvent* event){
 	}
 }
 
-void popFinished(bb::cascades::Page* page)
+void onPopTransitionEnded(bb::cascades::Page* page)
 {
+	Application::instance()->setMenuEnabled(true);
 	delete page;
 }
