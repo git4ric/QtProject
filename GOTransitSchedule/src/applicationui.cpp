@@ -711,7 +711,7 @@ void ApplicationUI::onDisplayDirectionAboutToChange(){
 			directionDropDown->setPreferredWidth(690);
 			lab->setVisible(true);
 		}
-		lab->setTopPadding(0);
+		lab->setTopMargin(0);
 		contentContainer->setTopPadding(0);
 		lab->setText("This app's creators aren't associated with GO");
 	}
