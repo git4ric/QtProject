@@ -286,20 +286,22 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 			logo->setImage("asset:///images/logo-landscape.png");
 			contentContainer->setTopPadding(0);
 			lab->setTopMargin(0);
-			lab->setText("This application or its creators are notassociated with GO Transit or Metrolinx.");
-			lab->setVisible(false);
+			lab->setText("This app's creators aren't associated with GO");
+			lab->setVisible(true);
 		}
 	}
 	else {
 		logo->setImage("asset:///images/logo-landscape.png");
-		if (!Q10)
+		if (!Q10){
+			lab->setVisible(false);
 			routeDropDown->setPreferredWidth(1200);
-		else
+		}else{
 			routeDropDown->setPreferredWidth(690);
+			lab->setVisible(true);
+		}
 		lab->setTopMargin(0);
 		contentContainer->setTopPadding(0);
-		lab->setText("This application or its creators are not associated with GO Transit or Metrolinx.");
-		lab->setVisible(false);
+		lab->setText("This app's creators aren't associated with GO");
 	}
 	directionDropDown = DropDown::create().title("Select direction of travel");
 	directionDropDown->setHorizontalAlignment(HorizontalAlignment::Center);
@@ -317,8 +319,6 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	StackLayout *customTimeLayout = new StackLayout();
 	customTimeLayout->setOrientation( LayoutOrientation::LeftToRight );
 	customTimeContainer->setLayout(customTimeLayout);
-	customTimeContainer->setTopPadding(15);
-	customTimeContainer->setBottomPadding(15);
 	customTimeContainer->setLeftPadding(200);
 	customTimeContainer->setRightPadding(200);
 
@@ -523,16 +523,12 @@ void ApplicationUI::customTimeCheckBoxChanged(bool changed){
 		customTimeMinute->setVisible(false);
 		customTimeContainer->setLeftPadding(200);
 		customTimeContainer->setRightPadding(200);
-		customTimeContainer->setTopPadding(15);
-		customTimeContainer->setBottomPadding(15);
 	}
 	else {
 		customTimeHour->setVisible(true);
 		customTimeMinute->setVisible(true);
 		customTimeContainer->setLeftPadding(0);
 		customTimeContainer->setRightPadding(0);
-		customTimeContainer->setTopPadding(0);
-		customTimeContainer->setBottomPadding(0);
 		customTimeHour->setSelectedIndex(QTime::currentTime().hour());
 		customTimeMinute->setSelectedIndex(QTime::currentTime().minute()/5);
 	}
@@ -709,13 +705,15 @@ void ApplicationUI::onDisplayDirectionAboutToChange(){
 		if (!Q10){
 			routeDropDown->setPreferredWidth(1200);
 			directionDropDown->setPreferredWidth(1200);
+			lab->setVisible(false);
 		}else{
 			routeDropDown->setPreferredWidth(690);
 			directionDropDown->setPreferredWidth(690);
+			lab->setVisible(true);
 		}
-		lab->setTopMargin(0);
+		lab->setTopPadding(0);
 		contentContainer->setTopPadding(0);
-		lab->setVisible(false);
+		lab->setText("This app's creators aren't associated with GO");
 	}
 	else{ //Changing to portrait
 		lab->setVisible(true);
@@ -730,7 +728,7 @@ void ApplicationUI::onDisplayDirectionAboutToChange(){
 			logo->setImage("asset:///images/logo-landscape.png");
 			contentContainer->setTopPadding(0);
 			lab->setTopMargin(0);
-			lab->setText("This application or its creators are not associated with GO Transit or Metrolinx.");
+			lab->setText("This app's creators aren't associated with GO");
 		}
 	}
 }
