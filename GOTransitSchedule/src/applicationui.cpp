@@ -1,89 +1,11 @@
 
-/*
-  TODO: Custom icons for tabbed pane icons (GO and Presto)
-  TODO: Add coming soon screen for PRESTO tab
-  TODO: Input from textbox should go to function call (hard coded Bramalea for now till names are fixed in code) (DONE!)
-            Make sure all station names in file name are same as HTML names. (DONE!)
-  TODO: Fix direction issue (some directions are reversed in app as opposed to documents) (DONE!)
-  TODO: Find a better dialog box...
-  TODO: Combine 5   QStringList's for bus1,bus2,etc. into 1 QList<QStringList> (DONE!)
-  TODO: When you select a station, then a route, then go back to edit station text box, it crashes... No idea why (DONE!)
-  TODO: Add times for next stations in bus time lists and add station names in output page (DONE!)
-  TODO: Make text input suggestions searchable by .contains as well as .compare/.equals (DONE!)
-  TODO: Fix heights and widths of display text areas (DONE!)
- */
-// Default empty project template
 #include "applicationui.hpp"
-#include <bb/system/SystemToast>
-#include <bb/system/SystemUiPosition>
-#include <bb/cascades/ImageButton>
-#include <bb/cascades/Menu>
-#include <bb/cascades/ActionItem>
-#include <bb/cascades/SettingsActionItem>
-#include <bb/system/SystemDialog>
-#include <bb/cascades/Application>
-#include <bb/cascades/QmlDocument>
-#include <bb/cascades/OrientationSupport>
-#include <bb/cascades/AbstractPane>
-#include <bb/cascades/ActionBarPlacement>
-#include <bb/cascades/ActionItem>
-#include <bb/cascades/Application>
-#include <bb/cascades/Color>
-#include <bb/cascades/Container>
-#include <bb/cascades/DockLayout>
-#include <bb/cascades/Stacklayout>
-#include <bb/cascades/StackLayoutProperties>
-#include <bb/cascades/Button>
-#include <bb/cascades/NavigationPaneProperties>
-#include <qt4/QtCore/QTime>
-#include <qt4/QtCore/QStringList>
-#include <bb/cascades/TextStyle>
-#include <bb/cascades/FontWeight>
-#include <bb/cascades/FontSize>
-#include <bb/device/DisplayInfo>
-#include <qt4/QtCore/QFile>
-#include <bb/cascades/Dialog>
-#include <bb/cascades/TextArea>
-#include <bb/cascades/TabbedPane>
-#include <bb/cascades/ScrollView>
-#include <bb/cascades/Dialog>
-#include <bb/cascades/ScrollMode>
-#include <bps/virtualkeyboard.h>
-#include <bb/cascades/Tab>
-#include <bb/cascades/ProgressIndicator>
-#include <bb/cascades/CheckBox>
-#include <bb/cascades/ToggleButton>
-
 using namespace bb::cascades;
 using namespace bb::device;
 
-QString routeFile;
-TabbedPane *tabbedPane;
-int stationsToShow, indexOfCurrentStationShowing;
-bb::cascades::NavigationPane* navigationPane, *navigationPaneService, *navigationPaneDonate;
-Button* fetchData;
-Dialog* pMyDialog;
-Label *lab,  *loadMoreButton, *redDisplay;
-ProgressIndicator *pI;
-QList<bb::cascades::TextArea*> listOfTextAreas;
-Label *moreStationsButton ;
-LoadData *localFile;
-OrientationSupport *thisOrientation;
-int deviceWidth, deviceHeight;
-Container *suggestion1Container,*suggestion2Container,*suggestion3Container,*suggestion4Container, *customTimeContainer ;
-ImageButton* imageFavOne, *imageFavTwo, *imageFavThree, *imageFavFour;
-float progressIndicatorValue = 0.0;
-bb::cascades::TextField *suggestion1, *suggestion2, *suggestion3, *suggestion4, *textInput;
-bb::cascades::ImageView *logo;
-DropDown *routeDropDown, *directionDropDown, *customTimeHour, *customTimeMinute;
 bool Q10 = false;
-Container* contentContainer;
-QList<QString> favStations;
 bool showFavoriteButton, firstLaunch = true, firstTimeAppLaunched = false;
-QList<bb::cascades::CheckBox*> c;
-ToggleButton *t;
-QString hour, minute;
-Page *page3;
+float progressIndicatorValue = 0.0;
 
 void ApplicationUI::getDeviceInformation(){
 	OrientationSupport *support = OrientationSupport::instance();
@@ -286,7 +208,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 			logo->setImage("asset:///images/logo-landscape.png");
 			contentContainer->setTopPadding(0);
 			lab->setTopMargin(0);
-			lab->setText("This app's creators aren't associated with GO");
+			lab->setText("This application or its creators are not\nassociated with GO Transit or Metrolinx.");
 			lab->setVisible(true);
 		}
 	}
@@ -301,7 +223,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 		}
 		lab->setTopMargin(0);
 		contentContainer->setTopPadding(0);
-		lab->setText("This app's creators aren't associated with GO");
+		lab->setText("This application or its creators are not\nassociated with GO Transit or Metrolinx.");
 	}
 	directionDropDown = DropDown::create().title("Select direction of travel");
 	directionDropDown->setHorizontalAlignment(HorizontalAlignment::Center);
@@ -425,9 +347,10 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	navigationPaneService = NavigationPane::create();
 	QObject::connect(navigationPaneService,  SIGNAL(popTransitionEnded(bb::cascades::Page*)),
 	        this, SLOT(popFinished(bb::cascades::Page*)));
-	page3 = new Page();
+	_page3 = new Page();
 	_page3Container = Container::create().top(100);
 	Button* checkUpdate = Button::create().text("Check Service Update").horizontal(HorizontalAlignment::Center).vertical(VerticalAlignment::Center);
+	Label* internetNote = Label::create().text("Note: This requires data usage").horizontal(HorizontalAlignment::Center);
 	TextStyle *t = new TextStyle();
 	t->setColor(Color::DarkGreen);
 	t->setFontSize(FontSize::XLarge);
@@ -439,7 +362,8 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	l->setBottomPadding(75);
 	_page3Container->add(l);
 	_page3Container->add(checkUpdate);
-	page3->setContent(_page3Container);
+	_page3Container->add(internetNote);
+	_page3->setContent(_page3Container);
 	QObject::connect(checkUpdate,SIGNAL(clicked()),this,SLOT(updateButtonClicked()));
 
 	Tab* tab3 = new Tab();
@@ -464,7 +388,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	        this, SLOT(popFinished(bb::cascades::Page*)));
 	navigationPaneDonate->push(page2);
 	tab3->setContent(navigationPaneDonate);
-	navigationPaneService->push(page3);
+	navigationPaneService->push(_page3);
 	tab2->setContent(navigationPaneService);
 	tabbedPane->add(tab3);
 
@@ -534,7 +458,7 @@ void ApplicationUI::customTimeCheckBoxChanged(bool changed){
 	}
 }
 void ApplicationUI::help_clicked(){
-	Application::instance()->setMenuEnabled(false);
+	Application::instance()->setMenuEnabled(false);// disable to prevent disclaimer within disclaimer
 	Page *helpPage = new Page();
 	Container *cc = Container::create().top(40);
 	TextStyle *t = new TextStyle();
@@ -713,7 +637,7 @@ void ApplicationUI::onDisplayDirectionAboutToChange(){
 		}
 		lab->setTopMargin(0);
 		contentContainer->setTopPadding(0);
-		lab->setText("This app's creators aren't associated with GO");
+		lab->setText("This application or its creators are not\nassociated with GO Transit or Metrolinx.");
 	}
 	else{ //Changing to portrait
 		lab->setVisible(true);
@@ -728,7 +652,7 @@ void ApplicationUI::onDisplayDirectionAboutToChange(){
 			logo->setImage("asset:///images/logo-landscape.png");
 			contentContainer->setTopPadding(0);
 			lab->setTopMargin(0);
-			lab->setText("This app's creators aren't associated with GO");
+			lab->setText("This application or its creators are not\nassociated with GO Transit or Metrolinx.");
 		}
 	}
 }
@@ -1753,9 +1677,9 @@ void ApplicationUI::fourthFavClicked(bb::cascades::TouchEvent* event){
 	}
 }
 
-//void onPopTransitionEnded()
-//{
-//}
+/*
+ *  Top down menu needs to be re-enabled when user clicks back from disclaimer or settings
+ */
 void ApplicationUI::popFinished(bb::cascades::Page* page)
 {
 	Application::instance()->setMenuEnabled(true);
