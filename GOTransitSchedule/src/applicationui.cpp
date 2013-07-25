@@ -284,8 +284,7 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 			SLOT(showSuggestions(QString)));
 	Q_ASSERT(res);
 
-	res = QObject::connect(customTimeCheckBox, SIGNAL(checkedChanged(bool)), this,
-				SLOT(customTimeCheckBoxChanged(bool)));
+	res = QObject::connect(customTimeCheckBox, SIGNAL(checkedChanged(bool)), this, SLOT(customTimeCheckBoxChanged(bool)));
 		Q_ASSERT(res);
 
 	res = QObject::connect(textInput, SIGNAL(focusedChanged(bool)), this,
@@ -1419,8 +1418,21 @@ void ApplicationUI::showSuggestions(QString text){//Called whenever a new charac
 	directionDropDown->removeAll();
 	routeDropDown->removeAll();
 	routeDropDown->blockSignals(false);
-
 	QString s1 = "",s2 = "",s3 = "",s4 = "";
+
+	if (text.length() < 1 && favStations.length() > 0){
+		for (int i = 0; i < favStations.length(); i++){
+			if (i == 0)
+				s1 = favStations.at(i);
+			else if (i == 1)
+				s2 = favStations.at(i);
+			else if (i == 2)
+				s3 = favStations.at(i);
+			else if (i == 4)
+				s4 = favStations.at(i);
+		}
+	}
+	else{
 	for (int i = 0; i < stationName.length(); i++)
 	{
 		QString r = stationName[i].left(text.length());
@@ -1465,7 +1477,7 @@ void ApplicationUI::showSuggestions(QString text){//Called whenever a new charac
 				break;
 		}
 	}
-
+	}
 	if (s1 != ""){
 		suggestion1->setText(s1);
 		imageFavOne->setDefaultImage("asset:///images/fav-image-unselected.png");
