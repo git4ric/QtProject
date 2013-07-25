@@ -1,5 +1,7 @@
 
 #include "applicationui.hpp"
+#include <QSettings>
+
 using namespace bb::cascades;
 using namespace bb::device;
 
@@ -28,49 +30,37 @@ void ApplicationUI::getDeviceInformation(){
 }
 
 void ApplicationUI::getSettingsInfo(){
-		QString appFolder(QDir::currentPath());
-		QString fileName = appFolder + "/app/native/assets/AppSettings.txt";
-		QFile file(fileName);
-	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-	         {
-		showFavoriteButton = false;
-		return;
-	         }
+		QCoreApplication::setApplicationName("GO Schedule Finder");
+		QCoreApplication::setOrganizationName("Yasir and Ripul");
 
-	     QTextStream in(&file);
-	     showFavoriteButton = in.readLine().compare("true") == 0 ? true : false;
-	     while (!in.atEnd()){
-	         QString line = in.readLine();
-	         favStations.append(line);
-	         if (favStations.length() > 5)
-	        	 break;
+		QSettings settings;
+
+	     if (settings.value("showFavButton").isNull()){
+	    	 showFavoriteButton = true;//default value
+	    	 settings.setValue("showFavButton", QVariant("true"));
 	     }
-	     file.close();
-
-	     fileName = appFolder + "/app/native/assets/firstLaunch.txt";
-	     QFile file2(fileName);
-	     if (!file2.open(QIODevice::ReadOnly | QIODevice::Text)){
-	    	 firstTimeAppLaunched = false;
-	    	 return;
+	     else {
+	    	 if (settings.value("showFavButton").toString().compare("true") == 0)
+	    		 showFavoriteButton = true;
+	    	 else
+	    		 showFavoriteButton = false;
 	     }
-	     QTextStream inn(&file2);
-	     QString readLine = inn.readLine();
-		if (readLine.compare("true") == 0){
-			firstTimeAppLaunched = true;
-			file2.close();
 
-			QFile file3(fileName);
+	     for (int i = 0; i < 5; i++){
+	     if (!settings.value("favStation" + (i+1)).isNull())
+	         favStations.append(settings.value("favStation" + (i+1)).toString());
+	     }
 
-			if (!file3.open(QIODevice::WriteOnly | QIODevice::Text))
-			{ return;}
-
-			QTextStream out(&file3);
-			out << "false";
-			file3.close();
-		}
-		else
-			firstTimeAppLaunched = false;
-	     file2.close();
+	     if (settings.value("firstLaunch").isNull()){
+	    	 firstTimeAppLaunched = true;
+	    	 settings.setValue("firstLaunch", QVariant("false"));
+	     }
+	     else {
+	    	 if (settings.value("firstLaunch").toString().compare("true") == 0)
+	    		 firstTimeAppLaunched = true;
+	    	 else
+	    		 firstTimeAppLaunched = false;
+	     }
 }
 ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 : QObject(app)
@@ -590,36 +580,28 @@ void ApplicationUI::reinitialize_App_Screen(){
 	}
 }
 void ApplicationUI::saveSettings(){
-	QString appFolder(QDir::currentPath());
-		QString fileName = appFolder + "/app/native/assets/AppSettings.txt";
-		QFile file(fileName);
+	QSettings settings;
 
-		if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-		{ return;}
-
-		QTextStream out(&file);
-
-		if (t->isChecked()){
-			out << "true" << "\n";
-			if (showFavoriteButton == false){
-				showFavoriteButton = true;
-				reinitialize_App_Screen();
-			}
-		}else{
-			out << "false" << "\n";
-			if (showFavoriteButton == true){
+	if (t->isChecked()){
+		settings.setValue("showFavButton",  QVariant("true"));
+		if (showFavoriteButton == false){
+			showFavoriteButton = true;
+			reinitialize_App_Screen();
+		}
+	}else{
+		settings.setValue("showFavButton",  QVariant("false"));
+		if (showFavoriteButton == true){
 			showFavoriteButton = false;
 			reinitialize_App_Screen();
-			}
-		}for (int i = 0; i < c.length(); i++){
-			qDebug() << c.at(i)->text();
-			if (c.at(i)->isChecked())
-				out << c.at(i)->text() << "\n";
-			else
-				favStations.removeAll(c.at(i)->text());
 		}
-		file.close();
-		navigationPane->pop();
+	}
+	for (int i = 0; i < c.length(); i++){
+		if (c.at(i)->isChecked())
+			settings.setValue("favStation" + (i+1), c.at(i)->text() );
+		else
+			favStations.removeAll(c.at(i)->text());
+	}
+	navigationPane->pop();
 }
 void ApplicationUI::onDisplayDirectionAboutToChange(){
 	OrientationSupport *support = OrientationSupport::instance();
@@ -1538,60 +1520,27 @@ void ApplicationUI::showSuggestions(QString text){//Called whenever a new charac
 }
 QString ApplicationUI::addFavoriteStation(QString stationName){
 	QString outputMessage;
+	QSettings settings;
+
 	if (favStations.length() >= 5)
 		return "Max. 5 stations already added to favourites";
-	QString appFolder(QDir::currentPath());
-	QString fileName = appFolder + "/app/native/assets/AppSettings.txt";
-	QFile file(fileName);
-
-	if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-	{return "Unable to save station to favourites";}
-
-	QTextStream out(&file);
-
-	if (showFavoriteButton)
-		out << "true" << "\n";
-	else
-		out << "false" << "\n";
 
 	if (favStations.contains(stationName) == false)
 		favStations.append(stationName);
 
-	for (int i = 0; i < favStations.length(); i++){
-		out << favStations[i];
-		if (i != favStations.length() - 1)
-			out << "\n";
-	}
+	settings.setValue("favStation" + favStations.length(), stationName);
 
-	file.close();
 	return "Added " + stationName + " to favourite stations!";
 }
 
 QString ApplicationUI::removeFavoriteStation(QString stationName){
-	QString outputMessage;
-	QString appFolder(QDir::currentPath());
-	QString fileName = appFolder + "/app/native/assets/AppSettings.txt";
-	QFile file(fileName);
-
-	if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-	{ 	return "Unable to remove station from favourites.";  }
-
-	QTextStream out(&file);
-
-	if (showFavoriteButton)
-			out << "true" ;
-		else
-			out << "false";
-	if (favStations.contains(stationName))
+	QSettings setting;
+	int location;
+	if (favStations.contains(stationName)){
+		location = favStations.indexOf(stationName);
 		favStations.removeOne(stationName);
-	if (favStations.length() > 0)
-		out << "\n";
-	for (int i = 0; i < favStations.length(); i++){
-		out << favStations[i];
-		if (i != favStations.length() - 1)
-				out << "\n";
+		setting.remove("favStation" + (location+1));
 	}
-	file.close();
 	return "Removed " + stationName + " from favourite stations!";
 
 }
