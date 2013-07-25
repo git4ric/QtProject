@@ -339,7 +339,10 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	_page3 = new Page();
 	_page3Container = Container::create().top(100);
 	Button* checkUpdate = Button::create().text("Check Service Update").horizontal(HorizontalAlignment::Center).vertical(VerticalAlignment::Center);
-	Label* internetNote = Label::create().text("Note: This requires data usage").horizontal(HorizontalAlignment::Center);
+	Label* internetNote = Label::create().text("Note: These buttons require data usage").horizontal(HorizontalAlignment::Center);
+	TextStyle *r = new TextStyle();
+	r->setFontSize(FontSize::Small);
+	internetNote->textStyle()->setBase(*r);
 	TextStyle *t = new TextStyle();
 	t->setColor(Color::DarkGreen);
 	t->setFontSize(FontSize::XLarge);
@@ -347,13 +350,27 @@ ApplicationUI::ApplicationUI(bb::cascades::Application *app)
 	l->setHorizontalAlignment(HorizontalAlignment::Center);
 	l->setText("GO Service Updates");
 	l->textStyle()->setBase(*t);
-	l->setBottomMargin(75);
 	l->setBottomPadding(75);
+
+	Label *scheduleFinderSite = new Label();
+	scheduleFinderSite->setHorizontalAlignment(HorizontalAlignment::Center);
+	scheduleFinderSite->setText("GO Official Schedule Finder");
+	scheduleFinderSite->textStyle()->setBase(*t);
+	scheduleFinderSite->setBottomPadding(75);
+
+	Button* pButton1 = Button::create().text("GO Transit Schedule Finder");
+	pButton1->setHorizontalAlignment(HorizontalAlignment::Center);
+	pButton1->setBottomPadding(75);
+	internetNote->setTopPadding(50);
+
 	_page3Container->add(l);
 	_page3Container->add(checkUpdate);
+	_page3Container->add(scheduleFinderSite);
+	_page3Container->add(pButton1);
 	_page3Container->add(internetNote);
 	_page3->setContent(_page3Container);
 	QObject::connect(checkUpdate,SIGNAL(clicked()),this,SLOT(updateButtonClicked()));
+	QObject::connect(pButton1,SIGNAL(clicked()),this,SLOT(openScheduleButtonClicked()));
 
 	Tab* tab3 = new Tab();
 	tab3->setTitle("Donate");
@@ -455,20 +472,19 @@ void ApplicationUI::help_clicked(){
 	t->setFontSize(FontSize::XLarge);
 	Label *l = new Label();
 	l->setHorizontalAlignment(HorizontalAlignment::Center);
-	l->setText("GO Schedule Finder");
+	l->setText("Application Disclaimer");
 	l->textStyle()->setBase(*t);
 
-	Button* pButton1 = Button::create().text("Open GO Transit schedule website");
-	pButton1->setHorizontalAlignment(HorizontalAlignment::Center);
 	Label *disclaimerLabel = new Label();
 	disclaimerLabel->setMultiline(true);
-	disclaimerLabel->setText("DISCLAIMER:\n\nThis application, its creators, or contributors are NOT in any way associated with GO Transit, MetroLinx, or any of its partners. Everything used in this application has been used with permission from its owners and its copyright holders. "
+	Label* disclaimerTitle = Label::create().text("DISCLAIMER:").horizontal(HorizontalAlignment::Center);
+	disclaimerTitle->setTopPadding(100);
+	disclaimerTitle->setBottomPadding(100);
+	disclaimerLabel->setText("This application, its creators, or contributors are NOT in any way associated with GO Transit, MetroLinx, or any of its partners or subsidiaries. Everything used in this application has been used with permission from its owners and its copyright holders. "
 			"The creators of this application take no responsibility for incorrect, inaccurate or missing information in regards to schedules. This app is limited at the moment to schedules ONLY ON WEEKDAYS. The app does not show special trips such as Wonderland.");
-
 	cc->add(l);
+	cc->add(disclaimerTitle);
 	cc->add(disclaimerLabel);
-	cc->add(pButton1);
-	QObject::connect(pButton1,SIGNAL(clicked()),this,SLOT(openScheduleButtonClicked()));
 	helpPage->setContent(cc);
 
 	if (tabbedPane->activeTab()->title().contains("GO Service", Qt::CaseInsensitive))
